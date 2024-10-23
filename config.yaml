@@ -58,7 +58,7 @@ contact: 'team@carpentries.org'
 # - another-learner.md
 
 # Order of episodes in your lesson
-episodes: 
+episodes:
 - 01-run-quit.md
 - 02-variables.md
 - 03-types-conversion.md
@@ -70,6 +70,7 @@ episodes:
 - 09-plotting.md
 - 10-lunch.md
 - 11-lists.md
+- 11.5-dictionaries.md
 - 12-for-loops.md
 - 13-conditionals.md
 - 14-looping-data-sets.md
@@ -81,13 +82,13 @@ episodes:
 - 20-feedback.md
 
 # Information for Learners
-learners: 
+learners:
 
 # Information for Instructors
-instructors: 
+instructors:
 
 # Learner Profiles
-profiles: 
+profiles:
 
 # Customisation ---------------------------------------------
 #
