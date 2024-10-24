@@ -461,7 +461,7 @@ dictionary</a></li>
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Dictionaries</h1>
-        <p>Last updated on 2024-10-23 |
+        <p>Last updated on 2024-10-24 |
 
         <a href="https://github.com/swcarpentry/python-novice-gapminder/edit/main/episodes/11.5-dictionaries.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -714,6 +714,105 @@ all prices {'laptop': 500, 'mouse': 10, 'camera': 85, 'printer': 50}</code></pre
 </div>
 </div>
 </div>
+<div id="adding-two-values" class="callout challenge">
+<div class="callout-square">
+<i class="callout-icon" data-feather="zap"></i>
+</div>
+<div id="adding-two-values" class="callout-inner">
+<h3 class="callout-title">Adding Two Values</h3>
+<div class="callout-content">
+<p>Given the following dictionary, how would we get the cost of a laptop
+and a camera?</p>
+<div class="codewrapper sourceCode" id="cb24">
+<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" tabindex="-1"></a>prices <span class="op">=</span> {</span>
+<span id="cb24-2"><a href="#cb24-2" tabindex="-1"></a>    <span class="st">"laptop"</span>: <span class="dv">500</span>,</span>
+<span id="cb24-3"><a href="#cb24-3" tabindex="-1"></a>    <span class="st">"mouse"</span>: <span class="dv">10</span>,</span>
+<span id="cb24-4"><a href="#cb24-4" tabindex="-1"></a>    <span class="st">"camera"</span>: <span class="dv">85</span></span>
+<span id="cb24-5"><a href="#cb24-5" tabindex="-1"></a>}</span></code></pre>
+</div>
+<div class="codewrapper">
+<h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="output" tabindex="0"><code>price of a laptop + camera: 585</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div id="accordionSolution2" class="accordion challenge-accordion accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
+  <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
+</button>
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div class="accordion-body">
+<div class="codewrapper sourceCode" id="cb26">
+<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" tabindex="-1"></a>prices <span class="op">=</span> {</span>
+<span id="cb26-2"><a href="#cb26-2" tabindex="-1"></a>    <span class="st">"laptop"</span>: <span class="dv">500</span>,</span>
+<span id="cb26-3"><a href="#cb26-3" tabindex="-1"></a>    <span class="st">"mouse"</span>: <span class="dv">10</span>,</span>
+<span id="cb26-4"><a href="#cb26-4" tabindex="-1"></a>    <span class="st">"camera"</span>: <span class="dv">85</span></span>
+<span id="cb26-5"><a href="#cb26-5" tabindex="-1"></a>}</span>
+<span id="cb26-6"><a href="#cb26-6" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'price of a laptop + camera:'</span>, prices[<span class="st">'laptop'</span>] <span class="op">+</span> prices[<span class="st">'camera'</span>])</span></code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="summing-values" class="callout challenge">
+<div class="callout-square">
+<i class="callout-icon" data-feather="zap"></i>
+</div>
+<div id="summing-values" class="callout-inner">
+<h3 class="callout-title">Summing Values</h3>
+<div class="callout-content">
+<p>Given the following dictionary, how could we calculate the total cost
+of all items?</p>
+<p>Hint: try the <em>sum</em> function</p>
+<div class="codewrapper sourceCode" id="cb27">
+<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" tabindex="-1"></a>prices <span class="op">=</span> {</span>
+<span id="cb27-2"><a href="#cb27-2" tabindex="-1"></a>    <span class="st">"laptop"</span>: <span class="dv">500</span>,</span>
+<span id="cb27-3"><a href="#cb27-3" tabindex="-1"></a>    <span class="st">"mouse"</span>: <span class="dv">10</span>,</span>
+<span id="cb27-4"><a href="#cb27-4" tabindex="-1"></a>    <span class="st">"camera"</span>: <span class="dv">85</span>,</span>
+<span id="cb27-5"><a href="#cb27-5" tabindex="-1"></a>    <span class="st">"printer"</span>: <span class="dv">50</span></span>
+<span id="cb27-6"><a href="#cb27-6" tabindex="-1"></a>}</span></code></pre>
+</div>
+<div class="codewrapper">
+<h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="output" tabindex="0"><code>total cost: 645</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div id="accordionSolution3" class="accordion challenge-accordion accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
+  <h4 class="accordion-header" id="headingSolution3"> Show me the solution </h4>
+</button>
+<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
+<div class="accordion-body">
+<div class="codewrapper sourceCode" id="cb29">
+<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" tabindex="-1"></a></span>
+<span id="cb29-2"><a href="#cb29-2" tabindex="-1"></a>prices <span class="op">=</span> {</span>
+<span id="cb29-3"><a href="#cb29-3" tabindex="-1"></a>    <span class="st">"laptop"</span>: <span class="dv">500</span>,</span>
+<span id="cb29-4"><a href="#cb29-4" tabindex="-1"></a>    <span class="st">"mouse"</span>: <span class="dv">10</span>,</span>
+<span id="cb29-5"><a href="#cb29-5" tabindex="-1"></a>    <span class="st">"camera"</span>: <span class="dv">85</span>,</span>
+<span id="cb29-6"><a href="#cb29-6" tabindex="-1"></a>    <span class="st">"printer"</span>: <span class="dv">50</span></span>
+<span id="cb29-7"><a href="#cb29-7" tabindex="-1"></a>}</span>
+<span id="cb29-8"><a href="#cb29-8" tabindex="-1"></a></span>
+<span id="cb29-9"><a href="#cb29-9" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'total cost:'</span>, <span class="bu">sum</span>(prices.values()))</span></code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
 </section></div> <!-- / div.lesson-content -->
     </main><!-- / main#main-content.main-content --><nav class="bottom-pagination mx-md-4" aria-label="Previous and Next Chapter"><div class="d-block d-sm-block d-md-none">
         <a class="chapter-link" href="11-lists.html"><i aria-hidden="true" class="small-arrow" data-feather="arrow-left"></i>Previous</a>
@@ -772,8 +871,8 @@ all prices {'laptop': 500, 'mouse': 10, 'camera': 85, 'printer': 50}</code></pre
   "url": "https://swcarpentry.github.io/python-novice-gapminder/11.5-dictionaries.html",
   "identifier": "https://swcarpentry.github.io/python-novice-gapminder/11.5-dictionaries.html",
   "dateCreated": "2016-01-07",
-  "dateModified": "2024-10-23",
-  "datePublished": "2024-10-23"
+  "dateModified": "2024-10-24",
+  "datePublished": "2024-10-24"
 }
 
   </script><script>
