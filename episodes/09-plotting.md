@@ -36,29 +36,11 @@ position = [0, 100, 200, 300]
 plt.plot(time, position)
 plt.xlabel('Time (hr)')
 plt.ylabel('Position (km)')
+plt.show()
 ```
 
 ![](fig/9_simple_position_time_plot.svg){alt='A line chart showing time (hr) relative to position (km), using the values provided in the code block above. By default, the plotted line is blue against a white background, and the axes have been scaled automatically to fit the range of the input data.'}
 
-:::::::::::::::::::::::::::::::::::::::::  callout
-
-## Display All Open Figures
-
-In our Jupyter Notebook example, running the cell should generate the figure directly below the code.
-The figure is also included in the Notebook document for future viewing.
-However, other Python environments like an interactive Python session started from a terminal
-or a Python script executed via the command line require an additional command to display the figure.
-
-Instruct `matplotlib` to show a figure:
-
-```python
-plt.show()
-```
-
-This command can also be used within a Notebook - for instance, to display multiple figures
-if several are created by a single cell.
-
-::::::::::::::::::::::::::::::::::::::::::::::::::
 
 ## Plot data directly from a [`Pandas dataframe`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.html).
 
@@ -74,7 +56,7 @@ import pandas as pd
 data = pd.read_csv('data/gapminder_gdp_oceania.csv', index_col='country')
 
 # Extract year from last 4 characters of each column name
-# The current column names are structured as 'gdpPercap_(year)', 
+# The current column names are structured as 'gdpPercap_(year)',
 # so we want to keep the (year) part only for clarity when plotting GDP vs. years
 # To do this we use replace(), which removes from the string the characters stated in the argument
 # This method works on strings, so we use replace() from Pandas Series.str vectorized string functions
@@ -369,7 +351,7 @@ Whenever you are generating plots to go into a paper or a presentation, there ar
 - Always make sure your text is large enough to read. Use the `fontsize` parameter in `xlabel`, `ylabel`, `title`, and `legend`, and [`tick_params` with `labelsize`](https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.tick_params.html) to increase the text size of the numbers on your axes.
 - Similarly, you should make your graph elements easy to see. Use `s` to increase the size of your scatterplot markers and `linewidth` to increase the sizes of your plot lines.
 - Using color (and nothing else) to distinguish between different plot elements will make your plots unreadable to anyone who is colorblind, or who happens to have a black-and-white office printer. For lines, the `linestyle` parameter lets you use different types of lines. For scatterplots, `marker` lets you change the shape of your points. If you're unsure about your colors, you can use [Coblis](https://www.color-blindness.com/coblis-color-blindness-simulator/) or [Color Oracle](https://colororacle.org/) to simulate what your plots would look like to those with colorblindness.
-  
+
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
