@@ -80,11 +80,20 @@ data.loc['Australia'].plot()
 ```python
 data.T.plot()
 plt.ylabel('GDP per capita')
+plt.show()
 ```
 
 ![](fig/9_gdp_australia_nz.svg){alt='GDP plot for Australia and New Zealand'}
 
 ## Many styles of plot are available.
+
+::::::::::::::::::::::::::::::::::::: instructor
+
+There are a number of plot styles available in `matplotlib`.
+
+https://matplotlib.org/stable/gallery/style_sheets/style_sheets_reference.html
+
+:::::::::::::::::::::::::::::::::::::::::::::::::
 
 - For example, do a bar plot using a fancier style.
 
@@ -92,6 +101,7 @@ plt.ylabel('GDP per capita')
 plt.style.use('ggplot')
 data.T.plot(kind='bar')
 plt.ylabel('GDP per capita')
+plt.show()
 ```
 
 ![](fig/9_gdp_bar.svg){alt='GDP barplot for Australia'}
@@ -127,6 +137,7 @@ plt.plot(years, gdp_nz, 'g-', label='New Zealand')
 plt.legend(loc='upper left')
 plt.xlabel('Year')
 plt.ylabel('GDP per capita ($)')
+plt.show()
 ```
 
 :::::::::::::::::::::::::::::::::::::::::  callout
