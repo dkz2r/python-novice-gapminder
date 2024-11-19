@@ -46,9 +46,9 @@ if mass > 3.0:
 
 ```python
 masses = [3.54, 2.07, 9.22, 1.86, 1.71]
-for m in masses:
-    if m > 3.0:
-        print(m, 'is large')
+for mass in masses:
+    if mass > 3.0:
+        print(mass, 'is large')
 ```
 
 ```output
@@ -63,11 +63,11 @@ for m in masses:
 
 ```python
 masses = [3.54, 2.07, 9.22, 1.86, 1.71]
-for m in masses:
+for mass in masses:
     if m > 3.0:
-        print(m, 'is large')
+        print(mass, 'is large')
     else:
-        print(m, 'is small')
+        print(mass, 'is small')
 ```
 
 ```output
@@ -87,13 +87,13 @@ for m in masses:
 
 ```python
 masses = [3.54, 2.07, 9.22, 1.86, 1.71]
-for m in masses:
-    if m > 9.0:
-        print(m, 'is HUGE')
-    elif m > 3.0:
-        print(m, 'is large')
+for mass in masses:
+    if mass > 9.0:
+        print(mass, 'is HUGE')
+    elif mass > 3.0:
+        print(mass, 'is large')
     else:
-        print(m, 'is small')
+        print(mass, 'is small')
 ```
 
 ```output
@@ -142,8 +142,8 @@ adjusting velocity
 
 ```python
 velocity = 10.0
-for i in range(5): # execute the loop 5 times
-    print(i, ':', velocity)
+for value in range(5): # execute the loop 5 times
+    print(value, ':', velocity)
     if velocity > 20.0:
         print('moving too fast')
         velocity = velocity - 5.0
@@ -166,19 +166,6 @@ moving too fast
 moving too slow
 final velocity: 30.0
 ```
-
-## Create a table showing variables' values to trace a program's execution.
-
-<table>
-  <tr>   <td><strong>i</strong></td>   <td>0</td>   <td>.</td>   <td>1</td>   <td>.</td>   <td>2</td>   <td>.</td>   <td>3</td>   <td>.</td>   <td>4</td>   <td>.</td>
-  </tr>
-  <tr>   <td><strong>velocity</strong></td>   <td>10.0</td>   <td>20.0</td>   <td>.</td>   <td>30.0</td>   <td>.</td>   <td>25.0</td>   <td>.</td>   <td>20.0</td>   <td>.</td>   <td>30.0</td>
-  </tr>
-</table>
-
-- The program must have a `print` statement *outside* the body of the loop
-  to show the final value of `velocity`,
-  since its value is updated by the last iteration of the loop.
 
 :::::::::::::::::::::::::::::::::::::::::  callout
 

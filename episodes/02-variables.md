@@ -22,7 +22,7 @@ exercises: 10
 - **Variables** are names for values.
 
 - Variable names
-  
+
   - can **only** contain letters, digits, and underscore `_` (typically used to separate words in long variable names)
   - cannot start with a digit
   - are **case sensitive** (age, Age and AGE are three different variables)
@@ -38,7 +38,7 @@ exercises: 10
 
 - Here, Python assigns an age to a variable `age`
   and a name in quotes to a variable `first_name`.
-  
+
   ```python
   age = 42
   first_name = 'Ahmed'
@@ -115,6 +115,7 @@ clears the interpreter and runs everything from a clean slate going top to botto
   - Remember, we assigned the value `42` to `age` a few lines ago.
 
 ```python
+# Add three to the age
 age = age + 3
 print('Age in three years:', age)
 ```
@@ -122,6 +123,23 @@ print('Age in three years:', age)
 ```output
 Age in three years: 45
 ```
+
+## Use comments to add documentation to programs.
+
+:::::::::::::::::::::::::::::::::::::::::  callout
+
+You might notice in the previous example that our first line starts with a `#`. This is called a
+"comment", and is incredibly useful for annotating your code. When Python sees a `#`, it ignores
+the rest of the line.
+
+Example
+
+```python
+# This sentence isn't executed by Python
+adjustment = 0.5   # Neither is this comment - anything after the '#' is ignored
+```
+
+:::::::::::::::::::::::::::::::::::::::::
 
 ## Use an index to get a single character from a string.
 
@@ -395,8 +413,8 @@ What would these expressions return?
 5. `species_name[11:-3]` returns the substring `'fo'`, from the 11th position to the third last position
 6. `species_name[-5:-3]` also returns the substring `'fo'`, from the fifth last position to the third last
 7. If a part of the slice is out of range, the operation does not fail. `species_name[0:20]` gives the same result as `species_name[0:]`, and `species_name[:103]` gives the same result as `species_name[:]`
-  
-  
+
+
 
 :::::::::::::::::::::::::
 

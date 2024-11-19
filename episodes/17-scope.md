@@ -31,23 +31,23 @@ exercises: 10
 ```python
 pressure = 103.9
 
-def adjust(t):
-    temperature = t * 1.43 / pressure
-    return temperature
+def adjust_temperature(temperature):
+    adjusted_temperature = temperature * 1.43 / pressure
+    return adjusted_temperature
 ```
 
 - `pressure` is a *global variable*.
   - Defined outside any particular function.
   - Visible everywhere.
-- `t` and `temperature` are *local variables* in `adjust`.
+- `temperature` and `adjusted_temperature` are *local variables* in `adjust_temperature`.
   - Defined in the function.
   - Not visible in the main program.
   - Remember: a function parameter is a variable
     that is automatically assigned a value when the function is called.
 
 ```python
-print('adjusted:', adjust(0.9))
-print('temperature after call:', temperature)
+print('adjusted:', adjust_temperature(0.9))
+print('adjusted_temperature after call:', adjusted_temperature)
 ```
 
 ```output
@@ -57,8 +57,8 @@ adjusted: 0.01238691049085659
 ```error
 Traceback (most recent call last):
   File "/Users/swcarpentry/foo.py", line 8, in <module>
-    print('temperature after call:', temperature)
-NameError: name 'temperature' is not defined
+    print('adjust_temperature after call:', adjust_temperature)
+NameError: name 'adjust_temperature' is not defined
 ```
 
 :::::::::::::::::::::::::::::::::::::::  challenge
@@ -127,8 +127,8 @@ KeyError: 'Friday'
   structure such as a dictionary). We can find more information about the `KeyError` and other built-in exceptions
   in the [Python docs](https://docs.python.org/3/library/exceptions.html#KeyError).
 6. `KeyError: 'Friday'`
-  
-  
+
+
 
 :::::::::::::::::::::::::
 

@@ -22,13 +22,6 @@ exercises: 10
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-## Use comments to add documentation to programs.
-
-```python
-# This sentence isn't executed by Python.
-adjustment = 0.5   # Neither is this - anything after '#' is ignored.
-```
-
 ## A function may take zero or more arguments.
 
 - We have seen some functions already --- now let's take a closer look.
@@ -110,7 +103,7 @@ TypeError: '>' not supported between instances of 'str' and 'int'
 - By default, rounds to zero decimal places.
 
 ```python
-round(3.712)
+print(round(3.712))
 ```
 
 ```output
@@ -120,7 +113,7 @@ round(3.712)
 - We can specify the number of decimal places we want.
 
 ```python
-round(3.712, 1)
+print(round(3.712, 1))
 ```
 
 ```output
@@ -134,7 +127,7 @@ round(3.712, 1)
 - Some methods are used for internal Python operations, and are marked with double underlines.
 
 ```python
-my_string = 'Hello world!'  # creation of a string object 
+my_string = 'Hello world!'  # creation of a string object
 
 print(len(my_string))       # the len function takes a string as an argument and returns the length of the string
 
@@ -178,7 +171,7 @@ Help on built-in function round in module builtins:
 
 round(number, ndigits=None)
     Round a number to a given precision in decimal digits.
-    
+
     The return value is an integer if ndigits is omitted or None.  Otherwise
     the return value has the same type as the number.  ndigits may be negative.
 ```
@@ -245,14 +238,14 @@ SyntaxError: unexpected EOF while parsing
 
 ```python
 age = 53
-remaining = 100 - aege # mis-spelled 'age'
+retirement = 65 - aege # mis-spelled 'age'
 ```
 
 ```error
 NameError                                 Traceback (most recent call last)
 <ipython-input-59-1214fb6c55fc> in <module>
       1 age = 53
-----> 2 remaining = 100 - aege # mis-spelled 'age'
+----> 2 retirement = 65 - aege # mis-spelled 'age'
 
 NameError: name 'aege' is not defined
 ```
@@ -284,8 +277,8 @@ radiance = max(2.1, 2.0 + min(radiance, 1.1 * radiance - 0.5))
   4. `2.0 + 0.6 = 2.6`
   5. `max(2.1, 2.6) = 2.6`
 2. At the end, `radiance = 2.6`
-  
-  
+
+
 
 :::::::::::::::::::::::::
 
@@ -339,7 +332,7 @@ print(max(len(rich), len(poor)))
 `max(len(rich), poor)` throws a TypeError. This turns into `max(4, 'tin')` and
 as we discussed earlier a string and integer cannot meaningfully be compared.
 
-```error 
+```error
 TypeError                                 Traceback (most recent call last)
 <ipython-input-65-bc82ad05177a> in <module>
 ----> 1 max(len(rich), poor)

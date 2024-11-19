@@ -46,8 +46,8 @@ uniquely identifies its *entry* in the DataFrame.
 
 ```python
 import pandas as pd
-data = pd.read_csv('data/gapminder_gdp_europe.csv', index_col='country')
-print(data.iloc[0, 0])
+data_europe = pd.read_csv('data/gapminder_gdp_europe.csv', index_col='country')
+print(data_europe.iloc[0, 0])
 ```
 
 ```output
@@ -59,7 +59,7 @@ print(data.iloc[0, 0])
 - Can specify location by row and/or column name.
 
 ```python
-print(data.loc["Albania", "gdpPercap_1952"])
+print(data_europe.loc["Albania", "gdpPercap_1952"])
 ```
 
 ```output
@@ -71,7 +71,7 @@ print(data.loc["Albania", "gdpPercap_1952"])
 - Just like Python's usual slicing notation.
 
 ```python
-print(data.loc["Albania", :])
+print(data_europe.loc["Albania", :])
 ```
 
 ```output
@@ -90,10 +90,10 @@ gdpPercap_2007    5937.029526
 Name: Albania, dtype: float64
 ```
 
-- Would get the same result printing `data.loc["Albania"]` (without a second index).
+- Would get the same result printing `data_europe.loc["Albania"]` (without a second index).
 
 ```python
-print(data.loc[:, "gdpPercap_1952"])
+print(data_europe.loc[:, "gdpPercap_1952"])
 ```
 
 ```output
@@ -108,13 +108,13 @@ United Kingdom             9979.508487
 Name: gdpPercap_1952, dtype: float64
 ```
 
-- Would get the same result printing `data["gdpPercap_1952"]`
-- Also get the same result printing `data.gdpPercap_1952` (not recommended, because easily confused with `.` notation for methods)
+- Would get the same result printing `data_europe["gdpPercap_1952"]`
+- Also get the same result printing `data_europe.gdpPercap_1952` (not recommended, because easily confused with `.` notation for methods)
 
 ## Select multiple columns or rows using `DataFrame.loc` and a named slice.
 
 ```python
-print(data.loc['Italy':'Poland', 'gdpPercap_1962':'gdpPercap_1972'])
+print(data_europe.loc['Italy':'Poland', 'gdpPercap_1962':'gdpPercap_1972'])
 ```
 
 ```output
@@ -139,7 +139,7 @@ everything up to but not including the final index.
 - E.g., calculate max of a slice.
 
 ```python
-print(data.loc['Italy':'Poland', 'gdpPercap_1962':'gdpPercap_1972'].max())
+print(data_europe.loc['Italy':'Poland', 'gdpPercap_1962':'gdpPercap_1972'].max())
 ```
 
 ```output
@@ -150,7 +150,7 @@ dtype: float64
 ```
 
 ```python
-print(data.loc['Italy':'Poland', 'gdpPercap_1962':'gdpPercap_1972'].min())
+print(data_europe.loc['Italy':'Poland', 'gdpPercap_1962':'gdpPercap_1972'].min())
 ```
 
 ```output
@@ -167,15 +167,15 @@ dtype: float64
 
 ```python
 # Use a subset of data to keep output readable.
-subset = data.loc['Italy':'Poland', 'gdpPercap_1962':'gdpPercap_1972']
-print('Subset of data:\n', subset)
+subset = data_europe.loc['Italy':'Poland', 'gdpPercap_1962':'gdpPercap_1972']
+print('Subset of data_europe:\n', subset)
 
 # Which values were greater than 10000 ?
 print('\nWhere are values large?\n', subset > 10000)
 ```
 
 ```output
-Subset of data:
+Subset of data_europe:
              gdpPercap_1962  gdpPercap_1967  gdpPercap_1972
 country
 Italy           8243.582340    10022.401310    12269.273780
@@ -239,8 +239,8 @@ Learners often struggle here, many may not work with financial data and concepts
 find the example concepts difficult to get their head around. The biggest problem
 though is the line generating the wealth_score, this step needs to be talked through
 throughly:
-* It uses implicit conversion between boolean and float values which 
-has not been covered in the course so far. 
+* It uses implicit conversion between boolean and float values which
+has not been covered in the course so far.
 * The axis=1 argument needs to be explained clearly.
 :::::::::::::::::::::::::::::::::::::::::::::::::
 
@@ -256,8 +256,8 @@ split themselves according to their GDP.
   where we account how many times a country has participated in the groups of *lower* or *higher* GDP
 
 ```python
-mask_higher = data > data.mean()
-wealth_score = mask_higher.aggregate('sum', axis=1) / len(data.columns)
+mask_higher = data_europe > data_europe.mean()
+wealth_score = mask_higher.aggregate('sum', axis=1) / len(data_europe.columns)
 print(wealth_score)
 ```
 
@@ -300,26 +300,26 @@ Finally, for each group in the `wealth_score` table, we sum their (financial) co
 across the years surveyed using chained methods:
 
 ```python
-print(data.groupby(wealth_score).sum())
+print(data_europe.groupby(wealth_score).sum())
 ```
 
 ```output
           gdpPercap_1952  gdpPercap_1957  gdpPercap_1962  gdpPercap_1967  \
-0.000000    36916.854200    46110.918793    56850.065437    71324.848786   
-0.333333    16790.046878    20942.456800    25744.935321    33567.667670   
-0.500000    11807.544405    14505.000150    18380.449470    21421.846200   
-1.000000   104317.277560   127332.008735   149989.154201   178000.350040   
+0.000000    36916.854200    46110.918793    56850.065437    71324.848786
+0.333333    16790.046878    20942.456800    25744.935321    33567.667670
+0.500000    11807.544405    14505.000150    18380.449470    21421.846200
+1.000000   104317.277560   127332.008735   149989.154201   178000.350040
 
           gdpPercap_1972  gdpPercap_1977  gdpPercap_1982  gdpPercap_1987  \
-0.000000    88569.346898   104459.358438   113553.768507   119649.599409   
-0.333333    45277.839976    53860.456750    59679.634020    64436.912960   
-0.500000    25377.727380    29056.145370    31914.712050    35517.678220   
-1.000000   215162.343140   241143.412730   263388.781960   296825.131210   
+0.000000    88569.346898   104459.358438   113553.768507   119649.599409
+0.333333    45277.839976    53860.456750    59679.634020    64436.912960
+0.500000    25377.727380    29056.145370    31914.712050    35517.678220
+1.000000   215162.343140   241143.412730   263388.781960   296825.131210
 
-          gdpPercap_1992  gdpPercap_1997  gdpPercap_2002  gdpPercap_2007  
-0.000000    92380.047256   103772.937598   118590.929863   149577.357928  
-0.333333    67918.093220    80876.051580   102086.795210   122803.729520  
-0.500000    36310.666080    40723.538700    45564.308390    51403.028210  
+          gdpPercap_1992  gdpPercap_1997  gdpPercap_2002  gdpPercap_2007
+0.000000    92380.047256   103772.937598   118590.929863   149577.357928
+0.333333    67918.093220    80876.051580   102086.795210   122803.729520
+0.500000    36310.666080    40723.538700    45564.308390    51403.028210
 1.000000   315238.235970   346930.926170   385109.939210   427850.333420
 ```
 
@@ -379,7 +379,7 @@ No, they do not produce the same output! The output of the first statement is:
 
 ```output
         gdpPercap_1952  gdpPercap_1957
-country                                
+country
 Albania     1601.056136     1942.284244
 Austria     6137.076492     8842.598030
 ```
@@ -388,13 +388,13 @@ The second statement gives:
 
 ```output
         gdpPercap_1952  gdpPercap_1957  gdpPercap_1962
-country                                                
+country
 Albania     1601.056136     1942.284244     2312.888958
 Austria     6137.076492     8842.598030    10750.721110
 Belgium     8343.105127     9714.960623    10991.206760
 ```
 
-Clearly, the second statement produces an additional column and an additional row compared to the first statement.  
+Clearly, the second statement produces an additional column and an additional row compared to the first statement.
 What conclusion can we draw? We see that a numerical slice, 0:2, *omits* the final index (i.e. index 2)
 in the range provided,
 while a named slice, 'gdpPercap\_1952':'gdpPercap\_1962', *includes* the final element.
@@ -715,7 +715,7 @@ data.iloc[:, col1_index:col2_index].loc["row1":"row2"]
 Python includes a `dir()` function that can be used to display all of the available methods (functions) that are built into a data object.  In Episode 4, we used some methods with a string. But we can see many more are available by using `dir()`:
 
 ```python
-my_string = 'Hello world!'   # creation of a string object 
+my_string = 'Hello world!'   # creation of a string object
 dir(my_string)
 ```
 

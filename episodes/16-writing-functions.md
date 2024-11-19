@@ -58,6 +58,8 @@ print_greeting()
 
 ```output
 Hello!
+The weather is nice today.
+Right?
 ```
 
 ## Arguments in a function call are matched to its defined parameters.
@@ -114,8 +116,8 @@ def average(values):
 ```
 
 ```python
-a = average([1, 3, 4])
-print('average of actual values:', a)
+my_avg = average([1, 3, 4])
+print('average of actual values:', my_avg)
 ```
 
 ```output
@@ -218,24 +220,24 @@ pressure is 22.5
 ## Order of Operations
 
 1. What's wrong in this example?
-  
+
   ```python
   result = print_time(11, 37, 59)
-  
+
   def print_time(hour, minute, second):
      time_string = str(hour) + ':' + str(minute) + ':' + str(second)
      print(time_string)
   ```
 
 2. After fixing the problem above, explain why running this example code:
-  
+
   ```python
   result = print_time(11, 37, 59)
   print('result of call is:', result)
   ```
-  
+
   gives this output:
-  
+
   ```output
   11:37:59
   result of call is: None
@@ -367,8 +369,8 @@ print_date(day=1, month=2, year=2003)
 3. Using named arguments can make code more readable since one can see from the function call what name the different arguments
   have inside the function. It can also reduce the chances of passing arguments in the wrong order, since by using named arguments
   the order doesn't matter.
-  
-  
+
+
 
 :::::::::::::::::::::::::
 
@@ -464,7 +466,7 @@ japan = data_asia.loc['Japan']
 
 1. Complete the statements below to obtain the average GDP for Japan
   across the years reported for the 1980s.
-  
+
   ```python
   year = 1983
   gdp_decade = 'gdpPercap_' + str(year // ____)
@@ -472,7 +474,7 @@ japan = data_asia.loc['Japan']
   ```
 
 2. Abstract the code above into a single function.
-  
+
   ```python
   def avg_gdp_in_decade(country, continent, year):
       data_countries = pd.read_csv('data/gapminder_gdp_'+___+'.csv',delimiter=',',index_col=0)
@@ -493,7 +495,7 @@ japan = data_asia.loc['Japan']
 ## Solution
 
 1. The average GDP for Japan across the years reported for the 1980s is computed with:
-  
+
   ```python
   year = 1983
   gdp_decade = 'gdpPercap_' + str(year // 10)
@@ -501,7 +503,7 @@ japan = data_asia.loc['Japan']
   ```
 
 2. That code as a function is:
-  
+
   ```python
   def avg_gdp_in_decade(country, continent, year):
       data_countries = pd.read_csv('data/gapminder_gdp_' + continent + '.csv', index_col=0)
@@ -512,7 +514,7 @@ japan = data_asia.loc['Japan']
   ```
 
 3. To obtain the average for the relevant years, we need to loop over them:
-  
+
   ```python
   def avg_gdp_in_decade(country, continent, year):
       data_countries = pd.read_csv('data/gapminder_gdp_' + continent + '.csv', index_col=0)
@@ -554,7 +556,7 @@ density. In the model, time takes discrete values 0, 1, 2, ...
 1. Define a function called `logistic_map` that takes two inputs: `x`, representing the current
   population (at time `t`), and a parameter `r = 1`. This function should return a value
   representing the state of the system (population) at time `t + 1`, using the mapping function:
-  
+
   `f(t+1) = r * f(t) * [1 - f(t)]`
 
 2. Using a `for` or `while` loop, iterate the `logistic_map` function defined in part 1, starting
@@ -597,7 +599,7 @@ density. In the model, time takes discrete values 0, 1, 2, ...
       for t in range(t_final):
           population.append( logistic_map(population[t], r) )
       return population
-  
+
   for period in (10, 100, 1000):
       population = iterate(0.5, period, 1)
       print(population[-1])
@@ -608,10 +610,10 @@ density. In the model, time takes discrete values 0, 1, 2, ...
   0.009395779870614648
   0.0009913908614406382
   ```
-  
+
   The population seems to be approaching zero.
-  
-  
+
+
 
 :::::::::::::::::::::::::
 
