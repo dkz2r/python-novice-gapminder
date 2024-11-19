@@ -49,33 +49,46 @@ Assertions are a simple but powerful method for making sure that the context in 
 
 ```python
 def calc_bulk_density(mass, volume):
-    '''Return dry bulk density = powder mass / powder volume.'''
     assert volume > 0
     return mass / volume
 ```
 
-If the assertion is `False`, the Python interpreter raises an `AssertionError` runtime exception. The source code for the expression that failed will be displayed as part of the error message. To ignore assertions in your code run the interpreter with the '-O' (optimize) switch. Assertions should contain only simple checks and never change the state of the program. For example, an assertion should never contain an assignment.
+If the assertion is `False`, the Python interpreter raises an `AssertionError` runtime exception. The source code for the expression that failed will be displayed as part of the error message. Assertions should contain only simple checks and never change the state of the program. For example, an assertion should never contain an assignment.
 
 ## Use docstrings to provide builtin help.
 
 If the first thing in a function is a character string that is not assigned directly to a variable, Python attaches it to the function, accessible via the builtin help function. This string that provides documentation is also known as a *docstring*.
 
 ```python
-def average(values):
-    "Return average of values, or None if no values are supplied."
+def calc_bulk_density(mass, volume):
+    """
+    Caculate bulk density from mass and volume.
 
-    if len(values) == 0:
-        return None
-    return sum(values) / len(values)
+    Args:
+        mass(float): mass of the object
+        volume(float): volume of the object
 
-help(average)
+    Returns:
+        float: bulk density of the object
+    """
+    assert volume > 0
+    return mass / volume
+
+help(calc_bulk_density)
 ```
 
 ```output
-Help on function average in module __main__:
+Help on function calc_bulk_density in module __main__:
 
-average(values)
-    Return average of values, or None if no values are supplied.
+calc_bulk_density(mass, volume)
+    Caculate bulk density from mass and volume.
+
+    Args:
+        mass(float): mass of the object
+        volume(float): volume of the object
+
+    Returns:
+        float: bulk density of the object
 ```
 
 :::::::::::::::::::::::::::::::::::::::::  callout
@@ -94,6 +107,44 @@ Blank lines are allowed."""
 ```
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
+
+## Type Hinting
+
+We can additionaly give some hints about the types of values our functions are expecting and
+returning by providing type hints. (This funtionality was not available in earlier versions of
+python, and so may not be available in all code you encounter.)
+
+```python
+def calc_bulk_density(mass: float, volume: float) -> float:
+    """
+    Caculate bulk density from mass and volume.
+
+    Args:
+        mass(float): mass of the object
+        volume(float): volume of the object
+
+    Returns:
+        float: bulk density of the object
+    """
+    assert volume > 0
+    return mass / volume
+
+help(calc_bulk_density)
+```
+
+```output
+Help on function calc_bulk_density in module __main__:
+
+calc_bulk_density(mass: float, volume: float) -> float
+    Caculate bulk density from mass and volume.
+
+    Args:
+        mass(float): mass of the object
+        volume(float): volume of the object
+
+    Returns:
+        float: bulk density of the object
+```
 
 :::::::::::::::::::::::::::::::::::::::  challenge
 
@@ -224,7 +275,7 @@ def string_machine(input_string, iterations):
                 new = new + '*'
         print(new)
         # store new string as old
-        old = new     
+        old = new
 
 string_machine('et cetera', 10)
 ```
