@@ -124,6 +124,14 @@ print('Age in three years:', age)
 Age in three years: 45
 ```
 
+:::::::::::::::::::::::::::::::::::::::::  callout
+
+You might notice in the previous example that our first line starts with a `#`. This is called a
+"comment", and is incredibly useful for annotating your code. When Python sees a `#`, it ignores
+the rest of the line.
+
+:::::::::::::::::::::::::::::::::::::::::
+
 ## Use an index to get a single character from a string.
 
 - The characters (individual letters, numbers, and so on) in a string are
