@@ -460,7 +460,7 @@ about data.</a></li>
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Reading Tabular Data into DataFrames</h1>
-        <p>Last updated on 2024-10-23 |
+        <p>Last updated on 2024-11-19 |
 
         <a href="https://github.com/swcarpentry/python-novice-gapminder/edit/main/episodes/07-reading-tabular.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -750,7 +750,7 @@ should be in the same directory as
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <p>To read in a CSV, we use <code>pd.read_csv</code> and pass the
 filename <code>'data/gapminder_gdp_americas.csv'</code> to it. We also
@@ -758,11 +758,11 @@ once again pass the column name <code>'country'</code> to the parameter
 <code>index_col</code> in order to index by country. The summary
 statistics can be displayed with the <code>DataFrame.describe()</code>
 method.</p>
-<div class="codewrapper sourceCode" id="cb14">
+<div class="codewrapper sourceCode" id="cb15">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" tabindex="-1"></a>data_americas <span class="op">=</span> pd.read_csv(<span class="st">'data/gapminder_gdp_americas.csv'</span>, index_col<span class="op">=</span><span class="st">'country'</span>)</span>
-<span id="cb14-2"><a href="#cb14-2" tabindex="-1"></a>data_americas.describe()</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" tabindex="-1"></a>data_americas <span class="op">=</span> pd.read_csv(<span class="st">'data/gapminder_gdp_americas.csv'</span>, index_col<span class="op">=</span><span class="st">'country'</span>)</span>
+<span id="cb15-2"><a href="#cb15-2" tabindex="-1"></a>data_americas.describe()</span></code></pre>
 </div>
 </div>
 </div>
@@ -791,7 +791,7 @@ data?</li>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
 <ol style="list-style-type: decimal"><li>We can check out the first five rows of <code>data_americas</code>
 by executing <code>data_americas.head()</code> which lets us view the
@@ -799,10 +799,10 @@ beginning of the DataFrame. We can specify the number of rows we wish to
 see by specifying the parameter <code>n</code> in our call to
 <code>data_americas.head()</code>. To view the first three rows,
 execute:</li>
-</ol><div class="codewrapper sourceCode" id="cb15">
+</ol><div class="codewrapper sourceCode" id="cb16">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" tabindex="-1"></a>data_americas.head(n<span class="op">=</span><span class="dv">3</span>)</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" tabindex="-1"></a>data_americas.head(n<span class="op">=</span><span class="dv">3</span>)</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -837,17 +837,17 @@ would use the command, <code>americas.tail(n=3)</code>, analogous to
 last three columns so we need to change our view and then use
 <code>tail()</code>. To do so, we create a new DataFrame in which rows
 and columns are switched:</li>
-</ol><div class="codewrapper sourceCode" id="cb17">
+</ol><div class="codewrapper sourceCode" id="cb18">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" tabindex="-1"></a>americas_flipped <span class="op">=</span> data_americas.T</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" tabindex="-1"></a>americas_flipped <span class="op">=</span> data_americas.T</span></code></pre>
 </div>
 <p>We can then view the last three columns of <code>americas</code> by
 viewing the last three rows of <code>americas_flipped</code>:</p>
-<div class="codewrapper sourceCode" id="cb18">
+<div class="codewrapper sourceCode" id="cb19">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" tabindex="-1"></a>americas_flipped.tail(n<span class="op">=</span><span class="dv">3</span>)</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" tabindex="-1"></a>americas_flipped.tail(n<span class="op">=</span><span class="dv">3</span>)</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -874,17 +874,17 @@ gdpPercap_2007             18008.5       42951.7  10611.5   11415.8</code></pre>
 </div>
 <p>This shows the data that we want, but we may prefer to display three
 columns instead of three rows, so we can flip it back:</p>
-<div class="codewrapper sourceCode" id="cb20">
-<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
-</h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" tabindex="-1"></a>americas_flipped.tail(n<span class="op">=</span><span class="dv">3</span>).T    </span></code></pre>
-</div>
-<p><strong>Note:</strong> we could have done the above in a single line
-of code by ‘chaining’ the commands:</p>
 <div class="codewrapper sourceCode" id="cb21">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" tabindex="-1"></a>data_americas.T.tail(n<span class="op">=</span><span class="dv">3</span>).T</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" tabindex="-1"></a>americas_flipped.tail(n<span class="op">=</span><span class="dv">3</span>).T</span></code></pre>
+</div>
+<p><strong>Note:</strong> we could have done the above in a single line
+of code by ‘chaining’ the commands:</p>
+<div class="codewrapper sourceCode" id="cb22">
+<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" tabindex="-1"></a>data_americas.T.tail(n<span class="op">=</span><span class="dv">3</span>).T</span></code></pre>
 </div>
 </div>
 </div>
@@ -921,17 +921,17 @@ of code by ‘chaining’ the commands:</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
   <h4 class="accordion-header" id="headingSolution3"> Show me the solution </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
 <div class="accordion-body">
 <p>We need to specify the path to the file of interest in the call to
 <code>pd.read_csv</code>. We first need to ‘jump’ out of the folder
 <code>thesis</code> using ‘../’ and then into the folder
 <code>field_data</code> using ‘field_data/’. Then we can specify the
 filename `microbes.csv. The result is as follows:</p>
-<div class="codewrapper sourceCode" id="cb23">
+<div class="codewrapper sourceCode" id="cb24">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" tabindex="-1"></a>data_microbes <span class="op">=</span> pd.read_csv(<span class="st">'../field_data/microbes.csv'</span>)</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" tabindex="-1"></a>data_microbes <span class="op">=</span> pd.read_csv(<span class="st">'../field_data/microbes.csv'</span>)</span></code></pre>
 </div>
 </div>
 </div>
@@ -958,22 +958,22 @@ can use <code>help</code> to get information on how to use
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution4" aria-expanded="false" aria-controls="collapseSolution4">
   <h4 class="accordion-header" id="headingSolution4"> Show me the solution </h4>
 </button>
-<div id="collapseSolution4" class="accordion-collapse collapse" aria-labelledby="headingSolution4" data-bs-parent="#accordionSolution4">
+<div id="collapseSolution4" class="accordion-collapse collapse" data-bs-parent="#accordionSolution4" aria-labelledby="headingSolution4">
 <div class="accordion-body">
 <p>In order to write the DataFrame <code>data_americas</code> to a file
 called <code>processed.csv</code>, execute the following command:</p>
-<div class="codewrapper sourceCode" id="cb24">
-<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
-</h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" tabindex="-1"></a>data_americas.to_csv(<span class="st">'processed.csv'</span>)</span></code></pre>
-</div>
-<p>For help on <code>read_csv</code> or <code>to_csv</code>, you could
-execute, for example:</p>
 <div class="codewrapper sourceCode" id="cb25">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" tabindex="-1"></a><span class="bu">help</span>(data_americas.to_csv)</span>
-<span id="cb25-2"><a href="#cb25-2" tabindex="-1"></a><span class="bu">help</span>(pd.read_csv)</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" tabindex="-1"></a>data_americas.to_csv(<span class="st">'processed.csv'</span>)</span></code></pre>
+</div>
+<p>For help on <code>read_csv</code> or <code>to_csv</code>, you could
+execute, for example:</p>
+<div class="codewrapper sourceCode" id="cb26">
+<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" tabindex="-1"></a><span class="bu">help</span>(data_americas.to_csv)</span>
+<span id="cb26-2"><a href="#cb26-2" tabindex="-1"></a><span class="bu">help</span>(pd.read_csv)</span></code></pre>
 </div>
 <p>Note that <code>help(to_csv)</code> or <code>help(pd.to_csv)</code>
 throws an error! This is due to the fact that <code>to_csv</code> is not
@@ -1064,7 +1064,7 @@ data.</li>
   "url": "https://swcarpentry.github.io/python-novice-gapminder/07-reading-tabular.html",
   "identifier": "https://swcarpentry.github.io/python-novice-gapminder/07-reading-tabular.html",
   "dateCreated": "2016-01-07",
-  "dateModified": "2024-10-23",
+  "dateModified": "2024-11-19",
   "datePublished": "2024-11-19"
 }
 

@@ -573,11 +573,42 @@ so it’s probably not trivial.”
 </dl></section><section id="aggregate-instructor-notes"><section id="01-run-quit"><h2 class="section-heading"><a href="01-run-quit.html">Running and Quitting</a></h2>
 <hr class="half-width"></section><section id="02-variables"><h2 class="section-heading"><a href="02-variables.html">Variables and Assignment</a></h2>
 <hr class="half-width"></section><section id="03-types-conversion"><h2 class="section-heading"><a href="03-types-conversion.html">Data Types and Type Conversion</a></h2>
-<hr class="half-width"></section><section id="04-built-in"><h2 class="section-heading"><a href="04-built-in.html">Built-in Functions and Help</a></h2>
+<hr class="half-width">
+<h3 id="03-types-conversion-headingInstructor1">
+<a href="03-types-conversion.html#headingInstructor1">Instructor Note</a><a class="anchor" aria-label="anchor" href="#03-types-conversion-headingInstructor1"></a>
+</h3>
+<p>Pause here and ask the learners to try to come up with two ways of
+arriving at the value <code>352</code> using the + operator.</p>
+<p>Possible solutions include:</p>
+<div class="codewrapper sourceCode" id="cb21">
+<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" tabindex="-1"></a><span class="bu">print</span>(<span class="dv">300</span> <span class="op">+</span> <span class="dv">50</span> <span class="op">+</span> <span class="dv">2</span>)</span>
+<span id="cb21-2"><a href="#cb21-2" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"3"</span> <span class="op">+</span> <span class="st">"5"</span> <span class="op">+</span> <span class="st">"2"</span>)</span>
+<span id="cb21-3"><a href="#cb21-3" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"3"</span> <span class="op">+</span> <span class="bu">str</span>(<span class="dv">50</span> <span class="op">+</span> <span class="dv">2</span>))</span></code></pre>
+</div>
+<hr>
+<br></section><section id="04-built-in"><h2 class="section-heading"><a href="04-built-in.html">Built-in Functions and Help</a></h2>
 <hr class="half-width"></section><section id="05-coffee"><h2 class="section-heading"><a href="05-coffee.html">Morning Coffee</a></h2>
 <hr class="half-width"></section><section id="06-libraries"><h2 class="section-heading"><a href="06-libraries.html">Libraries</a></h2>
 <hr class="half-width"></section><section id="07-reading-tabular"><h2 class="section-heading"><a href="07-reading-tabular.html">Reading Tabular Data into DataFrames</a></h2>
-<hr class="half-width"></section><section id="08-data-frames"><h2 class="section-heading"><a href="08-data-frames.html">Pandas DataFrames</a></h2>
+<hr class="half-width">
+<h3 id="07-reading-tabular-headingInstructor1">
+<a href="07-reading-tabular.html#headingInstructor1">Instructor Note</a><a class="anchor" aria-label="anchor" href="#07-reading-tabular-headingInstructor1"></a>
+</h3>
+<p>Before we break, point out that we can chain things together. For
+example, earlier we used <code>data_oceania_country.T</code> to
+transpose the data, then we used
+<code>data_oceania_country.describe()</code> to get summary statistics.
+We could have done this in a single line of code by ‘chaining’ the
+commands:</p>
+<div class="codewrapper sourceCode" id="cb14">
+<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" tabindex="-1"></a>data_oceania_country.T.describe()</span></code></pre>
+</div>
+<hr>
+<br></section><section id="08-data-frames"><h2 class="section-heading"><a href="08-data-frames.html">Pandas DataFrames</a></h2>
 <hr class="half-width">
 <h3 id="08-data-frames-headingInstructor1">
 <a href="08-data-frames.html#headingInstructor1">Instructor Note</a><a class="anchor" aria-label="anchor" href="#08-data-frames-headingInstructor1"></a>
@@ -591,7 +622,15 @@ covered in the course so far. * The axis=1 argument needs to be
 explained clearly.</p>
 <hr>
 <br></section><section id="09-plotting"><h2 class="section-heading"><a href="09-plotting.html">Plotting</a></h2>
-<hr class="half-width"></section><section id="10-lunch"><h2 class="section-heading"><a href="10-lunch.html">Lunch</a></h2>
+<hr class="half-width">
+<h3 id="09-plotting-headingInstructor1">
+<a href="09-plotting.html#headingInstructor1">Instructor Note</a><a class="anchor" aria-label="anchor" href="#09-plotting-headingInstructor1"></a>
+</h3>
+<p>There are a number of plot styles available in
+<code>matplotlib</code>.</p>
+<p><a href="https://matplotlib.org/stable/gallery/style_sheets/style_sheets_reference.html" class="external-link uri">https://matplotlib.org/stable/gallery/style_sheets/style_sheets_reference.html</a></p>
+<hr>
+<br></section><section id="10-lunch"><h2 class="section-heading"><a href="10-lunch.html">Lunch</a></h2>
 <hr class="half-width"></section><section id="11-lists"><h2 class="section-heading"><a href="11-lists.html">Lists</a></h2>
 <hr class="half-width"></section><section id="11.5-dictionaries"><h2 class="section-heading"><a href="11.5-dictionaries.html">Dictionaries</a></h2>
 <hr class="half-width"></section><section id="12-for-loops"><h2 class="section-heading"><a href="12-for-loops.html">For Loops</a></h2>

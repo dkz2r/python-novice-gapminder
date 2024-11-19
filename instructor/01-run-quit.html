@@ -457,7 +457,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Running and Quitting</h1>
-        <p>Last updated on 2024-10-23 |
+        <p>Last updated on 2024-11-19 |
 
         <a href="https://github.com/swcarpentry/python-novice-gapminder/edit/main/episodes/01-run-quit.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -595,6 +595,62 @@ Prompt.</p>
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a><span class="ex">$</span> jupyter lab</span></code></pre>
+</div>
+<div id="callout2" class="callout">
+<div class="callout-square">
+<i class="callout-icon" data-feather="bell"></i>
+</div>
+<div class="callout-inner">
+<h3 class="callout-title">Callout</h3>
+<div class="callout-content">
+<p>RWTH Specific Note: This carpentries lesson relies on Anaconda, and
+makes mention here of Anaconda Navigator. Anaconda is free for personal
+and educational usage, however for commercial usage and organizations
+over 200 people, a license is required.</p>
+<p>As an alternative to Anaconda, you can also use Miniconda, which is a
+smaller version of Anaconda that includes only conda, Python, the
+packages they depend on, and a small number of other useful packages,
+including pip, zlib and a few others. Miniconda is free and open source,
+and is available for Windows, macOS and Linux.</p>
+</div>
+</div>
+</div>
+<div id="callout3" class="callout">
+<div class="callout-square">
+<i class="callout-icon" data-feather="bell"></i>
+</div>
+<div class="callout-inner">
+<h3 class="callout-title">Callout</h3>
+<div class="callout-content">
+<p>RWTH Specific Note: Following up on the previous note, we will take a
+moment to switch from Anaconda’s default channel to the conda-forge
+channel. The conda-forge channel is a community-led collection of conda
+packages, and avoids some of the licensing concerns that come from the
+default Anaconda channel. To switch to the conda-forge channel, run the
+following commands:</p>
+<div class="codewrapper sourceCode" id="cb3">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a><span class="ex">$</span> conda config <span class="at">--add</span> channels conda-forge</span>
+<span id="cb3-2"><a href="#cb3-2" tabindex="-1"></a><span class="ex">$</span> conda config <span class="at">--set</span> channel_priority strict</span>
+<span id="cb3-3"><a href="#cb3-3" tabindex="-1"></a><span class="ex">$</span> conda config <span class="at">--remove</span> channels defaults</span></code></pre>
+</div>
+<p>Then, to confirm that the channel has been switched, run the
+following command:</p>
+<div class="codewrapper sourceCode" id="cb4">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a><span class="ex">$</span> conda config <span class="at">--show</span> channels</span></code></pre>
+</div>
+<p>And you should see the following output:</p>
+<div class="codewrapper sourceCode" id="cb5">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a><span class="ex">channels:</span></span>
+<span id="cb5-2"><a href="#cb5-2" tabindex="-1"></a>  <span class="ex">-</span> conda-forge</span></code></pre>
+</div>
+</div>
+</div>
 </div>
 </div>
 <div class="section level3">
@@ -784,7 +840,7 @@ be most useful for your workflow?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <p>After creating the necessary tabs, you can drag one of the tabs to
 the center of a panel to move the tab to the panel; next you can
@@ -834,10 +890,9 @@ keyboard shortcuts to speed things up.</li>
 <h3 class="callout-title">Command Vs. Edit</h3>
 <div class="callout-content">
 <p>In the Jupyter notebook page are you currently in Command or Edit
-mode?<br>
-Switch between the modes. Use the shortcuts to generate a new cell. Use
-the shortcuts to delete a cell. Use the shortcuts to undo the last cell
-operation you performed.</p>
+mode? Switch between the modes. Use the shortcuts to generate a new
+cell. Use the shortcuts to delete a cell. Use the shortcuts to undo the
+last cell operation you performed.</p>
 </div>
 </div>
 </div>
@@ -846,7 +901,7 @@ operation you performed.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
 <p>Command mode has a grey border and Edit mode has a blue border. Use
 <kbd>Esc</kbd> and <kbd>Return</kbd> to switch between modes. You need
@@ -1005,7 +1060,7 @@ this:</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
   <h4 class="accordion-header" id="headingSolution3"> Show me the solution </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
 <div class="accordion-body">
 <p>This challenge integrates both the numbered list and bullet list.
 Note that the bullet list is indented 2 spaces so that it is inline with
@@ -1031,11 +1086,11 @@ the items of the numbered list.</p>
 <p>What is displayed when a Python cell in a notebook that contains
 several calculations is executed? For example, what happens when this
 cell is executed?</p>
-<div class="codewrapper sourceCode" id="cb11">
+<div class="codewrapper sourceCode" id="cb14">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" tabindex="-1"></a><span class="dv">7</span> <span class="op">*</span> <span class="dv">3</span></span>
-<span id="cb11-2"><a href="#cb11-2" tabindex="-1"></a><span class="dv">2</span> <span class="op">+</span> <span class="dv">1</span></span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" tabindex="-1"></a><span class="dv">7</span> <span class="op">*</span> <span class="dv">3</span></span>
+<span id="cb14-2"><a href="#cb14-2" tabindex="-1"></a><span class="dv">2</span> <span class="op">+</span> <span class="dv">1</span></span></code></pre>
 </div>
 </div>
 </div>
@@ -1045,13 +1100,13 @@ cell is executed?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution4" aria-expanded="false" aria-controls="collapseSolution4">
   <h4 class="accordion-header" id="headingSolution4"> Show me the solution </h4>
 </button>
-<div id="collapseSolution4" class="accordion-collapse collapse" aria-labelledby="headingSolution4" data-bs-parent="#accordionSolution4">
+<div id="collapseSolution4" class="accordion-collapse collapse" data-bs-parent="#accordionSolution4" aria-labelledby="headingSolution4">
 <div class="accordion-body">
 <p>Python returns the output of the last calculation.</p>
-<div class="codewrapper sourceCode" id="cb12">
+<div class="codewrapper sourceCode" id="cb15">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" tabindex="-1"></a><span class="dv">3</span></span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" tabindex="-1"></a><span class="dv">3</span></span></code></pre>
 </div>
 </div>
 </div>
@@ -1067,11 +1122,11 @@ cell is executed?</p>
 <p>What happens if you write some Python in a code cell and then you
 switch it to a Markdown cell? For example, put the following in a code
 cell:</p>
-<div class="codewrapper sourceCode" id="cb13">
+<div class="codewrapper sourceCode" id="cb16">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" tabindex="-1"></a>x <span class="op">=</span> <span class="dv">6</span> <span class="op">*</span> <span class="dv">7</span> <span class="op">+</span> <span class="dv">12</span></span>
-<span id="cb13-2"><a href="#cb13-2" tabindex="-1"></a><span class="bu">print</span>(x)</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" tabindex="-1"></a>x <span class="op">=</span> <span class="dv">6</span> <span class="op">*</span> <span class="dv">7</span> <span class="op">+</span> <span class="dv">12</span></span>
+<span id="cb16-2"><a href="#cb16-2" tabindex="-1"></a><span class="bu">print</span>(x)</span></code></pre>
 </div>
 <p>And then run it with <kbd>Shift</kbd>+<kbd>Return</kbd> to be sure
 that it works as a code cell. Now go back to the cell and use
@@ -1086,16 +1141,16 @@ might this be useful?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution5" aria-expanded="false" aria-controls="collapseSolution5">
   <h4 class="accordion-header" id="headingSolution5"> Show me the solution </h4>
 </button>
-<div id="collapseSolution5" class="accordion-collapse collapse" aria-labelledby="headingSolution5" data-bs-parent="#accordionSolution5">
+<div id="collapseSolution5" class="accordion-collapse collapse" data-bs-parent="#accordionSolution5" aria-labelledby="headingSolution5">
 <div class="accordion-body">
 <p>The Python code gets treated like Markdown text. The lines appear as
 if they are part of one contiguous paragraph. This could be useful to
 temporarily turn on and off cells in notebooks that get used for
 multiple purposes.</p>
-<div class="codewrapper sourceCode" id="cb14">
+<div class="codewrapper sourceCode" id="cb17">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" tabindex="-1"></a>x <span class="op">=</span> <span class="dv">6</span> <span class="op">*</span> <span class="dv">7</span> <span class="op">+</span> <span class="dv">12</span> <span class="bu">print</span>(x)</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" tabindex="-1"></a>x <span class="op">=</span> <span class="dv">6</span> <span class="op">*</span> <span class="dv">7</span> <span class="op">+</span> <span class="dv">12</span> <span class="bu">print</span>(x)</span></code></pre>
 </div>
 </div>
 </div>
@@ -1123,7 +1178,7 @@ and dollar sign, <code>$</code>, do?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution6" aria-expanded="false" aria-controls="collapseSolution6">
   <h4 class="accordion-header" id="headingSolution6"> Show me the solution </h4>
 </button>
-<div id="collapseSolution6" class="accordion-collapse collapse" aria-labelledby="headingSolution6" data-bs-parent="#accordionSolution6">
+<div id="collapseSolution6" class="accordion-collapse collapse" data-bs-parent="#accordionSolution6" aria-labelledby="headingSolution6">
 <div class="accordion-body">
 <p>The notebook shows the equation as it would be rendered from LaTeX
 equation syntax. The dollar sign, <code>$</code>, is used to tell
@@ -1235,7 +1290,7 @@ documentation.</li>
   "url": "https://swcarpentry.github.io/python-novice-gapminder/instructor/01-run-quit.html",
   "identifier": "https://swcarpentry.github.io/python-novice-gapminder/instructor/01-run-quit.html",
   "dateCreated": "2016-01-07",
-  "dateModified": "2024-10-23",
+  "dateModified": "2024-11-19",
   "datePublished": "2024-11-19"
 }
 

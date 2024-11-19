@@ -452,7 +452,7 @@ variable.</a></li>
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Variable Scope</h1>
-        <p>Last updated on 2024-10-23 |
+        <p>Last updated on 2024-11-19 |
 
         <a href="https://github.com/swcarpentry/python-novice-gapminder/edit/main/episodes/17-scope.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -506,9 +506,9 @@ names the function’s caller uses.</li>
 </h3>
 <pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a>pressure <span class="op">=</span> <span class="fl">103.9</span></span>
 <span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a></span>
-<span id="cb1-3"><a href="#cb1-3" tabindex="-1"></a><span class="kw">def</span> adjust(t):</span>
-<span id="cb1-4"><a href="#cb1-4" tabindex="-1"></a>    temperature <span class="op">=</span> t <span class="op">*</span> <span class="fl">1.43</span> <span class="op">/</span> pressure</span>
-<span id="cb1-5"><a href="#cb1-5" tabindex="-1"></a>    <span class="cf">return</span> temperature</span></code></pre>
+<span id="cb1-3"><a href="#cb1-3" tabindex="-1"></a><span class="kw">def</span> adjust_temperature(temperature):</span>
+<span id="cb1-4"><a href="#cb1-4" tabindex="-1"></a>    adjusted_temperature <span class="op">=</span> temperature <span class="op">*</span> <span class="fl">1.43</span> <span class="op">/</span> pressure</span>
+<span id="cb1-5"><a href="#cb1-5" tabindex="-1"></a>    <span class="cf">return</span> adjusted_temperature</span></code></pre>
 </div>
 <ul><li>
 <code>pressure</code> is a <em>global variable</em>.
@@ -516,8 +516,8 @@ names the function’s caller uses.</li>
 <li>Visible everywhere.</li>
 </ul></li>
 <li>
-<code>t</code> and <code>temperature</code> are <em>local
-variables</em> in <code>adjust</code>.
+<code>temperature</code> and <code>adjusted_temperature</code> are
+<em>local variables</em> in <code>adjust_temperature</code>.
 <ul><li>Defined in the function.</li>
 <li>Not visible in the main program.</li>
 <li>Remember: a function parameter is a variable that is automatically
@@ -526,8 +526,8 @@ assigned a value when the function is called.</li>
 </ul><div class="codewrapper sourceCode" id="cb2">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'adjusted:'</span>, adjust(<span class="fl">0.9</span>))</span>
-<span id="cb2-2"><a href="#cb2-2" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'temperature after call:'</span>, temperature)</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'adjusted:'</span>, adjust_temperature(<span class="fl">0.9</span>))</span>
+<span id="cb2-2"><a href="#cb2-2" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'adjusted_temperature after call:'</span>, adjusted_temperature)</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -539,8 +539,8 @@ assigned a value when the function is called.</li>
 </h3>
 <pre class="error" tabindex="0"><code>Traceback (most recent call last):
   File "/Users/swcarpentry/foo.py", line 8, in &lt;module&gt;
-    print('temperature after call:', temperature)
-NameError: name 'temperature' is not defined</code></pre>
+    print('adjust_temperature after call:', adjust_temperature)
+NameError: name 'adjust_temperature' is not defined</code></pre>
 </div>
 <div id="local-and-global-variable-use" class="callout discussion">
 <div class="callout-square">
@@ -697,7 +697,7 @@ variable.</li>
   "url": "https://swcarpentry.github.io/python-novice-gapminder/instructor/17-scope.html",
   "identifier": "https://swcarpentry.github.io/python-novice-gapminder/instructor/17-scope.html",
   "dateCreated": "2016-01-07",
-  "dateModified": "2024-10-23",
+  "dateModified": "2024-11-19",
   "datePublished": "2024-11-19"
 }
 

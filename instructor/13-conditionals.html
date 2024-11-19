@@ -330,8 +330,6 @@ code is executed.</a></li>
 <code>if</code> condition is <em>not</em> true.</a></li>
 <li><a href="#use-elif-to-specify-additional-tests.">Use <code>elif</code> to specify additional tests.</a></li>
 <li><a href="#conditions-are-tested-once-in-order.">Conditions are tested once, in order.</a></li>
-<li><a href="#create-a-table-showing-variables-values-to-trace-a-programs-execution.">Create a table showing variables’ values to trace a program’s
-execution.</a></li>
         </ul></div><!--/div.accordion-body-->
     </div><!--/div.accordion-collapse-->
 
@@ -459,7 +457,7 @@ execution.</a></li>
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Conditionals</h1>
-        <p>Last updated on 2024-10-23 |
+        <p>Last updated on 2024-11-19 |
 
         <a href="https://github.com/swcarpentry/python-novice-gapminder/edit/main/episodes/13-conditionals.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -531,9 +529,9 @@ above).</li>
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a>masses <span class="op">=</span> [<span class="fl">3.54</span>, <span class="fl">2.07</span>, <span class="fl">9.22</span>, <span class="fl">1.86</span>, <span class="fl">1.71</span>]</span>
-<span id="cb3-2"><a href="#cb3-2" tabindex="-1"></a><span class="cf">for</span> m <span class="kw">in</span> masses:</span>
-<span id="cb3-3"><a href="#cb3-3" tabindex="-1"></a>    <span class="cf">if</span> m <span class="op">&gt;</span> <span class="fl">3.0</span>:</span>
-<span id="cb3-4"><a href="#cb3-4" tabindex="-1"></a>        <span class="bu">print</span>(m, <span class="st">'is large'</span>)</span></code></pre>
+<span id="cb3-2"><a href="#cb3-2" tabindex="-1"></a><span class="cf">for</span> mass <span class="kw">in</span> masses:</span>
+<span id="cb3-3"><a href="#cb3-3" tabindex="-1"></a>    <span class="cf">if</span> mass <span class="op">&gt;</span> <span class="fl">3.0</span>:</span>
+<span id="cb3-4"><a href="#cb3-4" tabindex="-1"></a>        <span class="bu">print</span>(mass, <span class="st">'is large'</span>)</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -551,11 +549,11 @@ above).</li>
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a>masses <span class="op">=</span> [<span class="fl">3.54</span>, <span class="fl">2.07</span>, <span class="fl">9.22</span>, <span class="fl">1.86</span>, <span class="fl">1.71</span>]</span>
-<span id="cb5-2"><a href="#cb5-2" tabindex="-1"></a><span class="cf">for</span> m <span class="kw">in</span> masses:</span>
+<span id="cb5-2"><a href="#cb5-2" tabindex="-1"></a><span class="cf">for</span> mass <span class="kw">in</span> masses:</span>
 <span id="cb5-3"><a href="#cb5-3" tabindex="-1"></a>    <span class="cf">if</span> m <span class="op">&gt;</span> <span class="fl">3.0</span>:</span>
-<span id="cb5-4"><a href="#cb5-4" tabindex="-1"></a>        <span class="bu">print</span>(m, <span class="st">'is large'</span>)</span>
+<span id="cb5-4"><a href="#cb5-4" tabindex="-1"></a>        <span class="bu">print</span>(mass, <span class="st">'is large'</span>)</span>
 <span id="cb5-5"><a href="#cb5-5" tabindex="-1"></a>    <span class="cf">else</span>:</span>
-<span id="cb5-6"><a href="#cb5-6" tabindex="-1"></a>        <span class="bu">print</span>(m, <span class="st">'is small'</span>)</span></code></pre>
+<span id="cb5-6"><a href="#cb5-6" tabindex="-1"></a>        <span class="bu">print</span>(mass, <span class="st">'is small'</span>)</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -578,13 +576,13 @@ all”).</li>
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" tabindex="-1"></a>masses <span class="op">=</span> [<span class="fl">3.54</span>, <span class="fl">2.07</span>, <span class="fl">9.22</span>, <span class="fl">1.86</span>, <span class="fl">1.71</span>]</span>
-<span id="cb7-2"><a href="#cb7-2" tabindex="-1"></a><span class="cf">for</span> m <span class="kw">in</span> masses:</span>
-<span id="cb7-3"><a href="#cb7-3" tabindex="-1"></a>    <span class="cf">if</span> m <span class="op">&gt;</span> <span class="fl">9.0</span>:</span>
-<span id="cb7-4"><a href="#cb7-4" tabindex="-1"></a>        <span class="bu">print</span>(m, <span class="st">'is HUGE'</span>)</span>
-<span id="cb7-5"><a href="#cb7-5" tabindex="-1"></a>    <span class="cf">elif</span> m <span class="op">&gt;</span> <span class="fl">3.0</span>:</span>
-<span id="cb7-6"><a href="#cb7-6" tabindex="-1"></a>        <span class="bu">print</span>(m, <span class="st">'is large'</span>)</span>
+<span id="cb7-2"><a href="#cb7-2" tabindex="-1"></a><span class="cf">for</span> mass <span class="kw">in</span> masses:</span>
+<span id="cb7-3"><a href="#cb7-3" tabindex="-1"></a>    <span class="cf">if</span> mass <span class="op">&gt;</span> <span class="fl">9.0</span>:</span>
+<span id="cb7-4"><a href="#cb7-4" tabindex="-1"></a>        <span class="bu">print</span>(mass, <span class="st">'is HUGE'</span>)</span>
+<span id="cb7-5"><a href="#cb7-5" tabindex="-1"></a>    <span class="cf">elif</span> mass <span class="op">&gt;</span> <span class="fl">3.0</span>:</span>
+<span id="cb7-6"><a href="#cb7-6" tabindex="-1"></a>        <span class="bu">print</span>(mass, <span class="st">'is large'</span>)</span>
 <span id="cb7-7"><a href="#cb7-7" tabindex="-1"></a>    <span class="cf">else</span>:</span>
-<span id="cb7-8"><a href="#cb7-8" tabindex="-1"></a>        <span class="bu">print</span>(m, <span class="st">'is small'</span>)</span></code></pre>
+<span id="cb7-8"><a href="#cb7-8" tabindex="-1"></a>        <span class="bu">print</span>(mass, <span class="st">'is small'</span>)</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -638,8 +636,8 @@ variables.</li>
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" tabindex="-1"></a>velocity <span class="op">=</span> <span class="fl">10.0</span></span>
-<span id="cb13-2"><a href="#cb13-2" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">5</span>): <span class="co"># execute the loop 5 times</span></span>
-<span id="cb13-3"><a href="#cb13-3" tabindex="-1"></a>    <span class="bu">print</span>(i, <span class="st">':'</span>, velocity)</span>
+<span id="cb13-2"><a href="#cb13-2" tabindex="-1"></a><span class="cf">for</span> value <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">5</span>): <span class="co"># execute the loop 5 times</span></span>
+<span id="cb13-3"><a href="#cb13-3" tabindex="-1"></a>    <span class="bu">print</span>(value, <span class="st">':'</span>, velocity)</span>
 <span id="cb13-4"><a href="#cb13-4" tabindex="-1"></a>    <span class="cf">if</span> velocity <span class="op">&gt;</span> <span class="fl">20.0</span>:</span>
 <span id="cb13-5"><a href="#cb13-5" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">'moving too fast'</span>)</span>
 <span id="cb13-6"><a href="#cb13-6" tabindex="-1"></a>        velocity <span class="op">=</span> velocity <span class="op">-</span> <span class="fl">5.0</span></span>
@@ -663,79 +661,7 @@ moving too fast
 moving too slow
 final velocity: 30.0</code></pre>
 </div>
-</section><section><h2 class="section-heading" id="create-a-table-showing-variables-values-to-trace-a-programs-execution-">Create a table showing variables’ values to trace a program’s
-execution.<a class="anchor" aria-label="anchor" href="#create-a-table-showing-variables-values-to-trace-a-programs-execution-"></a></h2>
-<hr class="half-width"><table class="table"><tr><td>
-<strong>i</strong>
-</td>
-<td>
-0
-</td>
-<td>
-.
-</td>
-<td>
-1
-</td>
-<td>
-.
-</td>
-<td>
-2
-</td>
-<td>
-.
-</td>
-<td>
-3
-</td>
-<td>
-.
-</td>
-<td>
-4
-</td>
-<td>
-.
-</td>
-</tr><tr><td>
-<strong>velocity</strong>
-</td>
-<td>
-10.0
-</td>
-<td>
-20.0
-</td>
-<td>
-.
-</td>
-<td>
-30.0
-</td>
-<td>
-.
-</td>
-<td>
-25.0
-</td>
-<td>
-.
-</td>
-<td>
-20.0
-</td>
-<td>
-.
-</td>
-<td>
-30.0
-</td>
-</tr></table><ul><li>The program must have a <code>print</code> statement
-<em>outside</em> the body of the loop to show the final value of
-<code>velocity</code>, since its value is updated by the last iteration
-of the loop.</li>
-</ul><div id="compound-relations-using-and-or-and-parentheses" class="callout">
+<div id="compound-relations-using-and-or-and-parentheses" class="callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
@@ -1078,7 +1004,7 @@ execution.</li>
   "url": "https://swcarpentry.github.io/python-novice-gapminder/instructor/13-conditionals.html",
   "identifier": "https://swcarpentry.github.io/python-novice-gapminder/instructor/13-conditionals.html",
   "dateCreated": "2016-01-07",
-  "dateModified": "2024-10-23",
+  "dateModified": "2024-11-19",
   "datePublished": "2024-11-19"
 }
 

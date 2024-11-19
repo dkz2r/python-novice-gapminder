@@ -459,7 +459,7 @@ most widely used scientific plotting library in Python.</li>
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Plotting</h1>
-        <p>Last updated on 2024-10-23 |
+        <p>Last updated on 2024-11-19 |
 
         <a href="https://github.com/swcarpentry/python-novice-gapminder/edit/main/episodes/09-plotting.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -516,33 +516,10 @@ most widely used scientific plotting library in Python.<a class="anchor" aria-la
 <span id="cb2-3"><a href="#cb2-3" tabindex="-1"></a></span>
 <span id="cb2-4"><a href="#cb2-4" tabindex="-1"></a>plt.plot(time, position)</span>
 <span id="cb2-5"><a href="#cb2-5" tabindex="-1"></a>plt.xlabel(<span class="st">'Time (hr)'</span>)</span>
-<span id="cb2-6"><a href="#cb2-6" tabindex="-1"></a>plt.ylabel(<span class="st">'Position (km)'</span>)</span></code></pre>
+<span id="cb2-6"><a href="#cb2-6" tabindex="-1"></a>plt.ylabel(<span class="st">'Position (km)'</span>)</span>
+<span id="cb2-7"><a href="#cb2-7" tabindex="-1"></a>plt.show()</span></code></pre>
 </div>
-<figure><img src="../fig/9_simple_position_time_plot.svg" alt="A line chart showing time (hr) relative to position (km), using the values provided in the code block above. By default, the plotted line is blue against a white background, and the axes have been scaled automatically to fit the range of the input data." class="figure mx-auto d-block"></figure><div id="display-all-open-figures" class="callout">
-<div class="callout-square">
-<i class="callout-icon" data-feather="bell"></i>
-</div>
-<div id="display-all-open-figures" class="callout-inner">
-<h3 class="callout-title">Display All Open Figures</h3>
-<div class="callout-content">
-<p>In our Jupyter Notebook example, running the cell should generate the
-figure directly below the code. The figure is also included in the
-Notebook document for future viewing. However, other Python environments
-like an interactive Python session started from a terminal or a Python
-script executed via the command line require an additional command to
-display the figure.</p>
-<p>Instruct <code>matplotlib</code> to show a figure:</p>
-<div class="codewrapper sourceCode" id="cb3">
-<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
-</h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a>plt.show()</span></code></pre>
-</div>
-<p>This command can also be used within a Notebook - for instance, to
-display multiple figures if several are created by a single cell.</p>
-</div>
-</div>
-</div>
-</section><section><h2 class="section-heading" id="plot-data-directly-from-a-pandas-dataframe-">Plot data directly from a <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.html" class="external-link"><code>Pandas dataframe</code></a>.<a class="anchor" aria-label="anchor" href="#plot-data-directly-from-a-pandas-dataframe-"></a></h2>
+<figure><img src="../fig/9_simple_position_time_plot.svg" alt="A line chart showing time (hr) relative to position (km), using the values provided in the code block above. By default, the plotted line is blue against a white background, and the axes have been scaled automatically to fit the range of the input data." class="figure mx-auto d-block"></figure></section><section><h2 class="section-heading" id="plot-data-directly-from-a-pandas-dataframe-">Plot data directly from a <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.html" class="external-link"><code>Pandas dataframe</code></a>.<a class="anchor" aria-label="anchor" href="#plot-data-directly-from-a-pandas-dataframe-"></a></h2>
 <hr class="half-width"><ul><li>We can also plot <a href="https://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.html" class="external-link">Pandas
 dataframes</a>.</li>
 <li>Before plotting, we convert the column headings from a
@@ -552,45 +529,61 @@ to remove the <code>gpdPercap_</code> prefix and then <a href="https://pandas.py
 to convert the series of string values
 (<code>['1952', '1957', ..., '2007']</code>) to a series of integers:
 <code>[1925, 1957, ..., 2007]</code>.</li>
-</ul><div class="codewrapper sourceCode" id="cb4">
+</ul><div class="codewrapper sourceCode" id="cb3">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
-<span id="cb4-2"><a href="#cb4-2" tabindex="-1"></a></span>
-<span id="cb4-3"><a href="#cb4-3" tabindex="-1"></a>data <span class="op">=</span> pd.read_csv(<span class="st">'data/gapminder_gdp_oceania.csv'</span>, index_col<span class="op">=</span><span class="st">'country'</span>)</span>
-<span id="cb4-4"><a href="#cb4-4" tabindex="-1"></a></span>
-<span id="cb4-5"><a href="#cb4-5" tabindex="-1"></a><span class="co"># Extract year from last 4 characters of each column name</span></span>
-<span id="cb4-6"><a href="#cb4-6" tabindex="-1"></a><span class="co"># The current column names are structured as 'gdpPercap_(year)', </span></span>
-<span id="cb4-7"><a href="#cb4-7" tabindex="-1"></a><span class="co"># so we want to keep the (year) part only for clarity when plotting GDP vs. years</span></span>
-<span id="cb4-8"><a href="#cb4-8" tabindex="-1"></a><span class="co"># To do this we use replace(), which removes from the string the characters stated in the argument</span></span>
-<span id="cb4-9"><a href="#cb4-9" tabindex="-1"></a><span class="co"># This method works on strings, so we use replace() from Pandas Series.str vectorized string functions</span></span>
-<span id="cb4-10"><a href="#cb4-10" tabindex="-1"></a></span>
-<span id="cb4-11"><a href="#cb4-11" tabindex="-1"></a>years <span class="op">=</span> data.columns.<span class="bu">str</span>.replace(<span class="st">'gdpPercap_'</span>, <span class="st">''</span>)</span>
-<span id="cb4-12"><a href="#cb4-12" tabindex="-1"></a></span>
-<span id="cb4-13"><a href="#cb4-13" tabindex="-1"></a><span class="co"># Convert year values to integers, saving results back to dataframe</span></span>
-<span id="cb4-14"><a href="#cb4-14" tabindex="-1"></a></span>
-<span id="cb4-15"><a href="#cb4-15" tabindex="-1"></a>data.columns <span class="op">=</span> years.astype(<span class="bu">int</span>)</span>
-<span id="cb4-16"><a href="#cb4-16" tabindex="-1"></a></span>
-<span id="cb4-17"><a href="#cb4-17" tabindex="-1"></a>data.loc[<span class="st">'Australia'</span>].plot()</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb3-2"><a href="#cb3-2" tabindex="-1"></a></span>
+<span id="cb3-3"><a href="#cb3-3" tabindex="-1"></a>data <span class="op">=</span> pd.read_csv(<span class="st">'data/gapminder_gdp_oceania.csv'</span>, index_col<span class="op">=</span><span class="st">'country'</span>)</span>
+<span id="cb3-4"><a href="#cb3-4" tabindex="-1"></a></span>
+<span id="cb3-5"><a href="#cb3-5" tabindex="-1"></a><span class="co"># Extract year from last 4 characters of each column name</span></span>
+<span id="cb3-6"><a href="#cb3-6" tabindex="-1"></a><span class="co"># The current column names are structured as 'gdpPercap_(year)',</span></span>
+<span id="cb3-7"><a href="#cb3-7" tabindex="-1"></a><span class="co"># so we want to keep the (year) part only for clarity when plotting GDP vs. years</span></span>
+<span id="cb3-8"><a href="#cb3-8" tabindex="-1"></a><span class="co"># To do this we use replace(), which removes from the string the characters stated in the argument</span></span>
+<span id="cb3-9"><a href="#cb3-9" tabindex="-1"></a><span class="co"># This method works on strings, so we use replace() from Pandas Series.str vectorized string functions</span></span>
+<span id="cb3-10"><a href="#cb3-10" tabindex="-1"></a></span>
+<span id="cb3-11"><a href="#cb3-11" tabindex="-1"></a>years <span class="op">=</span> data.columns.<span class="bu">str</span>.replace(<span class="st">'gdpPercap_'</span>, <span class="st">''</span>)</span>
+<span id="cb3-12"><a href="#cb3-12" tabindex="-1"></a></span>
+<span id="cb3-13"><a href="#cb3-13" tabindex="-1"></a><span class="co"># Convert year values to integers, saving results back to dataframe</span></span>
+<span id="cb3-14"><a href="#cb3-14" tabindex="-1"></a></span>
+<span id="cb3-15"><a href="#cb3-15" tabindex="-1"></a>data.columns <span class="op">=</span> years.astype(<span class="bu">int</span>)</span>
+<span id="cb3-16"><a href="#cb3-16" tabindex="-1"></a></span>
+<span id="cb3-17"><a href="#cb3-17" tabindex="-1"></a>data.loc[<span class="st">'Australia'</span>].plot()</span></code></pre>
 </div>
 <figure><img src="../fig/9_gdp_australia.svg" alt="GDP plot for Australia" class="figure mx-auto d-block"></figure></section><section><h2 class="section-heading" id="select-and-transform-data-then-plot-it-">Select and transform data, then plot it.<a class="anchor" aria-label="anchor" href="#select-and-transform-data-then-plot-it-"></a></h2>
 <hr class="half-width"><ul><li>By default, <a href="https://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.plot.html#pandas.DataFrame.plot" class="external-link"><code>DataFrame.plot</code></a>
 plots with the rows as the X axis.</li>
 <li>We can transpose the data in order to plot multiple series.</li>
+</ul><div class="codewrapper sourceCode" id="cb4">
+<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a>data.T.plot()</span>
+<span id="cb4-2"><a href="#cb4-2" tabindex="-1"></a>plt.ylabel(<span class="st">'GDP per capita'</span>)</span>
+<span id="cb4-3"><a href="#cb4-3" tabindex="-1"></a>plt.show()</span></code></pre>
+</div>
+<figure><img src="../fig/9_gdp_australia_nz.svg" alt="GDP plot for Australia and New Zealand" class="figure mx-auto d-block"></figure></section><section><h2 class="section-heading" id="many-styles-of-plot-are-available-">Many styles of plot are available.<a class="anchor" aria-label="anchor" href="#many-styles-of-plot-are-available-"></a></h2>
+<hr class="half-width"><div id="accordionInstructor1" class="accordion instructor-note accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button instructor-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseInstructor1" aria-expanded="false" aria-controls="collapseInstructor1">
+  <h3 class="accordion-header" id="headingInstructor1">  <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="edit-2"></i></div> Instructor Note </h3>
+</button>
+<div id="collapseInstructor1" class="accordion-collapse collapse" data-bs-parent="#accordionInstructor1" aria-labelledby="headingInstructor1">
+<div class="accordion-body">
+<p>There are a number of plot styles available in
+<code>matplotlib</code>.</p>
+<p><a href="https://matplotlib.org/stable/gallery/style_sheets/style_sheets_reference.html" class="external-link uri">https://matplotlib.org/stable/gallery/style_sheets/style_sheets_reference.html</a></p>
+</div>
+</div>
+</div>
+</div>
+<ul><li>For example, do a bar plot using a fancier style.</li>
 </ul><div class="codewrapper sourceCode" id="cb5">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a>data.T.plot()</span>
-<span id="cb5-2"><a href="#cb5-2" tabindex="-1"></a>plt.ylabel(<span class="st">'GDP per capita'</span>)</span></code></pre>
-</div>
-<figure><img src="../fig/9_gdp_australia_nz.svg" alt="GDP plot for Australia and New Zealand" class="figure mx-auto d-block"></figure></section><section><h2 class="section-heading" id="many-styles-of-plot-are-available-">Many styles of plot are available.<a class="anchor" aria-label="anchor" href="#many-styles-of-plot-are-available-"></a></h2>
-<hr class="half-width"><ul><li>For example, do a bar plot using a fancier style.</li>
-</ul><div class="codewrapper sourceCode" id="cb6">
-<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
-</h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" tabindex="-1"></a>plt.style.use(<span class="st">'ggplot'</span>)</span>
-<span id="cb6-2"><a href="#cb6-2" tabindex="-1"></a>data.T.plot(kind<span class="op">=</span><span class="st">'bar'</span>)</span>
-<span id="cb6-3"><a href="#cb6-3" tabindex="-1"></a>plt.ylabel(<span class="st">'GDP per capita'</span>)</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a>plt.style.use(<span class="st">'ggplot'</span>)</span>
+<span id="cb5-2"><a href="#cb5-2" tabindex="-1"></a>data.T.plot(kind<span class="op">=</span><span class="st">'bar'</span>)</span>
+<span id="cb5-3"><a href="#cb5-3" tabindex="-1"></a>plt.ylabel(<span class="st">'GDP per capita'</span>)</span>
+<span id="cb5-4"><a href="#cb5-4" tabindex="-1"></a>plt.show()</span></code></pre>
 </div>
 <figure><img src="../fig/9_gdp_bar.svg" alt="GDP barplot for Australia" class="figure mx-auto d-block"></figure></section><section><h2 class="section-heading" id="data-can-also-be-plotted-by-calling-the-matplotlib-plot-function-directly-">Data can also be plotted by calling the <code>matplotlib</code>
 <code>plot</code> function directly.<a class="anchor" aria-label="anchor" href="#data-can-also-be-plotted-by-calling-the-matplotlib-plot-function-directly-"></a></h2>
@@ -600,30 +593,31 @@ plots with the rows as the X axis.</li>
 additional optional argument e.g., <code>b-</code> is a blue line,
 <code>g--</code> is a green dashed line.</li>
 </ul></section><section><h2 class="section-heading" id="get-australia-data-from-dataframe">Get Australia data from dataframe<a class="anchor" aria-label="anchor" href="#get-australia-data-from-dataframe"></a></h2>
+<hr class="half-width"><div class="codewrapper sourceCode" id="cb6">
+<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" tabindex="-1"></a>years <span class="op">=</span> data.columns</span>
+<span id="cb6-2"><a href="#cb6-2" tabindex="-1"></a>gdp_australia <span class="op">=</span> data.loc[<span class="st">'Australia'</span>]</span>
+<span id="cb6-3"><a href="#cb6-3" tabindex="-1"></a></span>
+<span id="cb6-4"><a href="#cb6-4" tabindex="-1"></a>plt.plot(years, gdp_australia, <span class="st">'g--'</span>)</span></code></pre>
+</div>
+<figure><img src="../fig/9_gdp_australia_formatted.svg" alt="GDP formatted plot for Australia" class="figure mx-auto d-block"></figure></section><section><h2 class="section-heading" id="can-plot-many-sets-of-data-together-">Can plot many sets of data together.<a class="anchor" aria-label="anchor" href="#can-plot-many-sets-of-data-together-"></a></h2>
 <hr class="half-width"><div class="codewrapper sourceCode" id="cb7">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" tabindex="-1"></a>years <span class="op">=</span> data.columns</span>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" tabindex="-1"></a><span class="co"># Select two countries' worth of data.</span></span>
 <span id="cb7-2"><a href="#cb7-2" tabindex="-1"></a>gdp_australia <span class="op">=</span> data.loc[<span class="st">'Australia'</span>]</span>
-<span id="cb7-3"><a href="#cb7-3" tabindex="-1"></a></span>
-<span id="cb7-4"><a href="#cb7-4" tabindex="-1"></a>plt.plot(years, gdp_australia, <span class="st">'g--'</span>)</span></code></pre>
-</div>
-<figure><img src="../fig/9_gdp_australia_formatted.svg" alt="GDP formatted plot for Australia" class="figure mx-auto d-block"></figure></section><section><h2 class="section-heading" id="can-plot-many-sets-of-data-together-">Can plot many sets of data together.<a class="anchor" aria-label="anchor" href="#can-plot-many-sets-of-data-together-"></a></h2>
-<hr class="half-width"><div class="codewrapper sourceCode" id="cb8">
-<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
-</h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" tabindex="-1"></a><span class="co"># Select two countries' worth of data.</span></span>
-<span id="cb8-2"><a href="#cb8-2" tabindex="-1"></a>gdp_australia <span class="op">=</span> data.loc[<span class="st">'Australia'</span>]</span>
-<span id="cb8-3"><a href="#cb8-3" tabindex="-1"></a>gdp_nz <span class="op">=</span> data.loc[<span class="st">'New Zealand'</span>]</span>
-<span id="cb8-4"><a href="#cb8-4" tabindex="-1"></a></span>
-<span id="cb8-5"><a href="#cb8-5" tabindex="-1"></a><span class="co"># Plot with differently-colored markers.</span></span>
-<span id="cb8-6"><a href="#cb8-6" tabindex="-1"></a>plt.plot(years, gdp_australia, <span class="st">'b-'</span>, label<span class="op">=</span><span class="st">'Australia'</span>)</span>
-<span id="cb8-7"><a href="#cb8-7" tabindex="-1"></a>plt.plot(years, gdp_nz, <span class="st">'g-'</span>, label<span class="op">=</span><span class="st">'New Zealand'</span>)</span>
-<span id="cb8-8"><a href="#cb8-8" tabindex="-1"></a></span>
-<span id="cb8-9"><a href="#cb8-9" tabindex="-1"></a><span class="co"># Create legend.</span></span>
-<span id="cb8-10"><a href="#cb8-10" tabindex="-1"></a>plt.legend(loc<span class="op">=</span><span class="st">'upper left'</span>)</span>
-<span id="cb8-11"><a href="#cb8-11" tabindex="-1"></a>plt.xlabel(<span class="st">'Year'</span>)</span>
-<span id="cb8-12"><a href="#cb8-12" tabindex="-1"></a>plt.ylabel(<span class="st">'GDP per capita ($)'</span>)</span></code></pre>
+<span id="cb7-3"><a href="#cb7-3" tabindex="-1"></a>gdp_nz <span class="op">=</span> data.loc[<span class="st">'New Zealand'</span>]</span>
+<span id="cb7-4"><a href="#cb7-4" tabindex="-1"></a></span>
+<span id="cb7-5"><a href="#cb7-5" tabindex="-1"></a><span class="co"># Plot with differently-colored markers.</span></span>
+<span id="cb7-6"><a href="#cb7-6" tabindex="-1"></a>plt.plot(years, gdp_australia, <span class="st">'b-'</span>, label<span class="op">=</span><span class="st">'Australia'</span>)</span>
+<span id="cb7-7"><a href="#cb7-7" tabindex="-1"></a>plt.plot(years, gdp_nz, <span class="st">'g-'</span>, label<span class="op">=</span><span class="st">'New Zealand'</span>)</span>
+<span id="cb7-8"><a href="#cb7-8" tabindex="-1"></a></span>
+<span id="cb7-9"><a href="#cb7-9" tabindex="-1"></a><span class="co"># Create legend.</span></span>
+<span id="cb7-10"><a href="#cb7-10" tabindex="-1"></a>plt.legend(loc<span class="op">=</span><span class="st">'upper left'</span>)</span>
+<span id="cb7-11"><a href="#cb7-11" tabindex="-1"></a>plt.xlabel(<span class="st">'Year'</span>)</span>
+<span id="cb7-12"><a href="#cb7-12" tabindex="-1"></a>plt.ylabel(<span class="st">'GDP per capita ($)'</span>)</span>
+<span id="cb7-13"><a href="#cb7-13" tabindex="-1"></a>plt.show()</span></code></pre>
 </div>
 <div id="adding-a-legend" class="callout">
 <div class="callout-square">
@@ -636,17 +630,17 @@ additional optional argument e.g., <code>b-</code> is a blue line,
 desirable to have a legend describing the data.</p>
 <p>This can be done in <code>matplotlib</code> in two stages:</p>
 <ul><li>Provide a label for each dataset in the figure:</li>
+</ul><div class="codewrapper sourceCode" id="cb8">
+<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" tabindex="-1"></a>plt.plot(years, gdp_australia, label<span class="op">=</span><span class="st">'Australia'</span>)</span>
+<span id="cb8-2"><a href="#cb8-2" tabindex="-1"></a>plt.plot(years, gdp_nz, label<span class="op">=</span><span class="st">'New Zealand'</span>)</span></code></pre>
+</div>
+<ul><li>Instruct <code>matplotlib</code> to create the legend.</li>
 </ul><div class="codewrapper sourceCode" id="cb9">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" tabindex="-1"></a>plt.plot(years, gdp_australia, label<span class="op">=</span><span class="st">'Australia'</span>)</span>
-<span id="cb9-2"><a href="#cb9-2" tabindex="-1"></a>plt.plot(years, gdp_nz, label<span class="op">=</span><span class="st">'New Zealand'</span>)</span></code></pre>
-</div>
-<ul><li>Instruct <code>matplotlib</code> to create the legend.</li>
-</ul><div class="codewrapper sourceCode" id="cb10">
-<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
-</h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" tabindex="-1"></a>plt.legend()</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" tabindex="-1"></a>plt.legend()</span></code></pre>
 </div>
 <p>By default matplotlib will attempt to place the legend in a suitable
 position. If you would rather specify a position this can be done with
@@ -660,15 +654,15 @@ Zealand</li>
 <li>Use either <code>plt.scatter</code> or
 <code>DataFrame.plot.scatter</code>
 </li>
-</ul><div class="codewrapper sourceCode" id="cb11">
+</ul><div class="codewrapper sourceCode" id="cb10">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" tabindex="-1"></a>plt.scatter(gdp_australia, gdp_nz)</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" tabindex="-1"></a>plt.scatter(gdp_australia, gdp_nz)</span></code></pre>
 </div>
-<figure><img src="../fig/9_gdp_correlation_plt.svg" alt="GDP correlation using plt.scatter" class="figure mx-auto d-block"></figure><div class="codewrapper sourceCode" id="cb12">
+<figure><img src="../fig/9_gdp_correlation_plt.svg" alt="GDP correlation using plt.scatter" class="figure mx-auto d-block"></figure><div class="codewrapper sourceCode" id="cb11">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" tabindex="-1"></a>data.T.plot.scatter(x <span class="op">=</span> <span class="st">'Australia'</span>, y <span class="op">=</span> <span class="st">'New Zealand'</span>)</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" tabindex="-1"></a>data.T.plot.scatter(x <span class="op">=</span> <span class="st">'Australia'</span>, y <span class="op">=</span> <span class="st">'New Zealand'</span>)</span></code></pre>
 </div>
 <figure><img src="../fig/9_gdp_correlation_data.svg" alt="GDP correlation using data.T.plot.scatter" class="figure mx-auto d-block"></figure><div id="minima-and-maxima" class="callout challenge">
 <div class="callout-square">
@@ -680,14 +674,15 @@ Zealand</li>
 <p>Fill in the blanks below to plot the minimum GDP per capita over time
 for all the countries in Europe. Modify it again to plot the maximum GDP
 per capita over time for Europe.</p>
-<div class="codewrapper sourceCode" id="cb13">
+<div class="codewrapper sourceCode" id="cb12">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" tabindex="-1"></a>data_europe <span class="op">=</span> pd.read_csv(<span class="st">'data/gapminder_gdp_europe.csv'</span>, index_col<span class="op">=</span><span class="st">'country'</span>)</span>
-<span id="cb13-2"><a href="#cb13-2" tabindex="-1"></a>data_europe.____.plot(label<span class="op">=</span><span class="st">'min'</span>)</span>
-<span id="cb13-3"><a href="#cb13-3" tabindex="-1"></a>data_europe.____</span>
-<span id="cb13-4"><a href="#cb13-4" tabindex="-1"></a>plt.legend(loc<span class="op">=</span><span class="st">'best'</span>)</span>
-<span id="cb13-5"><a href="#cb13-5" tabindex="-1"></a>plt.xticks(rotation<span class="op">=</span><span class="dv">90</span>)</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" tabindex="-1"></a>data_europe <span class="op">=</span> pd.read_csv(<span class="st">'data/gapminder_gdp_europe.csv'</span>, index_col<span class="op">=</span><span class="st">'country'</span>)</span>
+<span id="cb12-2"><a href="#cb12-2" tabindex="-1"></a>data_europe.____.plot(label<span class="op">=</span><span class="st">'min'</span>)</span>
+<span id="cb12-3"><a href="#cb12-3" tabindex="-1"></a>data_europe.____</span>
+<span id="cb12-4"><a href="#cb12-4" tabindex="-1"></a>plt.legend(loc<span class="op">=</span><span class="st">'best'</span>)</span>
+<span id="cb12-5"><a href="#cb12-5" tabindex="-1"></a>plt.xticks(rotation<span class="op">=</span><span class="dv">90</span>)</span>
+<span id="cb12-6"><a href="#cb12-6" tabindex="-1"></a>plt.show()</span></code></pre>
 </div>
 </div>
 </div>
@@ -699,14 +694,15 @@ per capita over time for Europe.</p>
 </button>
 <div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
-<div class="codewrapper sourceCode" id="cb14">
+<div class="codewrapper sourceCode" id="cb13">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" tabindex="-1"></a>data_europe <span class="op">=</span> pd.read_csv(<span class="st">'data/gapminder_gdp_europe.csv'</span>, index_col<span class="op">=</span><span class="st">'country'</span>)</span>
-<span id="cb14-2"><a href="#cb14-2" tabindex="-1"></a>data_europe.<span class="bu">min</span>().plot(label<span class="op">=</span><span class="st">'min'</span>)</span>
-<span id="cb14-3"><a href="#cb14-3" tabindex="-1"></a>data_europe.<span class="bu">max</span>().plot(label<span class="op">=</span><span class="st">'max'</span>)</span>
-<span id="cb14-4"><a href="#cb14-4" tabindex="-1"></a>plt.legend(loc<span class="op">=</span><span class="st">'best'</span>)</span>
-<span id="cb14-5"><a href="#cb14-5" tabindex="-1"></a>plt.xticks(rotation<span class="op">=</span><span class="dv">90</span>)</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" tabindex="-1"></a>data_europe <span class="op">=</span> pd.read_csv(<span class="st">'data/gapminder_gdp_europe.csv'</span>, index_col<span class="op">=</span><span class="st">'country'</span>)</span>
+<span id="cb13-2"><a href="#cb13-2" tabindex="-1"></a>data_europe.<span class="bu">min</span>().plot(label<span class="op">=</span><span class="st">'min'</span>)</span>
+<span id="cb13-3"><a href="#cb13-3" tabindex="-1"></a>data_europe.<span class="bu">max</span>().plot(label<span class="op">=</span><span class="st">'max'</span>)</span>
+<span id="cb13-4"><a href="#cb13-4" tabindex="-1"></a>plt.legend(loc<span class="op">=</span><span class="st">'best'</span>)</span>
+<span id="cb13-5"><a href="#cb13-5" tabindex="-1"></a>plt.xticks(rotation<span class="op">=</span><span class="dv">90</span>)</span>
+<span id="cb13-6"><a href="#cb13-6" tabindex="-1"></a>plt.show()</span></code></pre>
 </div>
 <figure><img src="../fig/9_minima_maxima_solution.png" alt="Minima Maxima Solution" class="figure mx-auto d-block"></figure></div>
 </div>
@@ -733,11 +729,11 @@ you see (if any)?</p>
 </button>
 <div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
-<div class="codewrapper sourceCode" id="cb15">
+<div class="codewrapper sourceCode" id="cb14">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" tabindex="-1"></a>data_asia <span class="op">=</span> pd.read_csv(<span class="st">'data/gapminder_gdp_asia.csv'</span>, index_col<span class="op">=</span><span class="st">'country'</span>)</span>
-<span id="cb15-2"><a href="#cb15-2" tabindex="-1"></a>data_asia.describe().T.plot(kind<span class="op">=</span><span class="st">'scatter'</span>, x<span class="op">=</span><span class="st">'min'</span>, y<span class="op">=</span><span class="st">'max'</span>)</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" tabindex="-1"></a>data_asia <span class="op">=</span> pd.read_csv(<span class="st">'data/gapminder_gdp_asia.csv'</span>, index_col<span class="op">=</span><span class="st">'country'</span>)</span>
+<span id="cb14-2"><a href="#cb14-2" tabindex="-1"></a>data_asia.describe().T.plot(kind<span class="op">=</span><span class="st">'scatter'</span>, x<span class="op">=</span><span class="st">'min'</span>, y<span class="op">=</span><span class="st">'max'</span>)</span></code></pre>
 </div>
 <figure><img src="../fig/9_correlations_solution1.svg" alt="Correlations Solution 1" class="figure mx-auto d-block"></figure><p>No particular correlations can be seen between the minimum and
 maximum GDP values year on year. It seems the fortunes of asian
@@ -757,13 +753,13 @@ countries do not rise and fall together.</p>
 <p>You might note that the variability in the maximum is much higher
 than that of the minimum. Take a look at the maximum and the max
 indexes:</p>
-<div class="codewrapper sourceCode" id="cb16">
+<div class="codewrapper sourceCode" id="cb15">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" tabindex="-1"></a>data_asia <span class="op">=</span> pd.read_csv(<span class="st">'data/gapminder_gdp_asia.csv'</span>, index_col<span class="op">=</span><span class="st">'country'</span>)</span>
-<span id="cb16-2"><a href="#cb16-2" tabindex="-1"></a>data_asia.<span class="bu">max</span>().plot()</span>
-<span id="cb16-3"><a href="#cb16-3" tabindex="-1"></a><span class="bu">print</span>(data_asia.idxmax())</span>
-<span id="cb16-4"><a href="#cb16-4" tabindex="-1"></a><span class="bu">print</span>(data_asia.idxmin())</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" tabindex="-1"></a>data_asia <span class="op">=</span> pd.read_csv(<span class="st">'data/gapminder_gdp_asia.csv'</span>, index_col<span class="op">=</span><span class="st">'country'</span>)</span>
+<span id="cb15-2"><a href="#cb15-2" tabindex="-1"></a>data_asia.<span class="bu">max</span>().plot()</span>
+<span id="cb15-3"><a href="#cb15-3" tabindex="-1"></a><span class="bu">print</span>(data_asia.idxmax())</span>
+<span id="cb15-4"><a href="#cb15-4" tabindex="-1"></a><span class="bu">print</span>(data_asia.idxmin())</span></code></pre>
 </div>
 </div>
 </div>
@@ -793,12 +789,12 @@ the highest GDP nation has varied more notably.</p>
 <div class="callout-content">
 <p>This short program creates a plot showing the correlation between GDP
 and life expectancy for 2007, normalizing marker size by population:</p>
-<div class="codewrapper sourceCode" id="cb17">
+<div class="codewrapper sourceCode" id="cb16">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" tabindex="-1"></a>data_all <span class="op">=</span> pd.read_csv(<span class="st">'data/gapminder_all.csv'</span>, index_col<span class="op">=</span><span class="st">'country'</span>)</span>
-<span id="cb17-2"><a href="#cb17-2" tabindex="-1"></a>data_all.plot(kind<span class="op">=</span><span class="st">'scatter'</span>, x<span class="op">=</span><span class="st">'gdpPercap_2007'</span>, y<span class="op">=</span><span class="st">'lifeExp_2007'</span>,</span>
-<span id="cb17-3"><a href="#cb17-3" tabindex="-1"></a>              s<span class="op">=</span>data_all[<span class="st">'pop_2007'</span>]<span class="op">/</span><span class="fl">1e6</span>)</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" tabindex="-1"></a>data_all <span class="op">=</span> pd.read_csv(<span class="st">'data/gapminder_all.csv'</span>, index_col<span class="op">=</span><span class="st">'country'</span>)</span>
+<span id="cb16-2"><a href="#cb16-2" tabindex="-1"></a>data_all.plot(kind<span class="op">=</span><span class="st">'scatter'</span>, x<span class="op">=</span><span class="st">'gdpPercap_2007'</span>, y<span class="op">=</span><span class="st">'lifeExp_2007'</span>,</span>
+<span id="cb16-3"><a href="#cb16-3" tabindex="-1"></a>              s<span class="op">=</span>data_all[<span class="st">'pop_2007'</span>]<span class="op">/</span><span class="fl">1e6</span>)</span></code></pre>
 </div>
 <p>Using online help and other resources, explain what each argument to
 <code>plot</code> does.</p>
@@ -836,10 +832,10 @@ Determines the size of the plotted points.</p>
 a file, perhaps to include it in a publication. There is a function in
 the matplotlib.pyplot module that accomplishes this: <a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.savefig.html" class="external-link">savefig</a>.
 Calling this function, e.g. with</p>
-<div class="codewrapper sourceCode" id="cb18">
+<div class="codewrapper sourceCode" id="cb17">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" tabindex="-1"></a>plt.savefig(<span class="st">'my_figure.png'</span>)</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" tabindex="-1"></a>plt.savefig(<span class="st">'my_figure.png'</span>)</span></code></pre>
 </div>
 <p>will save the current figure to the file <code>my_figure.png</code>.
 The file format will automatically be deduced from the file name
@@ -855,12 +851,12 @@ in one line. In addition to using <code>plt.savefig</code>, we can save
 a reference to the current figure in a local variable (with
 <code>plt.gcf</code>) and call the <code>savefig</code> class method
 from that variable to save the figure to file.</p>
-<div class="codewrapper sourceCode" id="cb19">
+<div class="codewrapper sourceCode" id="cb18">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" tabindex="-1"></a>data.plot(kind<span class="op">=</span><span class="st">'bar'</span>)</span>
-<span id="cb19-2"><a href="#cb19-2" tabindex="-1"></a>fig <span class="op">=</span> plt.gcf() <span class="co"># get current figure</span></span>
-<span id="cb19-3"><a href="#cb19-3" tabindex="-1"></a>fig.savefig(<span class="st">'my_figure.png'</span>)</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" tabindex="-1"></a>data.plot(kind<span class="op">=</span><span class="st">'bar'</span>)</span>
+<span id="cb18-2"><a href="#cb18-2" tabindex="-1"></a>fig <span class="op">=</span> plt.gcf() <span class="co"># get current figure</span></span>
+<span id="cb18-3"><a href="#cb18-3" tabindex="-1"></a>fig.savefig(<span class="st">'my_figure.png'</span>)</span></code></pre>
 </div>
 </div>
 </div>
@@ -970,7 +966,7 @@ Gallery</a> for more options.</li>
   "url": "https://swcarpentry.github.io/python-novice-gapminder/instructor/09-plotting.html",
   "identifier": "https://swcarpentry.github.io/python-novice-gapminder/instructor/09-plotting.html",
   "dateCreated": "2016-01-07",
-  "dateModified": "2024-10-23",
+  "dateModified": "2024-11-19",
   "datePublished": "2024-11-19"
 }
 
