@@ -167,19 +167,6 @@ moving too slow
 final velocity: 30.0
 ```
 
-## Create a table showing variables' values to trace a program's execution.
-
-<table>
-  <tr>   <td><strong>i</strong></td>   <td>0</td>   <td>.</td>   <td>1</td>   <td>.</td>   <td>2</td>   <td>.</td>   <td>3</td>   <td>.</td>   <td>4</td>   <td>.</td>
-  </tr>
-  <tr>   <td><strong>velocity</strong></td>   <td>10.0</td>   <td>20.0</td>   <td>.</td>   <td>30.0</td>   <td>.</td>   <td>25.0</td>   <td>.</td>   <td>20.0</td>   <td>.</td>   <td>30.0</td>
-  </tr>
-</table>
-
-- The program must have a `print` statement *outside* the body of the loop
-  to show the final value of `velocity`,
-  since its value is updated by the last iteration of the loop.
-
 :::::::::::::::::::::::::::::::::::::::::  callout
 
 ## Compound Relations Using `and`, `or`, and Parentheses
