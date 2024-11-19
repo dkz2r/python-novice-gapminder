@@ -199,6 +199,7 @@ data_europe.____.plot(label='min')
 data_europe.____
 plt.legend(loc='best')
 plt.xticks(rotation=90)
+plt.show()
 ```
 
 :::::::::::::::  solution
@@ -211,6 +212,7 @@ data_europe.min().plot(label='min')
 data_europe.max().plot(label='max')
 plt.legend(loc='best')
 plt.xticks(rotation=90)
+plt.show()
 ```
 
 ![](fig/9_minima_maxima_solution.png){alt='Minima Maxima Solution'}
