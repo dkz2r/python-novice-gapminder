@@ -158,6 +158,21 @@ print(str(1) + '2')
 12
 ```
 
+::::::::::::::::::::::::::::::::::::: instructor
+
+Pause here and ask the learners to try to come up with two ways of arriving at the value `352`
+using the + operator.
+
+Possible solutions include:
+
+```python
+print(300 + 50 + 2)
+print("3" + "5" + "2")
+print("3" + str(50 + 2))
+```
+
+:::::::::::::::::::::::::::::::::::::
+
 ## Can mix integers and floats freely in operations.
 
 - Integers and floating-point numbers can be mixed in arithmetic.
