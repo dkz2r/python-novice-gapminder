@@ -22,13 +22,6 @@ exercises: 10
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-## Use comments to add documentation to programs.
-
-```python
-# This sentence isn't executed by Python.
-adjustment = 0.5   # Neither is this - anything after '#' is ignored.
-```
-
 ## A function may take zero or more arguments.
 
 - We have seen some functions already --- now let's take a closer look.

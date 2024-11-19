@@ -124,11 +124,20 @@ print('Age in three years:', age)
 Age in three years: 45
 ```
 
+## Use comments to add documentation to programs.
+
 :::::::::::::::::::::::::::::::::::::::::  callout
 
 You might notice in the previous example that our first line starts with a `#`. This is called a
 "comment", and is incredibly useful for annotating your code. When Python sees a `#`, it ignores
 the rest of the line.
+
+Example
+
+```python
+# This sentence isn't executed by Python
+adjustment = 0.5   # Neither is this comment - anything after the '#' is ignored
+```
 
 :::::::::::::::::::::::::::::::::::::::::
 
