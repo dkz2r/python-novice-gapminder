@@ -104,6 +104,47 @@ After you have launched the Anaconda Prompt, type the command:
 $ jupyter lab
 ```
 
+:::::::::::::::::::::::::::::::::::::::::  callout
+
+RWTH Specific Note: This carpentries lesson relies on Anaconda, and makes mention here of Anaconda
+Navigator. Anaconda is free for personal and educational usage, however for commercial usage and
+organizations over 200 people, a license is required.
+
+As an alternative to Anaconda, you can also use Miniconda, which is a smaller version of Anaconda
+that includes only conda, Python, the packages they depend on, and a small number of other useful
+packages, including pip, zlib and a few others. Miniconda is free and open source, and is available
+for Windows, macOS and Linux.
+
+:::::::::::::::::::::::::::::::::::::::::
+
+:::::::::::::::::::::::::::::::::::::::::  callout
+
+RWTH Specific Note: Following up on the previous note, we will take a moment to switch from
+Anaconda's default channel to the conda-forge channel. The conda-forge channel is a community-led
+collection of conda packages, and avoids some of the licensing concerns that come from the default
+Anaconda channel. To switch to the conda-forge channel, run the following commands:
+
+```bash
+$ conda config --add channels conda-forge
+$ conda config --set channel_priority strict
+$ conda config --remove channels defaults
+```
+
+Then, to confirm that the channel has been switched, run the following command:
+
+```bash
+$ conda config --show channels
+```
+
+And you should see the following output:
+
+```bash
+channels:
+  - conda-forge
+```
+
+:::::::::::::::::::::::::::::::::::::::::
+
 ### Anaconda Navigator
 
 To start a JupyterLab server from Anaconda Navigator you must first [start Anaconda Navigator (click for detailed instructions on macOS, Windows, and Linux)](https://docs.anaconda.com/free/navigator/getting-started/#navigator-starting-navigator). You can search for Anaconda Navigator via Spotlight on macOS (<kbd>Command</kbd> + <kbd>spacebar</kbd>), the Windows search function (<kbd>Windows Logo Key</kbd>) or opening a terminal shell and executing the `anaconda-navigator` executable from the command line.
@@ -228,7 +269,7 @@ more details, then see the [official notebook documentation][jupyterlab-notebook
 - The notebook file is stored in a format called JSON.
 - Just like a webpage, what's saved looks different from what you see in your browser.
 - But this format allows Jupyter to mix source code, text, and images, all in one file.
-  
+
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
@@ -290,7 +331,7 @@ a "text cell" is one that contains ordinary prose written for human beings.
 
 ## Command Vs. Edit
 
-In the Jupyter notebook page are you currently in Command or Edit mode?  
+In the Jupyter notebook page are you currently in Command or Edit mode?
 Switch between the modes.
 Use the shortcuts to generate a new cell.
 Use the shortcuts to delete a cell.

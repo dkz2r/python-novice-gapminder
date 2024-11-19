@@ -152,20 +152,31 @@ a range is not a list: range(0, 3)
 ```python
 # Sum the first 10 integers.
 total = 0
-for number in range(10):
-   total = total + (number + 1)
-print(total)
+
+# Range is 1-11, since range is non-inclusive of the second value.
+for number in range(1, 11):
+   total = total + number
+   print(total, number)
+print("total:", total)
 ```
 
 ```output
-55
+1 1
+3 2
+6 3
+10 4
+15 5
+21 6
+28 7
+36 8
+45 9
+55 10
+total: 55
 ```
 
-- Read `total = total + (number + 1)` as:
-  - Add 1 to the current value of the loop variable `number`.
-  - Add that to the current value of the accumulator variable `total`.
+- Read `total = total + number` as:
+  - Add the current value of the loop variable to the current value of the accumulator variable `total`.
   - Assign that to `total`, replacing the current value.
-- We have to add `number + 1` because `range` produces 0..9, not 1..10.
 
 :::::::::::::::::::::::::::::::::::::::  challenge
 
@@ -203,15 +214,15 @@ for char in "tin":
 
 ## Solution
 
-| Line no | Variables            | 
+| Line no | Variables            |
 | ------- | -------------------- |
-| 1       | total = 0            | 
-| 2       | total = 0 char = 't' | 
-| 3       | total = 1 char = 't' | 
-| 2       | total = 1 char = 'i' | 
-| 3       | total = 2 char = 'i' | 
-| 2       | total = 2 char = 'n' | 
-| 3       | total = 3 char = 'n' | 
+| 1       | total = 0            |
+| 2       | total = 0 char = 't' |
+| 3       | total = 1 char = 't' |
+| 2       | total = 1 char = 'i' |
+| 3       | total = 2 char = 'i' |
+| 2       | total = 2 char = 'n' |
+| 3       | total = 3 char = 'n' |
 
 :::::::::::::::::::::::::
 
