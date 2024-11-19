@@ -165,12 +165,12 @@ print(str(1) + '2')
 
 ```python
 print('half is', 1 / 2.0)
-print('three squared is', 3.0 ** 2)
+print('three doubled is', 3.0 * 2)
 ```
 
 ```output
 half is 0.5
-three squared is 9.0
+three doubled is 6.0
 ```
 
 ## Variables only change value when something is assigned to them.
@@ -274,8 +274,8 @@ The answers to the questions are:
 4. This will vary! How do you define a specimen's age? whole days since collection (integer)? date and time (string)?
 5. Choose floating point to represent population as large aggregates (eg millions), or integer to represent population in units of individuals.
 6. Floating point number, since an average is likely to have a fractional part.
-  
-  
+
+
 
 :::::::::::::::::::::::::
 
@@ -476,8 +476,8 @@ print(a_complex_number.imag)
 2. `(4+2j)`
 3. `4j` and `Syntax Error: invalid syntax`. In the latter cases, `j` is considered a variable and the statement
   depends on if `j` is defined and if so, its assigned value.
-  
-  
+
+
 
 :::::::::::::::::::::::::
 
