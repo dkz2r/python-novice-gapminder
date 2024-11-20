@@ -19,6 +19,12 @@ exercises: 15
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
+::::::::::::::::::::::::::::::::::::: instructor
+
+Estimated: 14:30 - 15:00
+
+:::::::::::::::::::::::::::::::::::::
+
 ## Note about Pandas DataFrames/Series
 
 A [DataFrame][pandas-dataframe] is a collection of [Series][pandas-series];

@@ -1,7 +1,7 @@
 ---
 title: Dictionaries
-teaching: 15
-exercises: 10
+teaching: 30
+exercises: 15
 ---
 
 ::::::::::::::::::::::::::::::::::::::: objectives
@@ -16,6 +16,12 @@ exercises: 10
 - How is a dictionary different from a list?
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
+
+::::::::::::::::::::::::::::::::::::: instructor
+
+Estimated: 10:05 - 10:50
+
+:::::::::::::::::::::::::::::::::::::
 
 ## A dictionary stores values under keys.
 

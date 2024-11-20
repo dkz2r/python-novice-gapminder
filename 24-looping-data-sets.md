@@ -1,6 +1,6 @@
 ---
 title: Looping Over Data Sets
-teaching: 5
+teaching: 10
 exercises: 10
 ---
 
@@ -17,6 +17,12 @@ exercises: 10
 - How can I process many data sets with a single command?
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
+
+::::::::::::::::::::::::::::::::::::: instructor
+
+Estimated: 14:10 - 14:30
+
+:::::::::::::::::::::::::::::::::::::
 
 ## Use a `for` loop to process files given a list of their names.
 
@@ -201,13 +207,13 @@ for filename in glob.glob('data/gapminder_gdp*.csv'):
     dataframe = pd.read_csv(filename)
     # extract <region> from the filename, expected to be in the format 'data/gapminder_gdp_<region>.csv'.
     # we will split the string using the split method and `_` as our separator,
-    # retrieve the last string in the list that split returns (`<region>.csv`), 
+    # retrieve the last string in the list that split returns (`<region>.csv`),
     # and then remove the `.csv` extension from that string.
     # NOTE: the pathlib module covered in the next callout also offers
     # convenient abstractions for working with filesystem paths and could solve this as well:
     # from pathlib import Path
     # region = Path(filename).stem.split('_')[-1]
-    region = filename.split('_')[-1][:-4] 
+    region = filename.split('_')[-1][:-4]
     # pandas raises errors when it encounters non-numeric columns in a dataframe computation
     # but we can tell pandas to ignore them with the `numeric_only` parameter
     dataframe.mean(numeric_only=True).plot(ax=ax, label=region)

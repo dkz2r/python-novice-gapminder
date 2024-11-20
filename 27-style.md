@@ -20,6 +20,12 @@ exercises: 15
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
+::::::::::::::::::::::::::::::::::::: instructor
+
+Estimated: 15:45 - 16:15
+
+:::::::::::::::::::::::::::::::::::::
+
 ## Coding style
 
 A consistent coding style helps others (including our future selves) read and understand code more easily. Code is read much more often than it is written, and as the [Zen of Python](https://www.python.org/dev/peps/pep-0020) states, "Readability counts".

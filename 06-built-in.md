@@ -1,7 +1,7 @@
 ---
 title: Built-in Functions and Help
 teaching: 15
-exercises: 10
+exercises: 15
 ---
 
 ::::::::::::::::::::::::::::::::::::::: objectives
@@ -21,6 +21,12 @@ exercises: 10
 - What kind of errors can occur in programs?
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
+
+::::::::::::::::::::::::::::::::::::: instructor
+
+Estimated: 11:30am - 12:00pm
+
+:::::::::::::::::::::::::::::::::::::
 
 ## A function may take zero or more arguments.
 

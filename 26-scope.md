@@ -1,7 +1,7 @@
 ---
 title: Variable Scope
 teaching: 10
-exercises: 10
+exercises: 5
 ---
 
 ::::::::::::::::::::::::::::::::::::::: objectives
@@ -18,6 +18,12 @@ exercises: 10
 - How can I determine where errors occurred?
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
+
+::::::::::::::::::::::::::::::::::::: instructor
+
+Estimated: 15:30 - 15:45
+
+:::::::::::::::::::::::::::::::::::::
 
 ## The scope of a variable is the part of a program that can 'see' that variable.
 

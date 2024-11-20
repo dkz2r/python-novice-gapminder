@@ -1,7 +1,7 @@
 ---
 title: Writing Functions
-teaching: 10
-exercises: 15
+teaching: 20
+exercises: 40
 ---
 
 ::::::::::::::::::::::::::::::::::::::: objectives
@@ -16,6 +16,12 @@ exercises: 15
 - How can I create my own functions?
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
+
+::::::::::::::::::::::::::::::::::::: instructor
+
+Estimated: 14:30 - 15:30
+
+:::::::::::::::::::::::::::::::::::::
 
 ## Break programs down into functions to make them easier to understand.
 
@@ -132,7 +138,7 @@ print('average of empty list:', average([]))
 average of empty list: None
 ```
 
-- Remember: [every function returns something](04-built-in.md).
+- Remember: [every function returns something](06-built-in.md).
 - A function that doesn't explicitly `return` a value automatically returns `None`.
 
 ```python

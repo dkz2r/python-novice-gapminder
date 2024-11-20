@@ -1,7 +1,7 @@
 ---
 title: Reading Tabular Data into DataFrames
-teaching: 10
-exercises: 10
+teaching: 15
+exercises: 15
 ---
 
 ::::::::::::::::::::::::::::::::::::::: objectives
@@ -17,6 +17,12 @@ exercises: 10
 - How can I read tabular data?
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
+
+::::::::::::::::::::::::::::::::::::: instructor
+
+Estimated: 14:00 - 14:30
+
+:::::::::::::::::::::::::::::::::::::
 
 ## Use the Pandas library to do statistics on tabular data.
 
@@ -66,7 +72,7 @@ Our lessons store their data files in a `data` sub-directory,
 which is why the path to the file is `data/gapminder_gdp_oceania.csv`.
 If you forget to include `data/`,
 or if you include it but your copy of the file is somewhere else,
-you will get a [runtime error](04-built-in.md)
+you will get a [runtime error](06-built-in.md)
 that ends with a line like this:
 
 ```error
