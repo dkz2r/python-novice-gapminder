@@ -1,6 +1,6 @@
 ---
 title: Variables and Assignment
-teaching: 10
+teaching: 20
 exercises: 10
 ---
 
@@ -16,6 +16,12 @@ exercises: 10
 - How can I store data in programs?
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
+
+::::::::::::::::::::::::::::::::::::: instructor
+
+Estimated: 10:00am - 10:30am
+
+:::::::::::::::::::::::::::::::::::::
 
 ## Use variables to store values.
 
@@ -126,11 +132,11 @@ Age in three years: 45
 
 ## Use comments to add documentation to programs.
 
-:::::::::::::::::::::::::::::::::::::::::  callout
-
 You might notice in the previous example that our first line starts with a `#`. This is called a
 "comment", and is incredibly useful for annotating your code. When Python sees a `#`, it ignores
 the rest of the line.
+
+:::::::::::::::::::::::::::::::::::::::::  callout
 
 Example
 

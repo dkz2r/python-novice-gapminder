@@ -1,6 +1,6 @@
 ---
 title: Libraries
-teaching: 10
+teaching: 20
 exercises: 10
 ---
 
@@ -18,6 +18,12 @@ exercises: 10
 - How can I find out what that software does?
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
+
+::::::::::::::::::::::::::::::::::::: instructor
+
+Estimated: 13:00 - 13:30pm
+
+:::::::::::::::::::::::::::::::::::::
 
 ## Most of the power of a programming language is in its libraries.
 
@@ -150,12 +156,12 @@ cos(pi) is -1.0
 2. The `sqrt(x)` function is arguably more readable than `pow(x, 0.5)` when
   implementing equations. Readability is a cornerstone of good programming, so it
   makes sense to provide a special function for this specific common case.
-  
+
   Also, the design of Python's `math` library has its origin in the C standard,
   which includes both `sqrt(x)` and `pow(x,y)`, so a little bit of the history
   of programming is showing in Python's function names.
-  
-  
+
+
 
 :::::::::::::::::::::::::
 
@@ -249,9 +255,9 @@ print("random base ", bases[___], "base index", ___)
 ## Solution
 
 ```python
-import math 
+import math
 import random
-bases = "ACTTGCTTGAC" 
+bases = "ACTTGCTTGAC"
 n_bases = len(bases)
 idx = random.randrange(n_bases)
 print("random base", bases[idx], "base index", idx)
@@ -444,8 +450,8 @@ ValueError: math domain error
 2. You get an error of type `ValueError`, indicating that the function
   received an inappropriate argument value. The additional message
   "math domain error" makes it clearer what the problem is.
-  
-  
+
+
 
 :::::::::::::::::::::::::
 

@@ -1,6 +1,6 @@
 ---
 title: Data Types and Type Conversion
-teaching: 10
+teaching: 20
 exercises: 10
 ---
 
@@ -18,6 +18,12 @@ exercises: 10
 - How can I convert one type to another?
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
+
+::::::::::::::::::::::::::::::::::::: instructor
+
+Estimated: 11:00am - 11:30am
+
+:::::::::::::::::::::::::::::::::::::
 
 ## Every value has a type.
 

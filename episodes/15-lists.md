@@ -1,7 +1,7 @@
 ---
 title: Lists
-teaching: 10
-exercises: 10
+teaching: 20
+exercises: 15
 ---
 
 ::::::::::::::::::::::::::::::::::::::: objectives
@@ -16,6 +16,12 @@ exercises: 10
 - How can I store multiple values?
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
+
+::::::::::::::::::::::::::::::::::::: instructor
+
+Estimated: 09:30 - 10:05
+
+:::::::::::::::::::::::::::::::::::::
 
 ## A list stores many values in a single structure.
 
@@ -277,8 +283,8 @@ list to string: gold
 2. [`join`](https://docs.python.org/3/library/stdtypes.html#str.join) returns a string that is the *concatenation*
   of each string element in the list and adds the separator between each element in the list. This results in
   `x-y-z`. The separator between the elements is the string that provides this method.
-  
-  
+
+
 
 :::::::::::::::::::::::::
 
@@ -315,8 +321,8 @@ The program prints `m`.
   `-N`, which represents the first element.
 3. `del values[-1]` removes the last element from the list.
 4. `values[:-1]`
-  
-  
+
+
 
 :::::::::::::::::::::::::
 
@@ -353,8 +359,8 @@ eniroulf
   with element `1` (which is the second element, since indexing starts at `0`),
   goes on until the end (since no `end` is given), and uses a step size of `2`
   (i.e., selects every second element).
-  
-  
+
+
 
 :::::::::::::::::::::::::
 

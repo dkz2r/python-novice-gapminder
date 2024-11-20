@@ -1,7 +1,7 @@
 ---
 title: For Loops
-teaching: 10
-exercises: 15
+teaching: 20
+exercises: 40
 ---
 
 ::::::::::::::::::::::::::::::::::::::: objectives
@@ -17,6 +17,15 @@ exercises: 15
 - How can I make a program do many things?
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
+
+::::::::::::::::::::::::::::::::::::: instructor
+
+Estimated: 11:00 - 12:00
+
+Coming on the heels of lists and dicts, we don't want to overload learners. We'll take our time on
+this section.
+
+:::::::::::::::::::::::::::::::::::::
 
 ## A *for loop* executes commands once for each value in a collection.
 
