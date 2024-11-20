@@ -1,7 +1,7 @@
 ---
 title: Looping Over Data Sets
 teaching: 10
-exercises: 20
+exercises: 10
 ---
 
 ::::::::::::::::::::::::::::::::::::::: objectives
@@ -20,7 +20,7 @@ exercises: 20
 
 ::::::::::::::::::::::::::::::::::::: instructor
 
-Estimated: 14:30 - 15:00
+Estimated: 14:10 - 14:30
 
 :::::::::::::::::::::::::::::::::::::
 
