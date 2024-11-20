@@ -138,7 +138,7 @@ print('average of empty list:', average([]))
 average of empty list: None
 ```
 
-- Remember: [every function returns something](04-built-in.md).
+- Remember: [every function returns something](06-built-in.md).
 - A function that doesn't explicitly `return` a value automatically returns `None`.
 
 ```python
