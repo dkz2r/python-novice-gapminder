@@ -7,7 +7,7 @@ break: 0
 
 ::::::::::::::::::::::::::::::::::::: instructor
 
-Estimated: 10:30am - 10:50am
+Estimated: 10:30 - 10:50
 
 Source: https://git.rwth-aachen.de/dl/workshops/rdm-overview/-/raw/main/modules/coding/zen_of_python.md
 
