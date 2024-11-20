@@ -27,7 +27,7 @@ life_cycle: 'stable'
 license: 'CC-BY 4.0'
 
 # Link to the source repository for this lesson
-source: 'https://github.com/swcarpentry/python-novice-gapminder'
+source: 'https://github.com/dkz2r/python-novice-gapminder'
 
 # Default branch of your lesson
 branch: 'main'
@@ -61,25 +61,33 @@ contact: 'team@carpentries.org'
 episodes:
 - 01-run-quit.md
 - 02-variables.md
-- 03-types-conversion.md
-- 04-built-in.md
-- 05-coffee.md
-- 06-libraries.md
-- 07-reading-tabular.md
-- 08-data-frames.md
-- 09-plotting.md
-- 10-lunch.md
-- 11-lists.md
-- 11.5-dictionaries.md
-- 12-for-loops.md
-- 13-conditionals.md
-- 14-looping-data-sets.md
-- 15-coffee.md
-- 16-writing-functions.md
-- 17-scope.md
-- 18-style.md
-- 19-wrap.md
-- 20-feedback.md
+- 03-talk-zen-of-python.md
+- 04-morning-coffee.md
+- 05-types-conversion.md
+- 06-built-in.md
+- 07-lunch.md
+- 08-libraries.md
+- 09-afternoon-break.md
+- 10-reading-tabular.md
+- 11-data-frames.md
+- 12-plotting.md
+- 13-talk-git-primer.md
+- 14-day-1-recap.md
+- 15-lists.md
+- 16-dictionaries.md
+- 17-morning-coffee.md
+- 18-for-loops.md
+- 19-lunch.md
+- 20-conditionals.md
+- 21-talk-clean-code.md
+- 22-afternoon-break.md
+- 23-looping-data-sets.md
+- 24-writing-functions.md
+- 25-scope.md
+- 26-style.md
+- 27-talk-compiled-code.md
+- 28-feedback.md
+- 29-wrap.md
 
 # Information for Learners
 learners:
