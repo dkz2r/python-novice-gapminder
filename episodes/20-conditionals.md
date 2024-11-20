@@ -1,7 +1,7 @@
 ---
 title: Conditionals
-teaching: 10
-exercises: 15
+teaching: 20
+exercises: 25
 ---
 
 ::::::::::::::::::::::::::::::::::::::: objectives
@@ -16,6 +16,12 @@ exercises: 15
 - How can programs do different things for different data?
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
+
+::::::::::::::::::::::::::::::::::::: instructor
+
+Estimated: 13:00 - 13:45
+
+:::::::::::::::::::::::::::::::::::::
 
 ## Use `if` statements to control whether or not a block of code is executed.
 

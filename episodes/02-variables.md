@@ -1,6 +1,6 @@
 ---
 title: Variables and Assignment
-teaching: 10
+teaching: 20
 exercises: 10
 ---
 
@@ -16,6 +16,12 @@ exercises: 10
 - How can I store data in programs?
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
+
+::::::::::::::::::::::::::::::::::::: instructor
+
+Estimated: 10:00am - 10:30am
+
+:::::::::::::::::::::::::::::::::::::
 
 ## Use variables to store values.
 

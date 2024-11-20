@@ -1,7 +1,7 @@
 ---
 title: Running and Quitting
-teaching: 15
-exercises: 0
+teaching: 25
+exercises: 5
 ---
 
 ::::::::::::::::::::::::::::::::::::::: objectives
@@ -21,6 +21,12 @@ exercises: 0
 - How can I run Python programs?
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
+
+::::::::::::::::::::::::::::::::::::: instructor
+
+Estimated: 9:30am - 10:00am
+
+:::::::::::::::::::::::::::::::::::::
 
 To run Python, we are going to use [Jupyter Notebooks][jupyter] via [JupyterLab][jupyterlab] for the remainder of this workshop. Jupyter notebooks are common in data science and visualization and serve as a convenient common-denominator experience for running Python code interactively where we can easily view and share the results of our Python code.
 

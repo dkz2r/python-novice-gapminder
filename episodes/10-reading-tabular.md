@@ -1,7 +1,7 @@
 ---
 title: Reading Tabular Data into DataFrames
-teaching: 10
-exercises: 10
+teaching: 15
+exercises: 15
 ---
 
 ::::::::::::::::::::::::::::::::::::::: objectives
@@ -17,6 +17,12 @@ exercises: 10
 - How can I read tabular data?
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
+
+::::::::::::::::::::::::::::::::::::: instructor
+
+Estimated: 14:00 - 14:30
+
+:::::::::::::::::::::::::::::::::::::
 
 ## Use the Pandas library to do statistics on tabular data.
 
