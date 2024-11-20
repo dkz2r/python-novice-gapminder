@@ -88,7 +88,7 @@ NameError: name 'last_name' is not defined
 ```
 
 - The last line of an error message is usually the most informative.
-- We will look at error messages in detail [later](17-scope.md#reading-error-messages).
+- We will look at error messages in detail [later](26-scope.md#reading-error-messages).
 
 :::::::::::::::::::::::::::::::::::::::::  callout
 
@@ -313,7 +313,7 @@ what happens if you try to get the second digit of `a` via `a[1]`?
 ## Solution
 
 Numbers are not strings or sequences and Python will raise an error if you try to perform an index operation on a
-number. In the [next lesson on types and type conversion](03-types-conversion.md)
+number. In the [next lesson on types and type conversion](05-types-conversion.md)
 we will learn more about types and how to convert between different types. If you want the Nth digit of a number you
 can convert it into a string using the `str` built-in function and then perform an index operation on that string.
 
