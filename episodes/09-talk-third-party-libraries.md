@@ -7,7 +7,7 @@ break: 0
 
 ::::::::::::::::::::::::::::::::::::: instructor
 
-Estimated: 10:30am - 10:50am
+Estimated: 13:30-13:50
 
 Source: https://git.rwth-aachen.de/dl/workshops/rdm-overview/-/raw/main/modules/coding/third_party_libraries.md
 

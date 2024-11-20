@@ -2,12 +2,12 @@
 title: Morning Coffee
 teaching: 0
 exercises: 0
-break: 10
+break: 15
 ---
 
 ::::::::::::::::::::::::::::::::::::: instructor
 
-Estimated: 10:50am - 11:00am
+Estimated: 10:45 - 11:00
 
 :::::::::::::::::::::::::::::::::::::
 
