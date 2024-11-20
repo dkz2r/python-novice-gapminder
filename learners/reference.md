@@ -132,7 +132,7 @@ for number in range(0,5):
     print(number)
 ```
 
-## [Conditionals](episodes/13-conditionals.md)
+## [Conditionals](episodes/21-conditionals.md)
 
 - Defined similarly to a loop, using `if variable conditional value:`.
   - For example, `if variable > 5:`.
@@ -157,7 +157,7 @@ for m in [3, 6, 7, 2, 8]:
         print(m, 'is small')
 ```
 
-## [Looping Over Data Sets](episodes/14-looping-data-sets.md)
+## [Looping Over Data Sets](episodes/24-looping-data-sets.md)
 
 - Use a for loop: `for filename in [file1, file2]:`
 - To find a set of files using a pattern use `glob.glob`
@@ -172,7 +172,7 @@ for filename in glob.glob(*.txt):
   data = pd.read_csv(filename)
 ```
 
-## [Writing Functions](episodes/16-writing-functions.md)
+## [Writing Functions](episodes/25-writing-functions.md)
 
 - Define a function using `def function_name(parameters):`. Replace `parameters` with the variables to use when the function is executed.
 - Run by using `function_name(parameters)`.
@@ -186,7 +186,7 @@ def add_numbers(a, b):
 add_numbers(1, 4)
 ```
 
-## [Variable Scope](episodes/17-scope.md)
+## [Variable Scope](episodes/26-scope.md)
 
 - A local variable is defined in a function and can only be seen and used within that function.
 - A global variable is defined outside of a function and can be seen or used anywhere after definition.

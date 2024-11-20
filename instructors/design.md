@@ -198,7 +198,7 @@ I know...
   - Given what we have seen so far,
     what index expression will get the last character in a string?
 
-### [Coffee](../episodes/04-coffee.md): 15 min (10:20)
+### [Coffee](../episodes/04-morning-coffee.md): 15 min (10:20)
 
 ### [Libraries](../episodes/08-libraries.md) (10:35)
 
