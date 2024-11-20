@@ -546,7 +546,92 @@
 
 
 <section><h2 class="section-heading" id="recap-of-day-1">Recap of Day 1<a class="anchor" aria-label="anchor" href="#recap-of-day-1"></a></h2>
-<hr class="half-width"></section></div> <!-- / div.lesson-content -->
+<hr class="half-width"><ul><li>Running and Quitting
+<ul><li>Start Jupyter Lab from the “Anaconda Prompt” by typing
+<code>jupyter lab</code>
+</li>
+<li>Alternatively you can start Jupyter Lab from the Anaconda
+Navigator</li>
+<li>Jupyter Lab will start in your default web browser</li>
+<li>Jupyter Lab will open in the directory where you started it</li>
+</ul></li>
+<li>Variables
+<ul><li>Variable Names
+<ul><li>can <strong>only</strong> contain letters, digits, and underscore
+<code>_</code> (typically used to separate words in long variable
+names)</li>
+<li>cannot start with a digit</li>
+<li>are <strong>case sensitive</strong> (age, Age and AGE are three
+different variables)</li>
+<li>should be descriptive and meaningful</li>
+</ul></li>
+<li>Variables must be assigned a value before they can be used</li>
+<li>We can use indexing to access individual elements of a string
+<ul><li>
+<code>hello[0]</code> will return <code>h</code>
+</li>
+</ul></li>
+<li>We can use slicing to access a range of elements in a string
+<ul><li>
+<code>hello[0:3]</code> will return <code>hel</code>
+</li>
+</ul></li>
+</ul></li>
+<li>Types and Type Conversions
+<ul><li>Every value in Python has a type</li>
+<li>We can use the <code>type()</code> function to find out the type of
+a value</li>
+<li>Common types are <code>int</code>, <code>float</code>,
+<code>str</code>
+</li>
+<li>We can convert between types using the <code>int()</code>,
+<code>float()</code>, and <code>str()</code> functions</li>
+<li>We can use the <code>+</code> operator to concatenate strings or add
+numbers</li>
+<li>Not all operators work with all types</li>
+</ul></li>
+<li>Libraries
+<ul><li>Libraries are collections of functions that extend the capabilities
+of Python</li>
+<li>There are a number of useful libraries that come with python</li>
+<li>We can import a library using the <code>import</code> statement</li>
+<li>We can use <code>help()</code> to get information about a library or
+a function</li>
+<li>We can use <code>import ... as ...</code> to give a library a
+shorter alias</li>
+</ul></li>
+<li>Reading Tabular Data
+<ul><li>We can use the <code>pandas</code> library to read tabular data</li>
+<li>We can use the <code>read_csv()</code> function to read a CSV
+file</li>
+</ul></li>
+<li>Dataframes
+<ul><li>We can access specific elements of a DataFrame using the
+<code>iloc</code> method
+<ul><li>
+<code>data.iloc[0, 0]</code> will return the element in the first
+row and first column</li>
+<li>
+<code>data.iloc[0, :]</code> will return the first row</li>
+<li>
+<code>data.iloc[:, 0]</code> will return the first column</li>
+<li>
+<code>data.iloc[0:2, 0:2]</code> will return the first two rows and
+columns</li>
+</ul></li>
+</ul></li>
+<li>Plotting
+<ul><li>We can use the <code>matplotlib</code> library to create plots
+<ul><li>
+<code>plt.plot()</code> will create a line plot</li>
+<li>
+<code>plt.scatter()</code> will create a scatter plot</li>
+</ul></li>
+<li>We can use the <code>xlabel()</code>, <code>ylabel()</code>, and
+<code>title()</code> functions to add labels to the plot</li>
+<li>We can use the <code>show()</code> function to display the plot</li>
+</ul></li>
+</ul></section></div> <!-- / div.lesson-content -->
     </main><!-- / main#main-content.main-content --><nav class="bottom-pagination mx-md-4" aria-label="Previous and Next Chapter"><div class="d-block d-sm-block d-md-none">
         <a class="chapter-link" href="14-talk-git-primer.html"><i aria-hidden="true" class="small-arrow" data-feather="arrow-left"></i>Previous</a>
         <a class="chapter-link float-end" href="16-lists.html">Next<i aria-hidden="true" class="small-arrow" data-feather="arrow-right"></i></a>
