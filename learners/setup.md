@@ -18,5 +18,10 @@ Please refer to the [Python section of the workshop website for installation ins
 
 [gapminder]: https://en.wikipedia.org/wiki/Gapminder_Foundation
 
+## (Fallback)
 
+If you are unable to install Python and Anaconda on your computer, you can use the
+following online services to run Python code:
 
+- (With an RWTH SSO Login) [https://jupyter.rwth-aachen.de/hub/login](Jupyter @ RWTH)
+- [https://jupyter.org/try](jupyter.org) (You will likely not be able to save your work)
