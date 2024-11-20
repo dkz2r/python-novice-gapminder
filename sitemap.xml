@@ -7,16 +7,31 @@
     <loc>https://swcarpentry.github.io/python-novice-gapminder/02-variables.html</loc>
   </url>
   <url>
+    <loc>https://swcarpentry.github.io/python-novice-gapminder/03-talk-zen-of-python.html</loc>
+  </url>
+  <url>
     <loc>https://swcarpentry.github.io/python-novice-gapminder/03-types-conversion.html</loc>
   </url>
   <url>
     <loc>https://swcarpentry.github.io/python-novice-gapminder/04-built-in.html</loc>
   </url>
   <url>
+    <loc>https://swcarpentry.github.io/python-novice-gapminder/04-morning-coffee.html</loc>
+  </url>
+  <url>
     <loc>https://swcarpentry.github.io/python-novice-gapminder/05-coffee.html</loc>
   </url>
   <url>
+    <loc>https://swcarpentry.github.io/python-novice-gapminder/05-types-conversion.html</loc>
+  </url>
+  <url>
+    <loc>https://swcarpentry.github.io/python-novice-gapminder/06-built-in.html</loc>
+  </url>
+  <url>
     <loc>https://swcarpentry.github.io/python-novice-gapminder/06-libraries.html</loc>
+  </url>
+  <url>
+    <loc>https://swcarpentry.github.io/python-novice-gapminder/07-lunch.html</loc>
   </url>
   <url>
     <loc>https://swcarpentry.github.io/python-novice-gapminder/07-reading-tabular.html</loc>
@@ -25,7 +40,16 @@
     <loc>https://swcarpentry.github.io/python-novice-gapminder/08-data-frames.html</loc>
   </url>
   <url>
+    <loc>https://swcarpentry.github.io/python-novice-gapminder/08-libraries.html</loc>
+  </url>
+  <url>
     <loc>https://swcarpentry.github.io/python-novice-gapminder/09-plotting.html</loc>
+  </url>
+  <url>
+    <loc>https://swcarpentry.github.io/python-novice-gapminder/09-talk-third-party-libraries.html</loc>
+  </url>
+  <url>
+    <loc>https://swcarpentry.github.io/python-novice-gapminder/10-afternoon-break.html</loc>
   </url>
   <url>
     <loc>https://swcarpentry.github.io/python-novice-gapminder/10-lunch.html</loc>
@@ -34,7 +58,13 @@
     <loc>https://swcarpentry.github.io/python-novice-gapminder/11-lists.html</loc>
   </url>
   <url>
+    <loc>https://swcarpentry.github.io/python-novice-gapminder/11-reading-tabular.html</loc>
+  </url>
+  <url>
     <loc>https://swcarpentry.github.io/python-novice-gapminder/11.5-dictionaries.html</loc>
+  </url>
+  <url>
+    <loc>https://swcarpentry.github.io/python-novice-gapminder/12-data-frames.html</loc>
   </url>
   <url>
     <loc>https://swcarpentry.github.io/python-novice-gapminder/12-for-loops.html</loc>
@@ -43,25 +73,79 @@
     <loc>https://swcarpentry.github.io/python-novice-gapminder/13-conditionals.html</loc>
   </url>
   <url>
+    <loc>https://swcarpentry.github.io/python-novice-gapminder/13-plotting.html</loc>
+  </url>
+  <url>
     <loc>https://swcarpentry.github.io/python-novice-gapminder/14-looping-data-sets.html</loc>
+  </url>
+  <url>
+    <loc>https://swcarpentry.github.io/python-novice-gapminder/14-talk-git-primer.html</loc>
   </url>
   <url>
     <loc>https://swcarpentry.github.io/python-novice-gapminder/15-coffee.html</loc>
   </url>
   <url>
+    <loc>https://swcarpentry.github.io/python-novice-gapminder/15-day-1-recap.html</loc>
+  </url>
+  <url>
+    <loc>https://swcarpentry.github.io/python-novice-gapminder/16-lists.html</loc>
+  </url>
+  <url>
     <loc>https://swcarpentry.github.io/python-novice-gapminder/16-writing-functions.html</loc>
+  </url>
+  <url>
+    <loc>https://swcarpentry.github.io/python-novice-gapminder/17-dictionaries.html</loc>
   </url>
   <url>
     <loc>https://swcarpentry.github.io/python-novice-gapminder/17-scope.html</loc>
   </url>
   <url>
+    <loc>https://swcarpentry.github.io/python-novice-gapminder/18-morning-coffee.html</loc>
+  </url>
+  <url>
     <loc>https://swcarpentry.github.io/python-novice-gapminder/18-style.html</loc>
+  </url>
+  <url>
+    <loc>https://swcarpentry.github.io/python-novice-gapminder/19-for-loops.html</loc>
   </url>
   <url>
     <loc>https://swcarpentry.github.io/python-novice-gapminder/19-wrap.html</loc>
   </url>
   <url>
     <loc>https://swcarpentry.github.io/python-novice-gapminder/20-feedback.html</loc>
+  </url>
+  <url>
+    <loc>https://swcarpentry.github.io/python-novice-gapminder/20-lunch.html</loc>
+  </url>
+  <url>
+    <loc>https://swcarpentry.github.io/python-novice-gapminder/21-conditionals.html</loc>
+  </url>
+  <url>
+    <loc>https://swcarpentry.github.io/python-novice-gapminder/22-talk-clean-code.html</loc>
+  </url>
+  <url>
+    <loc>https://swcarpentry.github.io/python-novice-gapminder/23-afternoon-break.html</loc>
+  </url>
+  <url>
+    <loc>https://swcarpentry.github.io/python-novice-gapminder/24-looping-data-sets.html</loc>
+  </url>
+  <url>
+    <loc>https://swcarpentry.github.io/python-novice-gapminder/25-writing-functions.html</loc>
+  </url>
+  <url>
+    <loc>https://swcarpentry.github.io/python-novice-gapminder/26-scope.html</loc>
+  </url>
+  <url>
+    <loc>https://swcarpentry.github.io/python-novice-gapminder/27-style.html</loc>
+  </url>
+  <url>
+    <loc>https://swcarpentry.github.io/python-novice-gapminder/28-talk-compiled-code.html</loc>
+  </url>
+  <url>
+    <loc>https://swcarpentry.github.io/python-novice-gapminder/29-feedback.html</loc>
+  </url>
+  <url>
+    <loc>https://swcarpentry.github.io/python-novice-gapminder/30-wrap.html</loc>
   </url>
   <url>
     <loc>https://swcarpentry.github.io/python-novice-gapminder/404.html</loc>
@@ -97,16 +181,31 @@
     <loc>https://swcarpentry.github.io/python-novice-gapminder/instructor/02-variables.html</loc>
   </url>
   <url>
+    <loc>https://swcarpentry.github.io/python-novice-gapminder/instructor/03-talk-zen-of-python.html</loc>
+  </url>
+  <url>
     <loc>https://swcarpentry.github.io/python-novice-gapminder/instructor/03-types-conversion.html</loc>
   </url>
   <url>
     <loc>https://swcarpentry.github.io/python-novice-gapminder/instructor/04-built-in.html</loc>
   </url>
   <url>
+    <loc>https://swcarpentry.github.io/python-novice-gapminder/instructor/04-morning-coffee.html</loc>
+  </url>
+  <url>
     <loc>https://swcarpentry.github.io/python-novice-gapminder/instructor/05-coffee.html</loc>
   </url>
   <url>
+    <loc>https://swcarpentry.github.io/python-novice-gapminder/instructor/05-types-conversion.html</loc>
+  </url>
+  <url>
+    <loc>https://swcarpentry.github.io/python-novice-gapminder/instructor/06-built-in.html</loc>
+  </url>
+  <url>
     <loc>https://swcarpentry.github.io/python-novice-gapminder/instructor/06-libraries.html</loc>
+  </url>
+  <url>
+    <loc>https://swcarpentry.github.io/python-novice-gapminder/instructor/07-lunch.html</loc>
   </url>
   <url>
     <loc>https://swcarpentry.github.io/python-novice-gapminder/instructor/07-reading-tabular.html</loc>
@@ -115,7 +214,16 @@
     <loc>https://swcarpentry.github.io/python-novice-gapminder/instructor/08-data-frames.html</loc>
   </url>
   <url>
+    <loc>https://swcarpentry.github.io/python-novice-gapminder/instructor/08-libraries.html</loc>
+  </url>
+  <url>
     <loc>https://swcarpentry.github.io/python-novice-gapminder/instructor/09-plotting.html</loc>
+  </url>
+  <url>
+    <loc>https://swcarpentry.github.io/python-novice-gapminder/instructor/09-talk-third-party-libraries.html</loc>
+  </url>
+  <url>
+    <loc>https://swcarpentry.github.io/python-novice-gapminder/instructor/10-afternoon-break.html</loc>
   </url>
   <url>
     <loc>https://swcarpentry.github.io/python-novice-gapminder/instructor/10-lunch.html</loc>
@@ -124,7 +232,13 @@
     <loc>https://swcarpentry.github.io/python-novice-gapminder/instructor/11-lists.html</loc>
   </url>
   <url>
+    <loc>https://swcarpentry.github.io/python-novice-gapminder/instructor/11-reading-tabular.html</loc>
+  </url>
+  <url>
     <loc>https://swcarpentry.github.io/python-novice-gapminder/instructor/11.5-dictionaries.html</loc>
+  </url>
+  <url>
+    <loc>https://swcarpentry.github.io/python-novice-gapminder/instructor/12-data-frames.html</loc>
   </url>
   <url>
     <loc>https://swcarpentry.github.io/python-novice-gapminder/instructor/12-for-loops.html</loc>
@@ -133,25 +247,79 @@
     <loc>https://swcarpentry.github.io/python-novice-gapminder/instructor/13-conditionals.html</loc>
   </url>
   <url>
+    <loc>https://swcarpentry.github.io/python-novice-gapminder/instructor/13-plotting.html</loc>
+  </url>
+  <url>
     <loc>https://swcarpentry.github.io/python-novice-gapminder/instructor/14-looping-data-sets.html</loc>
+  </url>
+  <url>
+    <loc>https://swcarpentry.github.io/python-novice-gapminder/instructor/14-talk-git-primer.html</loc>
   </url>
   <url>
     <loc>https://swcarpentry.github.io/python-novice-gapminder/instructor/15-coffee.html</loc>
   </url>
   <url>
+    <loc>https://swcarpentry.github.io/python-novice-gapminder/instructor/15-day-1-recap.html</loc>
+  </url>
+  <url>
+    <loc>https://swcarpentry.github.io/python-novice-gapminder/instructor/16-lists.html</loc>
+  </url>
+  <url>
     <loc>https://swcarpentry.github.io/python-novice-gapminder/instructor/16-writing-functions.html</loc>
+  </url>
+  <url>
+    <loc>https://swcarpentry.github.io/python-novice-gapminder/instructor/17-dictionaries.html</loc>
   </url>
   <url>
     <loc>https://swcarpentry.github.io/python-novice-gapminder/instructor/17-scope.html</loc>
   </url>
   <url>
+    <loc>https://swcarpentry.github.io/python-novice-gapminder/instructor/18-morning-coffee.html</loc>
+  </url>
+  <url>
     <loc>https://swcarpentry.github.io/python-novice-gapminder/instructor/18-style.html</loc>
+  </url>
+  <url>
+    <loc>https://swcarpentry.github.io/python-novice-gapminder/instructor/19-for-loops.html</loc>
   </url>
   <url>
     <loc>https://swcarpentry.github.io/python-novice-gapminder/instructor/19-wrap.html</loc>
   </url>
   <url>
     <loc>https://swcarpentry.github.io/python-novice-gapminder/instructor/20-feedback.html</loc>
+  </url>
+  <url>
+    <loc>https://swcarpentry.github.io/python-novice-gapminder/instructor/20-lunch.html</loc>
+  </url>
+  <url>
+    <loc>https://swcarpentry.github.io/python-novice-gapminder/instructor/21-conditionals.html</loc>
+  </url>
+  <url>
+    <loc>https://swcarpentry.github.io/python-novice-gapminder/instructor/22-talk-clean-code.html</loc>
+  </url>
+  <url>
+    <loc>https://swcarpentry.github.io/python-novice-gapminder/instructor/23-afternoon-break.html</loc>
+  </url>
+  <url>
+    <loc>https://swcarpentry.github.io/python-novice-gapminder/instructor/24-looping-data-sets.html</loc>
+  </url>
+  <url>
+    <loc>https://swcarpentry.github.io/python-novice-gapminder/instructor/25-writing-functions.html</loc>
+  </url>
+  <url>
+    <loc>https://swcarpentry.github.io/python-novice-gapminder/instructor/26-scope.html</loc>
+  </url>
+  <url>
+    <loc>https://swcarpentry.github.io/python-novice-gapminder/instructor/27-style.html</loc>
+  </url>
+  <url>
+    <loc>https://swcarpentry.github.io/python-novice-gapminder/instructor/28-talk-compiled-code.html</loc>
+  </url>
+  <url>
+    <loc>https://swcarpentry.github.io/python-novice-gapminder/instructor/29-feedback.html</loc>
+  </url>
+  <url>
+    <loc>https://swcarpentry.github.io/python-novice-gapminder/instructor/30-wrap.html</loc>
   </url>
   <url>
     <loc>https://swcarpentry.github.io/python-novice-gapminder/instructor/404.html</loc>
