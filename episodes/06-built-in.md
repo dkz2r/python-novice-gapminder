@@ -24,6 +24,8 @@ exercises: 15
 
 ::::::::::::::::::::::::::::::::::::: instructor
 
+A function in Python is a reusable block of code that performs a specific task and can be called with arguments to operate on data. It is defined using the def keyword and can return a value using return. We will first discuss Built in functions but later on Jonathan will talk about how to write your own functions.
+
 Estimated: 11:30 - 12:00
 
 :::::::::::::::::::::::::::::::::::::
