@@ -18,6 +18,7 @@ exercises: 10
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::: instructor
+Note that: There are different standards/conventions for variable naming. Jonathan will talk more about that later in the workshop. You can choose which naming convention you prefer but the important part is to be consistent through out your code. 
 
 Estimated: 10:00 - 10:30
 
