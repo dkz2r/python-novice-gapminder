@@ -26,6 +26,24 @@ exercises: 15
 
 A function in Python is a reusable block of code that performs a specific task and can be called with arguments to operate on data. It is defined using the def keyword and can return a value using return. We will first discuss Built in functions but later on Jonathan will talk about how to write your own functions.
 
+Regarding use of min() and max() to compare values: ASCII (American Standard Code for Information Interchange) and Unicode define a numerical representation for characters, determining their order in comparisons like min() and max() in Python.
+
+Each character has a unique integer value, with common characters ordered as follows:
+- Digits (0–9) → 0-9 (ASCII 48–57)
+- Uppercase letters (A–Z) → A-Z (ASCII 65–90)
+- Lowercase letters (a–z) → a-z (ASCII 97–122)
+
+Unicode Order (Beyond ASCII)
+Unicode extends ASCII, covering symbols, emojis, and characters from various languages.
+The ordering logic is similar—characters are compared based on their Unicode code points.
+
+You can check a character's ASCII/Unicode value in Python using:
+```
+print(ord('A'))  # 65
+print(ord('a'))  # 97
+print(ord('0'))  # 48
+```
+  
 Estimated: 11:30 - 12:00
 
 :::::::::::::::::::::::::::::::::::::
