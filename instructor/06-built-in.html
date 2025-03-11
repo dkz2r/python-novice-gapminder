@@ -600,21 +600,6 @@ specific task and can be called with arguments to operate on data. It is
 defined using the def keyword and can return a value using return. We
 will first discuss Built in functions but later on Jonathan will talk
 about how to write your own functions.</p>
-<p>Regarding use of min() and max() to compare values: ASCII (American
-Standard Code for Information Interchange) and Unicode define a
-numerical representation for characters, determining their order in
-comparisons like min() and max() in Python.</p>
-<p>Each character has a unique integer value, with common characters
-ordered as follows: - Digits (0–9) → 0-9 (ASCII 48–57) - Uppercase
-letters (A–Z) → A-Z (ASCII 65–90) - Lowercase letters (a–z) → a-z (ASCII
-97–122)</p>
-<p>Unicode Order (Beyond ASCII) Unicode extends ASCII, covering symbols,
-emojis, and characters from various languages. The ordering logic is
-similar—characters are compared based on their Unicode code points.</p>
-<p>You can check a character’s ASCII/Unicode value in Python using:</p>
-<pre><code><span><span class="fu">print</span><span class="op">(</span><span class="fu">ord</span><span class="op">(</span><span class="st">'A'</span><span class="op">)</span><span class="op">)</span>  <span class="co"># 65</span></span>
-<span><span class="fu">print</span><span class="op">(</span><span class="fu">ord</span><span class="op">(</span><span class="st">'a'</span><span class="op">)</span><span class="op">)</span>  <span class="co"># 97</span></span>
-<span><span class="fu">print</span><span class="op">(</span><span class="fu">ord</span><span class="op">(</span><span class="st">'0'</span><span class="op">)</span><span class="op">)</span>  <span class="co"># 48</span></span></code></pre>
 <p>Estimated: 11:30 - 12:00</p>
 </div>
 </div>
@@ -636,12 +621,12 @@ new value from an existing one.</li>
 <ul><li>Must always use parentheses, even if they’re empty, so that Python
 knows a function is being called.</li>
 </ul></li>
-</ul><div class="codewrapper sourceCode" id="cb2">
+</ul><div class="codewrapper sourceCode" id="cb1">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'before'</span>)</span>
-<span id="cb2-2"><a href="#cb2-2" tabindex="-1"></a><span class="bu">print</span>()</span>
-<span id="cb2-3"><a href="#cb2-3" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'after'</span>)</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'before'</span>)</span>
+<span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a><span class="bu">print</span>()</span>
+<span id="cb1-3"><a href="#cb1-3" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'after'</span>)</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -657,11 +642,11 @@ not return a value. Instead, it always returns None.</li>
 <li>If the function doesn’t have a useful result to return, it usually
 returns the special value <code>None</code>. <code>None</code> is a
 Python object that stands in anytime there is no value.</li>
-</ul><div class="codewrapper sourceCode" id="cb4">
+</ul><div class="codewrapper sourceCode" id="cb3">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a>result <span class="op">=</span> <span class="bu">print</span>(<span class="st">'example'</span>)</span>
-<span id="cb4-2"><a href="#cb4-2" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'result of print is'</span>, result)</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a>result <span class="op">=</span> <span class="bu">print</span>(<span class="st">'example'</span>)</span>
+<span id="cb3-2"><a href="#cb3-2" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'result of print is'</span>, result)</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -677,17 +662,43 @@ values.</li>
 <li>Both work on character strings as well as numbers.
 <ul><li>“Larger” and “smaller” use (0-9, A-Z, a-z) to compare letters.</li>
 </ul></li>
-</ul><div class="codewrapper sourceCode" id="cb6">
+</ul><div class="codewrapper sourceCode" id="cb5">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">max</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>))</span>
-<span id="cb6-2"><a href="#cb6-2" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">min</span>(<span class="st">'a'</span>, <span class="st">'A'</span>, <span class="st">'0'</span>))</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">max</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>))</span>
+<span id="cb5-2"><a href="#cb5-2" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">min</span>(<span class="st">'a'</span>, <span class="st">'A'</span>, <span class="st">'0'</span>))</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="output" tabindex="0"><code><span><span class="fl">3</span></span>
 <span><span class="fl">0</span></span></code></pre>
+</div>
+<div id="accordionInstructor2" class="accordion instructor-note accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button instructor-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseInstructor2" aria-expanded="false" aria-controls="collapseInstructor2">
+  <h3 class="accordion-header" id="headingInstructor2">  <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="edit-2"></i></div> Instructor Note </h3>
+</button>
+<div id="collapseInstructor2" class="accordion-collapse collapse" aria-labelledby="headingInstructor2" data-bs-parent="#accordionInstructor2">
+<div class="accordion-body">
+<p>Regarding use of min() and max() to compare values: ASCII (American
+Standard Code for Information Interchange) and Unicode define a
+numerical representation for characters, determining their order in
+comparisons like min() and max() in Python.</p>
+<p>Each character has a unique integer value, with common characters
+ordered as follows: - Digits (0–9) → 0-9 (ASCII 48–57) - Uppercase
+letters (A–Z) → A-Z (ASCII 65–90) - Lowercase letters (a–z) → a-z (ASCII
+97–122)</p>
+<p>Unicode Order (Beyond ASCII) Unicode extends ASCII, covering symbols,
+emojis, and characters from various languages. The ordering logic is
+similar—characters are compared based on their Unicode code points.</p>
+<p>You can check a character’s ASCII/Unicode value in Python using:</p>
+<pre><code><span><span class="fu">print</span><span class="op">(</span><span class="fu">ord</span><span class="op">(</span><span class="st">'A'</span><span class="op">)</span><span class="op">)</span>  <span class="co"># 65</span></span>
+<span><span class="fu">print</span><span class="op">(</span><span class="fu">ord</span><span class="op">(</span><span class="st">'a'</span><span class="op">)</span><span class="op">)</span>  <span class="co"># 97</span></span>
+<span><span class="fu">print</span><span class="op">(</span><span class="fu">ord</span><span class="op">(</span><span class="st">'0'</span><span class="op">)</span><span class="op">)</span>  <span class="co"># 48</span></span></code></pre>
+</div>
+</div>
+</div>
 </div>
 </section><section><h2 class="section-heading" id="functions-may-only-work-for-certain-combinations-of-arguments-">Functions may only work for certain (combinations of)
 arguments.<a class="anchor" aria-label="anchor" href="#functions-may-only-work-for-certain-combinations-of-arguments-"></a></h2>
