@@ -748,6 +748,21 @@ specific task and can be called with arguments to operate on data. It is
 defined using the def keyword and can return a value using return. We
 will first discuss Built in functions but later on Jonathan will talk
 about how to write your own functions.</p>
+<p>Regarding use of min() and max() to compare values: ASCII (American
+Standard Code for Information Interchange) and Unicode define a
+numerical representation for characters, determining their order in
+comparisons like min() and max() in Python.</p>
+<p>Each character has a unique integer value, with common characters
+ordered as follows: - Digits (0–9) → 0-9 (ASCII 48–57) - Uppercase
+letters (A–Z) → A-Z (ASCII 65–90) - Lowercase letters (a–z) → a-z (ASCII
+97–122)</p>
+<p>Unicode Order (Beyond ASCII) Unicode extends ASCII, covering symbols,
+emojis, and characters from various languages. The ordering logic is
+similar—characters are compared based on their Unicode code points.</p>
+<p>You can check a character’s ASCII/Unicode value in Python using:</p>
+<pre><code><span><span class="fu">print</span><span class="op">(</span><span class="fu">ord</span><span class="op">(</span><span class="st">'A'</span><span class="op">)</span><span class="op">)</span>  <span class="co"># 65</span></span>
+<span><span class="fu">print</span><span class="op">(</span><span class="fu">ord</span><span class="op">(</span><span class="st">'a'</span><span class="op">)</span><span class="op">)</span>  <span class="co"># 97</span></span>
+<span><span class="fu">print</span><span class="op">(</span><span class="fu">ord</span><span class="op">(</span><span class="st">'0'</span><span class="op">)</span><span class="op">)</span>  <span class="co"># 48</span></span></code></pre>
 <p>Estimated: 11:30 - 12:00</p>
 <hr>
 <br></section><section id="07-lunch"><h2 class="section-heading"><a href="07-lunch.html">Lunch Break</a></h2>
