@@ -56,6 +56,7 @@ after
 ## Every function returns something.
 
 - Every function call produces some result.
+- In Python, the print() function outputs text to the console but does not return a value. Instead, it always returns None.
 - If the function doesn't have a useful result to return,
   it usually returns the special value `None`. `None` is a Python
   object that stands in anytime there is no value.
