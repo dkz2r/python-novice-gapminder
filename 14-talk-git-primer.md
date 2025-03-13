@@ -9,8 +9,8 @@ break: 0
 
 Estimated: 15:30 - 16:00
 
-Source: https://fdmrwth.pages.rwth-aachen.de/rdm-overview/modules/coding/git.md
+Source: https://git.rwth-aachen.de/dl/workshops/rdm-overview/-/raw/main/modules/coding/git.md
 
 :::::::::::::::::::::::::::::::::::::
 
-[LiaScript - Git Control System](https://liascript.github.io/course/?https://api.allorigins.win/raw?url=https://fdmrwth.pages.rwth-aachen.de/rdm-overview/modules/coding/git.md#1)
+[LiaScript - Git Control System](https://liascript.github.io/course/?https://api.allorigins.win/raw?url=https://git.rwth-aachen.de/dl/workshops/rdm-overview/-/raw/main/modules/coding/git.md#1)
