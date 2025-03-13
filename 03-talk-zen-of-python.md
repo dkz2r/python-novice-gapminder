@@ -13,8 +13,8 @@ Name spacing is not a beginner concept so we won't talk about it in this worksho
 
 Estimated: 10:30 - 10:50
 
-Source: https://git.rwth-aachen.de/dl/workshops/rdm-overview/-/raw/main/modules/coding/zen_of_python.md
+Source: https://fdmrwth.pages.rwth-aachen.de/rdm-overview/modules/coding/zen_of_python.md
 
 :::::::::::::::::::::::::::::::::::::
 
-[LiaScript - The Zen of Python](https://liascript.github.io/course/?https://api.allorigins.win/raw?url=https://git.rwth-aachen.de/dl/workshops/rdm-overview/-/raw/main/modules/coding/zen_of_python.md#1)
+[LiaScript - The Zen of Python](https://liascript.github.io/course/?https://api.allorigins.win/raw?url=https://fdmrwth.pages.rwth-aachen.de/rdm-overview/modules/coding/zen_of_python.md#1)
