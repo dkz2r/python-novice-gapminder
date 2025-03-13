@@ -9,8 +9,8 @@ break: 0
 
 Estimated: 13:30-13:50
 
-Source: https://git.rwth-aachen.de/dl/workshops/rdm-overview/-/raw/main/modules/coding/third_party_libraries.md
+Source: https://fdmrwth.pages.rwth-aachen.de/rdm-overview/modules/coding/third_party_libraries.md
 
 :::::::::::::::::::::::::::::::::::::
 
-[LiaScript - Third Party Libraries](https://liascript.github.io/course/?https://api.allorigins.win/raw?url=https://git.rwth-aachen.de/dl/workshops/rdm-overview/-/raw/main/modules/coding/third_party_libraries.md#1)
+[LiaScript - Third Party Libraries](https://liascript.github.io/course/?https://api.allorigins.win/raw?url=https://fdmrwth.pages.rwth-aachen.de/rdm-overview/modules/coding/third_party_libraries.md#1)
