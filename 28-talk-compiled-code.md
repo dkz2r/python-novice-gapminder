@@ -9,8 +9,8 @@ break: 0
 
 Estimated: 16:15 - 16:45
 
-Source: https://git.rwth-aachen.de/dl/workshops/rdm-overview/-/raw/main/modules/coding/compiled_code.md
+Source: https://fdmrwth.pages.rwth-aachen.de/rdm-overview/modules/coding/compiled_code.md
 
 :::::::::::::::::::::::::::::::::::::
 
-[LiaScript - Libraries with Compiled Code](https://liascript.github.io/course/?https://api.allorigins.win/raw?url=https://git.rwth-aachen.de/dl/workshops/rdm-overview/-/raw/main/modules/coding/compiled_code.md#1)
+[LiaScript - Libraries with Compiled Code](https://liascript.github.io/course/?https://api.allorigins.win/raw?url=https://fdmrwth.pages.rwth-aachen.de/rdm-overview/modules/coding/compiled_code.md#1)
