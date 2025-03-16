@@ -263,7 +263,9 @@ split themselves according to their GDP.
 
 ```python
 mask_higher = data_europe > data_europe.mean()
-wealth_score = mask_higher.aggregate('sum', axis=1) / len(data_europe.columns)
+
+# This operation could also be written as wealth_score = mask_higher.mean(axis=1)
+wealth_score = mask_higher.sum(axis=1) / len(data_europe.columns)
 print(wealth_score)
 ```
 
