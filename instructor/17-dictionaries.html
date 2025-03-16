@@ -542,7 +542,7 @@ dictionary</a></li>
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Dictionaries</h1>
-        <p>Last updated on 2024-11-20 |
+        <p>Last updated on 2025-03-16 |
 
         <a href="https://github.com/dkz2r/python-novice-gapminder/edit/main/episodes/17-dictionaries.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -584,7 +584,7 @@ iterate over them.</li>
 <button class="accordion-button instructor-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseInstructor1" aria-expanded="false" aria-controls="collapseInstructor1">
   <h3 class="accordion-header" id="headingInstructor1">  <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="edit-2"></i></div> Instructor Note </h3>
 </button>
-<div id="collapseInstructor1" class="accordion-collapse collapse" data-bs-parent="#accordionInstructor1" aria-labelledby="headingInstructor1">
+<div id="collapseInstructor1" class="accordion-collapse collapse" aria-labelledby="headingInstructor1" data-bs-parent="#accordionInstructor1">
 <div class="accordion-body">
 <p>Estimated: 10:00 - 10:45</p>
 </div>
@@ -603,25 +603,48 @@ iterate over them.</li>
 </li>
 <li>key/value pairs are separated by commas <code>,</code>
 </li>
-</ul><div class="codewrapper sourceCode" id="cb1">
+</ul></li>
+<li>A Value can by any kind of data type (string, int, even lists or
+other dicts)</li>
+</ul><div id="accordionInstructor2" class="accordion instructor-note accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button instructor-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseInstructor2" aria-expanded="false" aria-controls="collapseInstructor2">
+  <h3 class="accordion-header" id="headingInstructor2">  <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="edit-2"></i></div> Instructor Note </h3>
+</button>
+<div id="collapseInstructor2" class="accordion-collapse collapse" aria-labelledby="headingInstructor2" data-bs-parent="#accordionInstructor2">
+<div class="accordion-body">
+<p>While a value can be anything, keys in a dictionary must be
+“hashable”. We aren’t going into hashable vs non-hashable types in this
+workshop, but generally, strings, integers and floats are hashable,
+whereas other dicts and lists are not.</p>
+<p>There is a special kind of list called a “tuple” that is hashable,
+defined by () rather than [].</p>
+</div>
+</div>
+</div>
+</div>
+<div class="codewrapper sourceCode" id="cb1">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a>inventory <span class="op">=</span> {</span>
-<span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a>  <span class="st">"apples"</span>: <span class="dv">12</span>,</span>
-<span id="cb1-3"><a href="#cb1-3" tabindex="-1"></a>  <span class="st">"bananas"</span>: <span class="dv">4</span>,</span>
-<span id="cb1-4"><a href="#cb1-4" tabindex="-1"></a>  <span class="st">"coconuts"</span>: <span class="dv">0</span></span>
+<span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a>    <span class="st">"apples"</span>: <span class="dv">12</span>,</span>
+<span id="cb1-3"><a href="#cb1-3" tabindex="-1"></a>    <span class="st">"bananas"</span>: <span class="dv">4</span>,</span>
+<span id="cb1-4"><a href="#cb1-4" tabindex="-1"></a>    <span class="st">"coconuts"</span>: <span class="dv">0</span></span>
 <span id="cb1-5"><a href="#cb1-5" tabindex="-1"></a>}</span>
 <span id="cb1-6"><a href="#cb1-6" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'inventory:'</span>, inventory)</span></code></pre>
 </div>
-</li>
-</ul><div class="codewrapper">
+<div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="output" tabindex="0"><code>apples: 12
 items in inventory: 3</code></pre>
 </div>
 </section><section><h2 class="section-heading" id="use-a-key-to-fetch-the-corresponding-value-from-the-dictionary">Use a key to fetch the corresponding value from the dictionary<a class="anchor" aria-label="anchor" href="#use-a-key-to-fetch-the-corresponding-value-from-the-dictionary"></a></h2>
-<hr class="half-width"><div class="codewrapper sourceCode" id="cb3">
+<hr class="half-width"><ul><li>A key has exactly one value associated with it.</li>
+<li>Keys <em>must</em> be unique within the dictionary.
+<ul><li>Values do not have to be unique</li>
+</ul></li>
+</ul><div class="codewrapper sourceCode" id="cb3">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'number of apples:'</span>, inventory[<span class="st">'apples'</span>])</span>
@@ -634,7 +657,9 @@ items in inventory: 3</code></pre>
 number of coconuts: 0</code></pre>
 </div>
 </section><section><h2 class="section-heading" id="a-value-can-be-replaced-by-assinging-to-it">A value can be replaced by assinging to it<a class="anchor" aria-label="anchor" href="#a-value-can-be-replaced-by-assinging-to-it"></a></h2>
-<hr class="half-width"><div class="codewrapper sourceCode" id="cb5">
+<hr class="half-width"><ul><li>Since each key can only exist once in the dictionary, assinging a
+value to that key will overwrite any existing values for that key.</li>
+</ul><div class="codewrapper sourceCode" id="cb5">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a>inventory[<span class="st">'apples'</span>] <span class="op">=</span> <span class="dv">7</span></span>
@@ -646,7 +671,9 @@ number of coconuts: 0</code></pre>
 <pre class="output" tabindex="0"><code>number of apples is now: 7</code></pre>
 </div>
 </section><section><h2 class="section-heading" id="use-a-key-to-add-a-new-value-to-a-dictionary">Use a key to add a new value to a dictionary<a class="anchor" aria-label="anchor" href="#use-a-key-to-add-a-new-value-to-a-dictionary"></a></h2>
-<hr class="half-width"><div class="codewrapper sourceCode" id="cb7">
+<hr class="half-width"><ul><li>If a key does not already exist in the dictionary, then assigning to
+that key will create a new entry in the dictionary.</li>
+</ul><div class="codewrapper sourceCode" id="cb7">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'inventory is now:'</span>, inventory)</span>
@@ -790,7 +817,7 @@ all prices {'laptop': 500, 'mouse': 10, 'camera': 85, 'printer': 50}</code></pre
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb23">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -840,7 +867,7 @@ and a camera?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb26">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -889,7 +916,7 @@ of all items?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
   <h4 class="accordion-header" id="headingSolution3"> Show me the solution </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb29">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -966,8 +993,8 @@ of all items?</p>
   "url": "https://swcarpentry.github.io/python-novice-gapminder/instructor/17-dictionaries.html",
   "identifier": "https://swcarpentry.github.io/python-novice-gapminder/instructor/17-dictionaries.html",
   "dateCreated": "2016-01-07",
-  "dateModified": "2024-11-20",
-  "datePublished": "2025-03-13"
+  "dateModified": "2025-03-16",
+  "datePublished": "2025-03-16"
 }
 
   </script><script>
