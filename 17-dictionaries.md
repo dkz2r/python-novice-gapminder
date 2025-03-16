@@ -31,6 +31,19 @@ Estimated: 10:00 - 10:45
   - Defined by curly braces `{...}`
   - *keys* and *values* are separated by a colon `:`
   - key/value pairs are separated by commas `,`
+- A Value can by any kind of data type (string, int, even lists or other dicts)
+
+::::::::::::::::::::::::::::::::::::: instructor
+
+While a value can be anything, keys in a dictionary must be "hashable". We aren't going into hashable 
+vs non-hashable types in this workshop, but generally, strings, integers and floats are hashable, 
+whereas other dicts and lists are not. 
+
+There is a special kind of list called a "tuple" that is hashable, defined by () rather than [].
+
+:::::::::::::::::::::::::::::::::::::
+
+
 ```python
 inventory = {
     "apples": 12,
@@ -47,6 +60,10 @@ items in inventory: 3
 
 ## Use a key to fetch the corresponding value from the dictionary
 
+- A key has exactly one value associated with it.
+- Keys *must* be unique within the dictionary.
+  - Values do not have to be unique
+
 ```python
 print('number of apples:', inventory['apples'])
 print('number of coconuts:', inventory['coconuts'])
@@ -59,6 +76,8 @@ number of coconuts: 0
 
 ## A value can be replaced by assinging to it
 
+- Since each key can only exist once in the dictionary, assinging a value to that key will overwrite any existing values for that key.
+
 ```python
 inventory['apples'] = 7
 print('number of apples is now:', inventory['apples'])
@@ -69,6 +88,8 @@ number of apples is now: 7
 ```
 
 ## Use a key to add a new value to a dictionary
+
+- If a key does not already exist in the dictionary, then assigning to that key will create a new entry in the dictionary.
 
 ```python
 print('inventory is now:', inventory)
