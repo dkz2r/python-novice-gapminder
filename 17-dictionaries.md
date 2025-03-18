@@ -51,6 +51,7 @@ inventory = {
     "coconuts": 0
 }
 print('inventory:', inventory)
+print("items in inventory:", len(inventory))
 ```
 
 ```output
