@@ -58,7 +58,7 @@
         </ul></div>
     </div>
   </div>
-  <hr></header><nav class="navbar navbar-expand-xl bottom-nav software" aria-label="Main Navigation"><div class="container-fluid nav-container">
+</header><nav class="navbar navbar-expand-xl bottom-nav software" aria-label="Main Navigation"><div class="container-fluid nav-container">
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle Navigation">
       <span class="navbar-toggler-icon"></span>
       <span class="menu-title">Menu</span>
@@ -107,12 +107,8 @@
     -->
     <a id="search-button" class="btn btn-primary" href="aio.html" role="button" aria-label="Search the All In One page">Search the All In One page</a>
   </div><!--/div.container-fluid -->
-</nav><aside class="col-md-12 lesson-progress"><div style="width: 28%" class="percentage">
-    28%
-  </div>
-  <div class="progress software">
-    <div class="progress-bar software" role="progressbar" aria-label="Lesson Progress" aria-valuemin="0" aria-valuemax="100" aria-valuenow="28" style="width: 28%">
-    </div>
+</nav><aside class="col-md-12 lesson-progress"><div class="progress software">
+    <div class="progress-bar software" role="progressbar" style="width: 28%" aria-valuenow="28" aria-valuemin="0" aria-valuemax="100" aria-label="Lesson Progress">28%</div>
   </div>
 </aside><div class="container">
       <div class="row">
@@ -168,7 +164,7 @@
               </div><!--div.sidenav-view-selector -->
             </div><!--/div.col -->
 
-            <hr></div><!--/div.mobile-row -->
+          </div><!--/div.mobile-row -->
 
           <div class="accordion accordion-flush" id="accordion-chapters-toggle">
             <div class="accordion-item">
@@ -265,12 +261,21 @@
 <div class="accordion accordion-flush" id="accordionFlushcurrent">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-headingcurrent">
+      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapsecurrent" aria-expanded="true" aria-controls="flush-collapsecurrent">
         <span class="visually-hidden">Current Chapter</span>
         <span class="current-chapter">
         9. (Talk) Third Party Libraries
         </span>
-      
+      </button>
     </div><!--/div.accordion-header-->
+
+    <div id="flush-collapsecurrent" class="accordion-collapse collapse show" data-bs-parent="#accordionFlushcurrent">
+      <div class="accordion-body">
+        <ul><li><a href="#libraries">Libraries</a></li>
+<li><a href="#the-python-standard-library">The Python Standard Library</a></li>
+<li><a href="#third-party-libraries">Third Party Libraries</a></li>
+        </ul></div><!--/div.accordion-body-->
+    </div><!--/div.accordion-collapse-->
 
   </div><!--/div.accordion-item-->
 </div><!--/div.accordion-flush-->
@@ -506,8 +511,8 @@
         <!-- START: inst/pkgdown/templates/content-instructor.html -->
   <div class="col-xl-8 col-lg-12 primary-content">
     <nav class="lesson-content mx-md-4" aria-label="Previous and Next Chapter Top"><!-- content for small screens --><div class="d-block d-sm-block d-md-none">
-        <a class="chapter-link" href="08-libraries.html"><i aria-hidden="true" class="small-arrow" data-feather="arrow-left"></i>Previous</a>
-        <a class="chapter-link float-end" href="10-afternoon-break.html">Next<i aria-hidden="true" class="small-arrow" data-feather="arrow-right"></i></a>
+        <a class="chapter-link" href="08-libraries.html" rel="prev"><i aria-hidden="true" class="small-arrow" data-feather="arrow-left"></i>Previous</a>
+        <a class="chapter-link float-end" href="10-afternoon-break.html" rel="next">Next<i aria-hidden="true" class="small-arrow" data-feather="arrow-right"></i></a>
       </div>
       <!-- content for large screens -->
       <div class="d-none d-sm-none d-md-block">
@@ -520,9 +525,9 @@
           <i aria-hidden="true" class="small-arrow" data-feather="arrow-right"></i>
         </a>
       </div>
-      <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
+    </nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>(Talk) Third Party Libraries</h1>
-        <p>Last updated on 2025-03-13 |
+        <p>Last updated on 2026-05-22 |
 
         <a href="https://github.com/dkz2r/python-novice-gapminder/edit/main/episodes/09-talk-third-party-libraries.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -535,8 +540,190 @@
         
 
 
-<p><a href="https://liascript.github.io/course/?https://api.allorigins.win/raw?url=https://fdmrwth.pages.rwth-aachen.de/rdm-overview/modules/coding/third_party_libraries.md#1" class="external-link">LiaScript
-- Third Party Libraries</a></p>
+<section><h2 class="section-heading" id="libraries">Libraries<a class="anchor" aria-label="anchor" href="#libraries"></a></h2>
+<hr class="half-width"><p>A library is a collection of files (called modules) that contains
+code for use by other programs. In addition to functions, a library can
+contain classes, constants, and other elements so that you don’t have to
+write them yourself. Libraries simplify life for programmers, in that
+they provide reusable functions and classes which can be used to build
+applications.</p>
+</section><section><h2 class="section-heading" id="the-python-standard-library">The Python Standard Library<a class="anchor" aria-label="anchor" href="#the-python-standard-library"></a></h2>
+<hr class="half-width"><p>The Python Standard Library is a collection of modules that come
+pre-packaged with Python. These modules provide a wide range of
+functionality, including file I/O, networking, data processing, and
+more. Some of the most commonly used modules in the Python Standard
+Library include:</p>
+<ol style="list-style-type: decimal"><li>
+<strong>os</strong>: Provides a way to interact with the operating
+system, such as reading and writing files, creating directories, and
+more.</li>
+<li>
+<strong>sys</strong>: Contains functions and variables that are used
+to manipulate the Python runtime environment.</li>
+<li>
+<strong>math</strong>: Provides mathematical functions and
+constants, such as trigonometric functions, logarithms, and more.</li>
+<li>
+<strong>datetime</strong>: Contains classes for working with dates
+and times.</li>
+<li>
+<strong>random</strong>: Provides functions for generating random
+numbers.</li>
+<li>
+<strong>re</strong>: Provides support for regular expressions.</li>
+<li>
+<strong>json</strong>: Provides functions for encoding and decoding
+JSON data.</li>
+</ol><p>You can find a complete list of modules in the Python Standard
+Library in the official <a href="https://docs.python.org/3/library/index.html" class="external-link">Python
+documentation</a>.</p>
+<div class="section level3">
+<h3 id="how-to-use-the-python-standard-library">How to Use the Python Standard Library<a class="anchor" aria-label="anchor" href="#how-to-use-the-python-standard-library"></a></h3>
+<p>To use a module from the Python Standard Libary, we use the keywork
+<code>import</code> followed by the name of the module. For example, to
+use the <code>os</code> module, we would write:</p>
+<div class="codewrapper sourceCode" id="cb1">
+<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" tabindex="-1" aria-label="code-block-1-1"></a><span class="im">import</span> os</span>
+<span id="cb1-2"><a href="#cb1-2" tabindex="-1" aria-label="code-block-1-2"></a></span>
+<span id="cb1-3"><a href="#cb1-3" tabindex="-1" aria-label="code-block-1-3"></a><span class="co"># Now we can use functions from the os module</span></span>
+<span id="cb1-4"><a href="#cb1-4" tabindex="-1" aria-label="code-block-1-4"></a><span class="bu">print</span>(os.getcwd())  <span class="co"># Print the current working directory</span></span></code></pre>
+</div>
+</div>
+</section><section><h2 class="section-heading" id="third-party-libraries">Third Party Libraries<a class="anchor" aria-label="anchor" href="#third-party-libraries"></a></h2>
+<hr class="half-width"><p>Third-party libraries in Python are external packages that provide
+additional functionality beyond the standard library. These libraries
+are created and maintained by the community or other organizations,
+allowing developers to leverage pre-built code for various tasks, such
+as data analysis, web development, machine learning, and more. Some
+popular third-party libraries include:</p>
+<ol style="list-style-type: decimal"><li>
+<strong>NumPy</strong>: For numerical computing.</li>
+<li>
+<strong>Pandas</strong>: For data manipulation and analysis.</li>
+<li>
+<strong>Matplotlib</strong>: A plotting library for creating static,
+animated, and interactive visualizations in Python.</li>
+<li>
+<strong>SciPy</strong>: For scientific and technical computing.</li>
+<li>
+<strong>pytorch</strong>: For deep learning and neural
+networks.</li>
+</ol><div class="section level3">
+<h3 id="how-to-import-third-party-libraries">How to Import Third-Party Libraries<a class="anchor" aria-label="anchor" href="#how-to-import-third-party-libraries"></a></h3>
+<p>Unlike the Python Standard Library, third-party libraries are not
+included with Python by default. In order to access their functionality,
+you need to install them separately using a package manager like
+<code>pip</code> or <code>conda</code>. Once installed, you can import
+the library into your Python script using the <code>import</code>
+statement.</p>
+<div class="section level4">
+<h4 id="dependencies">Dependencies<a class="anchor" aria-label="anchor" href="#dependencies"></a></h4>
+<p>A benefit / complication of third-party libraries is that they often
+rely on other third-party libraries in order to function.
+<code>pandas</code>, for example, relies on <code>numpy</code>. When you
+install <code>pandas</code>, <code>numpy</code> will be installed as
+well. <code>pip</code> and <code>conda</code> are package managers that
+help manage these dependencies, automatically installing the required
+version of a library and its dependencies.</p>
+</div>
+<div class="section level4">
+<h4 id="package-managers">Package Managers<a class="anchor" aria-label="anchor" href="#package-managers"></a></h4>
+<ul><li><p><strong>pip</strong>: The Python Package Installer,
+<code>pip</code>, is the default package manager for Python. It is used
+to install, upgrade, and manage Python packages. You can install a
+package using <code>pip</code> by running
+<code>pip install package_name</code> from the command line.</p></li>
+<li><p><strong>conda</strong>: Conda is a package manager that is
+commonly used for data science and scientific computing. It can be used
+to install Python packages as well as other software packages. You can
+install a package using conda by running
+<code>conda install package_name</code> from the command line.</p></li>
+</ul></div>
+<div class="section level4">
+<h4 id="environment-management">Environment Management<a class="anchor" aria-label="anchor" href="#environment-management"></a></h4>
+<p>When working with third-party libraries, it is often a good practice
+to create a virtual environment for your project to ensure that you are
+using the correct versions of the libraries and their dependencies.</p>
+<p>This is less imporant when first starting up, but as you start to
+work on multiple projects, you may find that different projects require
+different versions of the same library. Virtual environments help to
+manage these dependencies and avoid conflicts between projects.</p>
+<p>Some common tools for creating virtual environments include
+<code>venv</code><a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a>, <code>conda</code><a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a>, and
+<code>poetry</code><a href="#fn3" class="footnote-ref" id="fnref3"><sup>3</sup></a>.</p>
+</div>
+</div>
+<div class="section level3">
+<h3 id="using-third-party-libraries">Using Third-Party Libraries<a class="anchor" aria-label="anchor" href="#using-third-party-libraries"></a></h3>
+<p>To use a third-party library in your Python project, you typically
+need to follow these steps:</p>
+<ol style="list-style-type: decimal"><li>
+<p><strong>Install the Library</strong>: Before you can import a
+third-party library, you need to install it using a package manager like
+<code>pip</code> or <code>conda</code>. You can do this from the command
+line or terminal.</p>
+<p>Example:</p>
+<div class="codewrapper sourceCode" id="cb2">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" tabindex="-1" aria-label="code-block-2-1"></a><span class="ex">conda</span> install numpy  <span class="co"># Install the NumPy library</span></span></code></pre>
+</div>
+</li>
+<li>
+<p><strong>Import the Library in Your Code</strong>: Once installed,
+you can import the library into your Python script using the
+<code>import</code> statement.</p>
+<p>Example:</p>
+<div class="codewrapper sourceCode" id="cb3">
+<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" tabindex="-1" aria-label="code-block-3-1"></a><span class="im">import</span> numpy <span class="im">as</span> np  <span class="co"># Importing NumPy with an alias</span></span>
+<span id="cb3-2"><a href="#cb3-2" tabindex="-1" aria-label="code-block-3-2"></a></span>
+<span id="cb3-3"><a href="#cb3-3" tabindex="-1" aria-label="code-block-3-3"></a><span class="co"># Now you can use NumPy functions</span></span>
+<span id="cb3-4"><a href="#cb3-4" tabindex="-1" aria-label="code-block-3-4"></a>array <span class="op">=</span> np.array([<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>])</span>
+<span id="cb3-5"><a href="#cb3-5" tabindex="-1" aria-label="code-block-3-5"></a><span class="bu">print</span>(array)</span></code></pre>
+</div>
+</li>
+<li>
+<p><strong>Using Specific Functions or Classes</strong>: If you only
+need specific functions or classes from a library, you can import them
+directly.</p>
+<p>Example:</p>
+<div class="codewrapper sourceCode" id="cb4">
+<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" tabindex="-1" aria-label="code-block-4-1"></a><span class="im">from</span> numpy <span class="im">import</span> array  <span class="co"># Importing the array function from NumPy</span></span>
+<span id="cb4-2"><a href="#cb4-2" tabindex="-1" aria-label="code-block-4-2"></a></span>
+<span id="cb4-3"><a href="#cb4-3" tabindex="-1" aria-label="code-block-4-3"></a><span class="co"># Now you can use the array function directly</span></span>
+<span id="cb4-4"><a href="#cb4-4" tabindex="-1" aria-label="code-block-4-4"></a>my_array <span class="op">=</span> array([<span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>])</span></code></pre>
+</div>
+</li>
+</ol></div>
+<div class="section level3">
+<h3 id="tips-for-managing-third-party-libraries">Tips for Managing Third-Party Libraries<a class="anchor" aria-label="anchor" href="#tips-for-managing-third-party-libraries"></a></h3>
+<ul><li><p><strong>Virtual Environments</strong>: It’s often a good practice
+to create virtual environments (using <code>venv</code> or
+<code>virtualenv</code>) for your projects to manage dependencies
+separately and avoid conflicts between different projects.</p></li>
+<li><p><strong>Requirements File</strong>: You can create a
+<code>requirements.txt</code> file listing all your project’s</p></li>
+<li>
+<p>dependencies. This allows others (or yourself) to install all
+required packages easily using:</p>
+<div class="codewrapper sourceCode" id="cb5">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" tabindex="-1" aria-label="code-block-5-1"></a><span class="ex">pip</span> install <span class="at">-r</span> requirements.txt</span></code></pre>
+</div>
+</li>
+</ul></div>
+</section><div class="footnotes footnotes-end-of-document">
+<hr><ol><li id="fn1"><p><a href="https://docs.python.org/3/library/venv.html" class="external-link uri">https://docs.python.org/3/library/venv.html</a><a href="#fnref1" class="footnote-back">↩︎</a></p></li>
+<li id="fn2"><p><a href="https://docs.conda.io/projects/conda/en/latest/index.html" class="external-link uri">https://docs.conda.io/projects/conda/en/latest/index.html</a><a href="#fnref2" class="footnote-back">↩︎</a></p></li>
+<li id="fn3"><p><a href="https://python-poetry.org/" class="external-link uri">https://python-poetry.org/</a><a href="#fnref3" class="footnote-back">↩︎</a></p></li>
+</ol></div>
 
 
 
@@ -578,7 +765,7 @@
         <p>Materials licensed under <a href="LICENSE.html">CC-BY 4.0</a> by the authors</p>
 
         <p>Template licensed under <a href="https://creativecommons.org/licenses/by-sa/4.0/" class="external-link">CC-BY 4.0</a> by <a href="https://carpentries.org/" class="external-link">The Carpentries</a></p>
-        <p>Built with <a href="https://github.com/carpentries/sandpaper/tree/0.20.1" class="external-link">sandpaper (0.20.1)</a>, <a href="https://github.com/carpentries/pegboard/tree/0.7.9" class="external-link">pegboard (0.7.9)</a>, and <a href="https://github.com/carpentries/varnish/tree/1.1.0" class="external-link">varnish (1.1.0)</a></p>
+        <p>Built with <a href="https://github.com/carpentries/sandpaper/tree/0.20.2" class="external-link">sandpaper (0.20.2)</a>, <a href="https://github.com/carpentries/pegboard/tree/0.7.9" class="external-link">pegboard (0.7.9)</a>, and <a href="https://github.com/carpentries/varnish/tree/1.1.1" class="external-link">varnish (1.1.1)</a></p>
 		</div>
 		</footer></div> <!-- / div.container -->
 	<div id="to-top">
@@ -600,8 +787,8 @@
   "url": "https://swcarpentry.github.io/python-novice-gapminder/09-talk-third-party-libraries.html",
   "identifier": "https://swcarpentry.github.io/python-novice-gapminder/09-talk-third-party-libraries.html",
   "dateCreated": "2016-01-07",
-  "dateModified": "2025-03-13",
-  "datePublished": "2026-05-19"
+  "dateModified": "2026-05-22",
+  "datePublished": "2026-05-22"
 }
 
   </script><script>

@@ -58,7 +58,7 @@
         </ul></div>
     </div>
   </div>
-  <hr></header><nav class="navbar navbar-expand-xl bottom-nav software" aria-label="Main Navigation"><div class="container-fluid nav-container">
+</header><nav class="navbar navbar-expand-xl bottom-nav software" aria-label="Main Navigation"><div class="container-fluid nav-container">
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle Navigation">
       <span class="navbar-toggler-icon"></span>
       <span class="menu-title">Menu</span>
@@ -107,12 +107,8 @@
     -->
     <a id="search-button" class="btn btn-primary" href="../instructor/aio.html" role="button" aria-label="Search the All In One page">Search the All In One page</a>
   </div><!--/div.container-fluid -->
-</nav><aside class="col-md-12 lesson-progress"><div style="width: 76%" class="percentage">
-    76%
-  </div>
-  <div class="progress software">
-    <div class="progress-bar software" role="progressbar" aria-label="Lesson Progress" aria-valuemin="0" aria-valuemax="100" aria-valuenow="76" style="width: 76%">
-    </div>
+</nav><aside class="col-md-12 lesson-progress"><div class="progress software">
+    <div class="progress-bar software" role="progressbar" style="width: 76%" aria-valuenow="76" aria-valuemin="0" aria-valuemax="100" aria-label="Lesson Progress">76%</div>
   </div>
 </aside><div class="container">
       <div class="row">
@@ -168,7 +164,7 @@
               </div><!--div.sidenav-view-selector -->
             </div><!--/div.col -->
 
-            <hr></div><!--/div.mobile-row -->
+          </div><!--/div.mobile-row -->
 
           <div class="accordion accordion-flush" id="accordion-chapters-toggle">
             <div class="accordion-item">
@@ -506,8 +502,8 @@
         <!-- START: inst/pkgdown/templates/content-instructor.html -->
   <div class="col-xl-8 col-lg-12 primary-content">
     <nav class="lesson-content mx-md-4" aria-label="Previous and Next Chapter Top"><!-- content for small screens --><div class="d-block d-sm-block d-md-none">
-        <a class="chapter-link" href="../instructor/21-conditionals.html"><i aria-hidden="true" class="small-arrow" data-feather="arrow-left"></i>Previous</a>
-        <a class="chapter-link float-end" href="../instructor/23-afternoon-break.html">Next<i aria-hidden="true" class="small-arrow" data-feather="arrow-right"></i></a>
+        <a class="chapter-link" href="../instructor/21-conditionals.html" rel="prev"><i aria-hidden="true" class="small-arrow" data-feather="arrow-left"></i>Previous</a>
+        <a class="chapter-link float-end" href="../instructor/23-afternoon-break.html" rel="next">Next<i aria-hidden="true" class="small-arrow" data-feather="arrow-right"></i></a>
       </div>
       <!-- content for large screens -->
       <div class="d-none d-sm-none d-md-block">
@@ -520,9 +516,9 @@
           <i aria-hidden="true" class="small-arrow" data-feather="arrow-right"></i>
         </a>
       </div>
-      <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
+    </nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>(Talk) Clean Code</h1>
-        <p>Last updated on 2025-03-13 |
+        <p>Last updated on 2026-05-22 |
 
         <a href="https://github.com/dkz2r/python-novice-gapminder/edit/main/episodes/22-talk-clean-code.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -541,7 +537,7 @@
 <button class="accordion-button instructor-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseInstructor1" aria-expanded="false" aria-controls="collapseInstructor1">
   <h3 class="accordion-header" id="headingInstructor1">  <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="edit-2"></i></div> Instructor Note </h3>
 </button>
-<div id="collapseInstructor1" class="accordion-collapse collapse" aria-labelledby="headingInstructor1" data-bs-parent="#accordionInstructor1">
+<div id="collapseInstructor1" class="accordion-collapse collapse" data-bs-parent="#accordionInstructor1" aria-labelledby="headingInstructor1">
 <div class="accordion-body">
 <p>Estimated: 13:45 - 14:00</p>
 <p>Source: <a href="https://fdmrwth.pages.rwth-aachen.de/rdm-overview/modules/coding/clean_code.md" class="external-link uri">https://fdmrwth.pages.rwth-aachen.de/rdm-overview/modules/coding/clean_code.md</a></p>
@@ -549,8 +545,626 @@
 </div>
 </div>
 </div>
-<p><a href="https://liascript.github.io/course/?https://api.allorigins.win/raw?url=https://fdmrwth.pages.rwth-aachen.de/rdm-overview/modules/coding/clean_code.md#1" class="external-link">LiaScript
-- Clean Code</a></p>
+<div class="section level1">
+<h1 id="clean-code">Clean Code<a class="anchor" aria-label="anchor" href="#clean-code"></a></h1>
+<div class="section level2">
+<h2 id="what-exactly-do-you-mean-by-clean-code">What exactly do you mean by “clean code”?<a class="anchor" aria-label="anchor" href="#what-exactly-do-you-mean-by-clean-code"></a></h2>
+<blockquote>
+<p>“Any fool can write code that a computer can understand. Good
+programmers write code that humans can understand.”</p>
+<p>– Martin Fowler</p>
+</blockquote>
+<p>“Clean Coding” is a practice that aims to make code as easy as
+possible to understand, maintain, and extend in the future.</p>
+<p>Imagine that you are writing a lab notebook for yourself (or another
+fellow researcher) about an experiment you are conducting. You would
+want to make sure that the notebook is clear, concise, and easy to
+follow. You would want it to be as clear as possible the steps you took,
+the results you obtained, and the conclusions you drew.</p>
+<p>There are some general rules around writing clean code that apply to
+most programming languages. These rules are not set in stone, but they
+are generally accepted as good practices. They are designed to make your
+code easier to read, understand, and maintain.</p>
+<div class="section level3">
+<h3 id="clean-code-is-readable">Clean Code is Readable<a class="anchor" aria-label="anchor" href="#clean-code-is-readable"></a></h3>
+<p>The most important aspect of clean code is readability. Code is read
+far more often than it is written, so it is important to make sure that
+your code is easy to read and understand.</p>
+<p>Certain languages are just by design closer to english text, and
+therefor easier to read, but even in languages like Python, which is
+known for its readability, it is still possible to write code that is
+difficult to understand. Conversely, even in languages like C, which are
+known for their complexity, it is possible to write code that is easy to
+understand by using clear variable names and comments.</p>
+<p>Here’s an example of some code that is difficult to read:</p>
+<div class="codewrapper sourceCode" id="cb1">
+<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" tabindex="-1" aria-label="code-block-1-1"></a><span class="kw">def</span> f(n):</span>
+<span id="cb1-2"><a href="#cb1-2" tabindex="-1" aria-label="code-block-1-2"></a>    <span class="cf">if</span> n <span class="op">&lt;=</span> <span class="dv">1</span>:</span>
+<span id="cb1-3"><a href="#cb1-3" tabindex="-1" aria-label="code-block-1-3"></a>        <span class="cf">return</span> n</span>
+<span id="cb1-4"><a href="#cb1-4" tabindex="-1" aria-label="code-block-1-4"></a>    <span class="cf">else</span>:</span>
+<span id="cb1-5"><a href="#cb1-5" tabindex="-1" aria-label="code-block-1-5"></a>        <span class="cf">return</span> f(n<span class="op">-</span><span class="dv">1</span>) <span class="op">+</span> f(n<span class="op">-</span><span class="dv">2</span>)</span></code></pre>
+</div>
+<p>It might be pretty clear what this code is doing if you are familiar
+with the Fibonacci sequence, but it’s not immediately obvious and might
+take a few seconds, especially if you are not familiar with the
+language. Here’s the same code, but with better variable names,
+comments, and a docstring:</p>
+<div class="codewrapper sourceCode" id="cb2">
+<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" tabindex="-1" aria-label="code-block-2-1"></a><span class="kw">def</span> fibonacci(n) <span class="op">-&gt;</span> <span class="bu">int</span>:</span>
+<span id="cb2-2"><a href="#cb2-2" tabindex="-1" aria-label="code-block-2-2"></a>    <span class="co">"""</span></span>
+<span id="cb2-3"><a href="#cb2-3" tabindex="-1" aria-label="code-block-2-3"></a><span class="co">    Calculate the nth number in the Fibonacci sequence using a recursive algorithm.</span></span>
+<span id="cb2-4"><a href="#cb2-4" tabindex="-1" aria-label="code-block-2-4"></a></span>
+<span id="cb2-5"><a href="#cb2-5" tabindex="-1" aria-label="code-block-2-5"></a><span class="co">    Args:</span></span>
+<span id="cb2-6"><a href="#cb2-6" tabindex="-1" aria-label="code-block-2-6"></a><span class="co">        n (int): The index of the number to calculate.</span></span>
+<span id="cb2-7"><a href="#cb2-7" tabindex="-1" aria-label="code-block-2-7"></a></span>
+<span id="cb2-8"><a href="#cb2-8" tabindex="-1" aria-label="code-block-2-8"></a><span class="co">    Returns:</span></span>
+<span id="cb2-9"><a href="#cb2-9" tabindex="-1" aria-label="code-block-2-9"></a><span class="co">        int: The nth number in the Fibonacci sequence.</span></span>
+<span id="cb2-10"><a href="#cb2-10" tabindex="-1" aria-label="code-block-2-10"></a><span class="co">    """</span></span>
+<span id="cb2-11"><a href="#cb2-11" tabindex="-1" aria-label="code-block-2-11"></a>    <span class="co"># The first two numbers in the Fibonacci sequence are 0 and 1 - if we get either of these</span></span>
+<span id="cb2-12"><a href="#cb2-12" tabindex="-1" aria-label="code-block-2-12"></a>    <span class="co"># values, just return them</span></span>
+<span id="cb2-13"><a href="#cb2-13" tabindex="-1" aria-label="code-block-2-13"></a>    <span class="cf">if</span> n <span class="op">&lt;=</span> <span class="dv">1</span>:</span>
+<span id="cb2-14"><a href="#cb2-14" tabindex="-1" aria-label="code-block-2-14"></a>        <span class="cf">return</span> n</span>
+<span id="cb2-15"><a href="#cb2-15" tabindex="-1" aria-label="code-block-2-15"></a>    <span class="cf">else</span>:</span>
+<span id="cb2-16"><a href="#cb2-16" tabindex="-1" aria-label="code-block-2-16"></a>        <span class="co"># For values larger than 1, the nth number is the sum of the (n-1)th and (n-2)th numbers</span></span>
+<span id="cb2-17"><a href="#cb2-17" tabindex="-1" aria-label="code-block-2-17"></a>        <span class="co"># Recursively calculate the nth number in the Fibonacci sequence by calculating the</span></span>
+<span id="cb2-18"><a href="#cb2-18" tabindex="-1" aria-label="code-block-2-18"></a>        <span class="co"># (n-1)th and (n-2)th numbers and adding them together.</span></span>
+<span id="cb2-19"><a href="#cb2-19" tabindex="-1" aria-label="code-block-2-19"></a>        <span class="cf">return</span> fibonacci(n<span class="op">-</span><span class="dv">1</span>) <span class="op">+</span> fibonacci(n<span class="op">-</span><span class="dv">2</span>)</span></code></pre>
+</div>
+</div>
+<div class="section level3">
+<h3 id="clean-code-is-well-commented">Clean Code is well commented<a class="anchor" aria-label="anchor" href="#clean-code-is-well-commented"></a></h3>
+<p>Comments are an important part of writing clean code, helping to
+explain what the code is doing, why it is doing it, and how it is doing
+it. Comments can be used to explain complex or non-obvious parts of the
+code, and to provide context for the code.</p>
+<p>It is possible to over-comment code - it’s not necessary to comment
+every line of code, especially if the code is self-explanatory (which,
+if you are using good variable names, it often will be!).</p>
+<p>An example of code that contains good comments:</p>
+<div class="codewrapper sourceCode" id="cb3">
+<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" tabindex="-1" aria-label="code-block-3-1"></a><span class="co"># Find all of the files in the directory that have a .csv extension</span></span>
+<span id="cb3-2"><a href="#cb3-2" tabindex="-1" aria-label="code-block-3-2"></a>csv_file_list <span class="op">=</span> glob.glob(<span class="st">"*.csv"</span>)</span>
+<span id="cb3-3"><a href="#cb3-3" tabindex="-1" aria-label="code-block-3-3"></a></span>
+<span id="cb3-4"><a href="#cb3-4" tabindex="-1" aria-label="code-block-3-4"></a><span class="cf">for</span> filename <span class="kw">in</span> csv_file_list:</span>
+<span id="cb3-5"><a href="#cb3-5" tabindex="-1" aria-label="code-block-3-5"></a>    <span class="co"># Read in the data from the file</span></span>
+<span id="cb3-6"><a href="#cb3-6" tabindex="-1" aria-label="code-block-3-6"></a>    data <span class="op">=</span> pd.read_csv(filename)</span>
+<span id="cb3-7"><a href="#cb3-7" tabindex="-1" aria-label="code-block-3-7"></a></span>
+<span id="cb3-8"><a href="#cb3-8" tabindex="-1" aria-label="code-block-3-8"></a>    <span class="co"># Calculate the mean of the data grouped by the 'group_identifier' column, then reset the</span></span>
+<span id="cb3-9"><a href="#cb3-9" tabindex="-1" aria-label="code-block-3-9"></a>    <span class="co"># index and rename the 'value' column to 'mean_value'.</span></span>
+<span id="cb3-10"><a href="#cb3-10" tabindex="-1" aria-label="code-block-3-10"></a>    results <span class="op">=</span> (</span>
+<span id="cb3-11"><a href="#cb3-11" tabindex="-1" aria-label="code-block-3-11"></a>        data</span>
+<span id="cb3-12"><a href="#cb3-12" tabindex="-1" aria-label="code-block-3-12"></a>            .groupby(<span class="st">"group_identifier"</span>)</span>
+<span id="cb3-13"><a href="#cb3-13" tabindex="-1" aria-label="code-block-3-13"></a>            .mean()</span>
+<span id="cb3-14"><a href="#cb3-14" tabindex="-1" aria-label="code-block-3-14"></a>            .reset_index()</span>
+<span id="cb3-15"><a href="#cb3-15" tabindex="-1" aria-label="code-block-3-15"></a>            .rename(columns<span class="op">=</span>{<span class="st">"value"</span>: <span class="st">"mean_value"</span>})</span>
+<span id="cb3-16"><a href="#cb3-16" tabindex="-1" aria-label="code-block-3-16"></a>    )</span>
+<span id="cb3-17"><a href="#cb3-17" tabindex="-1" aria-label="code-block-3-17"></a></span>
+<span id="cb3-18"><a href="#cb3-18" tabindex="-1" aria-label="code-block-3-18"></a>    <span class="co"># Create a new filename for the results and save them to a new file</span></span>
+<span id="cb3-19"><a href="#cb3-19" tabindex="-1" aria-label="code-block-3-19"></a>    output_filename <span class="op">=</span> Path(filename).stem <span class="op">+</span> <span class="st">"_results.csv"</span></span>
+<span id="cb3-20"><a href="#cb3-20" tabindex="-1" aria-label="code-block-3-20"></a>    results.to_csv(output_filename)</span></code></pre>
+</div>
+<p>There are also a few examples of bad comments:</p>
+<ul><li>It’s ok to use a comment like
+<code># TODO: this requires further investigation</code> to indicate
+that there is something that needs to be fixed or improved, but these
+have a tendency to stick around in code for a long time and can become
+noise.</li>
+<li>Commented out code is another common issue. It’s better to use
+version control to keep track of changes to the code, rather than
+commenting out code that is no longer needed.</li>
+<li>Comments which exist just to exist. In the example above, we have
+the line <code>for filename in csv_file_list:</code>. Since we are using
+good variable names to begin with, it is clear from the code what this
+line is doing, and no comment is needed.</li>
+</ul></div>
+<div class="section level3">
+<h3 id="clean-code-uses-descriptive-variable-names">Clean Code uses descriptive variable names<a class="anchor" aria-label="anchor" href="#clean-code-uses-descriptive-variable-names"></a></h3>
+<p>This could be considered a subset of readability, but it is so
+important that it deserves its own section. Variable names should be
+descriptive and meaningful. They should describe as succinctly as
+possible what the variable represents and what it is used for. Where
+possible, use full words and avoid abbreviations. If a varaible name is
+too long, it might be a sign that the variable is doing too much and
+should be split into multiple variables.</p>
+<p>Some examples of poor variable names:</p>
+<ul><li>
+<code>x</code>, <code>i</code>, <code>j</code>- these are common
+loop variables, but they don’t tell you anything about what they are
+used for. There are exceptions<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a> to this rule, but in general, you should
+avoid using single-letter variable names.</li>
+<li>
+<code>temp</code> - why is this value temporary? What is it being
+used for?</li>
+<li>
+<code>data</code> - what kind of data is this? What does it
+represent?</li>
+<li>
+<code>list1</code> - what kind of list? Why is this the first
+list?</li>
+</ul><p>Some examples of good variable names:</p>
+<ul><li><code>total_value</code></li>
+<li><code>number_of_files</code></li>
+<li><code>user_id</code></li>
+<li>
+<code>file_list</code> <a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a>
+</li>
+<li>
+<code>experiment_results_df</code> <a href="#fn3" class="footnote-ref" id="fnref3"><sup>3</sup></a>
+</li>
+</ul><div class="section level4">
+<h4 id="naming-style">Naming Style<a class="anchor" aria-label="anchor" href="#naming-style"></a></h4>
+<p>As a subset of variable naming, there are a couple different
+approaches for naming variables.</p>
+<ul><li>
+<strong>snake_case</strong>: Words are separated by underscores. For
+example, <code>total_value</code>, <code>number_of_files</code>,
+<code>user_id</code>.</li>
+<li>
+<strong>camelCase</strong>: The first letter of each word is
+capitalized, except for the first word. For example,
+<code>totalValue</code>, <code>numberOfFiles</code>,
+<code>userId</code>.</li>
+<li>
+<strong>kebab-case</strong>: Words are separated by hyphens. For
+example, <code>total-value</code>, <code>number-of-files</code>,
+<code>user-id</code>.</li>
+<li>
+<strong>PascelCase</strong>: The first letter of each word is
+capitalized. For example, <code>TotalValue</code>,
+<code>NumberOfFiles</code>, <code>UserId</code>.</li>
+<li>
+<strong>UPPERCASE</strong>: All letters are capitalized. For
+example, <code>TOTAL_VALUE</code>, <code>NUMBER_OF_FILES</code>,
+<code>USER_ID</code>.</li>
+</ul><p>The specific convention you use is less important than being
+consistent <a href="#fn4" class="footnote-ref" id="fnref4"><sup>4</sup></a></p>
+</div>
+</div>
+<div class="section level3">
+<h3 id="clean-code-is-maintainable">Clean Code is Maintainable<a class="anchor" aria-label="anchor" href="#clean-code-is-maintainable"></a></h3>
+<p>Maintainability is the ease with which code can be modified. Take
+this example, which is a very common intro problem in programming:</p>
+<div class="codewrapper sourceCode" id="cb4">
+<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" tabindex="-1" aria-label="code-block-4-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>, <span class="dv">101</span>):</span>
+<span id="cb4-2"><a href="#cb4-2" tabindex="-1" aria-label="code-block-4-2"></a>    <span class="cf">if</span> i <span class="op">%</span> <span class="dv">3</span> <span class="op">==</span> <span class="dv">0</span> <span class="kw">and</span> i <span class="op">%</span> <span class="dv">5</span> <span class="op">==</span> <span class="dv">0</span>:</span>
+<span id="cb4-3"><a href="#cb4-3" tabindex="-1" aria-label="code-block-4-3"></a>        <span class="bu">print</span>(<span class="st">"FizzBuzz"</span>)</span>
+<span id="cb4-4"><a href="#cb4-4" tabindex="-1" aria-label="code-block-4-4"></a>    <span class="cf">elif</span> i <span class="op">%</span> <span class="dv">3</span> <span class="op">==</span> <span class="dv">0</span>:</span>
+<span id="cb4-5"><a href="#cb4-5" tabindex="-1" aria-label="code-block-4-5"></a>        <span class="bu">print</span>(<span class="st">"Fizz"</span>)</span>
+<span id="cb4-6"><a href="#cb4-6" tabindex="-1" aria-label="code-block-4-6"></a>    <span class="cf">elif</span> i <span class="op">%</span> <span class="dv">5</span> <span class="op">==</span> <span class="dv">0</span>:</span>
+<span id="cb4-7"><a href="#cb4-7" tabindex="-1" aria-label="code-block-4-7"></a>        <span class="bu">print</span>(<span class="st">"Buzz"</span>)</span>
+<span id="cb4-8"><a href="#cb4-8" tabindex="-1" aria-label="code-block-4-8"></a>    <span class="cf">else</span>:</span>
+<span id="cb4-9"><a href="#cb4-9" tabindex="-1" aria-label="code-block-4-9"></a>        <span class="bu">print</span>(i)</span></code></pre>
+</div>
+<p>Now imagine that you are asked to modify this code so that it prints
+“Fizz” for every even number, “Foo” for every number that is divisible
+by 5, and “FizzBuzz” for every number that is divisible by 7 and 5.
+Also, instead of checking 100 numbers, we only want to print out the
+first 40. These are simple changes, but it still requires modifying the
+code in multiple places.</p>
+<div class="codewrapper sourceCode" id="cb5">
+<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" tabindex="-1" aria-label="code-block-5-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>, <span class="dv">21</span>):</span>
+<span id="cb5-2"><a href="#cb5-2" tabindex="-1" aria-label="code-block-5-2"></a>    <span class="cf">if</span> i <span class="op">%</span> <span class="dv">7</span> <span class="op">==</span> <span class="dv">0</span> <span class="kw">and</span> i <span class="op">%</span> <span class="dv">5</span> <span class="op">==</span> <span class="dv">0</span>:</span>
+<span id="cb5-3"><a href="#cb5-3" tabindex="-1" aria-label="code-block-5-3"></a>        <span class="bu">print</span>(<span class="st">"FizzBuzz"</span>)</span>
+<span id="cb5-4"><a href="#cb5-4" tabindex="-1" aria-label="code-block-5-4"></a>    <span class="cf">elif</span> i <span class="op">%</span> <span class="dv">2</span> <span class="op">==</span> <span class="dv">0</span>:</span>
+<span id="cb5-5"><a href="#cb5-5" tabindex="-1" aria-label="code-block-5-5"></a>        <span class="bu">print</span>(<span class="st">"Fizz"</span>)</span>
+<span id="cb5-6"><a href="#cb5-6" tabindex="-1" aria-label="code-block-5-6"></a>    <span class="cf">elif</span> i <span class="op">%</span> <span class="dv">5</span> <span class="op">==</span> <span class="dv">0</span>:</span>
+<span id="cb5-7"><a href="#cb5-7" tabindex="-1" aria-label="code-block-5-7"></a>        <span class="bu">print</span>(<span class="st">"Foo"</span>)</span>
+<span id="cb5-8"><a href="#cb5-8" tabindex="-1" aria-label="code-block-5-8"></a>    <span class="cf">else</span>:</span>
+<span id="cb5-9"><a href="#cb5-9" tabindex="-1" aria-label="code-block-5-9"></a>        <span class="bu">print</span>(i)</span></code></pre>
+</div>
+<p>So how might we rewrite this code to be more maintainable? One way
+might be to create a list of rules that we can iterate over, checking
+each rule in turn to see if it applies to the current number. This way,
+we can easily add, remove, or modify rules without having to change the
+core logic of the loop.</p>
+<div class="codewrapper sourceCode" id="cb6">
+<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" tabindex="-1" aria-label="code-block-6-1"></a>rules <span class="op">=</span> [</span>
+<span id="cb6-2"><a href="#cb6-2" tabindex="-1" aria-label="code-block-6-2"></a>    (<span class="kw">lambda</span> x: x <span class="op">%</span> <span class="dv">7</span> <span class="op">==</span> <span class="dv">0</span> <span class="kw">and</span> x <span class="op">%</span> <span class="dv">5</span> <span class="op">==</span> <span class="dv">0</span>, <span class="st">"FizzBuzz"</span>),</span>
+<span id="cb6-3"><a href="#cb6-3" tabindex="-1" aria-label="code-block-6-3"></a>    (<span class="kw">lambda</span> x: x <span class="op">%</span> <span class="dv">2</span> <span class="op">==</span> <span class="dv">0</span>, <span class="st">"Fizz"</span>),</span>
+<span id="cb6-4"><a href="#cb6-4" tabindex="-1" aria-label="code-block-6-4"></a>    (<span class="kw">lambda</span> x: x <span class="op">%</span> <span class="dv">5</span> <span class="op">==</span> <span class="dv">0</span>, <span class="st">"Foo"</span>)</span>
+<span id="cb6-5"><a href="#cb6-5" tabindex="-1" aria-label="code-block-6-5"></a>]</span>
+<span id="cb6-6"><a href="#cb6-6" tabindex="-1" aria-label="code-block-6-6"></a><span class="bu">range</span> <span class="op">=</span> <span class="dv">40</span></span>
+<span id="cb6-7"><a href="#cb6-7" tabindex="-1" aria-label="code-block-6-7"></a></span>
+<span id="cb6-8"><a href="#cb6-8" tabindex="-1" aria-label="code-block-6-8"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>, <span class="bu">range</span><span class="op">+</span><span class="dv">1</span>):</span>
+<span id="cb6-9"><a href="#cb6-9" tabindex="-1" aria-label="code-block-6-9"></a>    <span class="cf">for</span> rule, output <span class="kw">in</span> rules:</span>
+<span id="cb6-10"><a href="#cb6-10" tabindex="-1" aria-label="code-block-6-10"></a>        <span class="cf">if</span> rule(i):</span>
+<span id="cb6-11"><a href="#cb6-11" tabindex="-1" aria-label="code-block-6-11"></a>            <span class="bu">print</span>(output)</span>
+<span id="cb6-12"><a href="#cb6-12" tabindex="-1" aria-label="code-block-6-12"></a>            <span class="cf">continue</span></span>
+<span id="cb6-13"><a href="#cb6-13" tabindex="-1" aria-label="code-block-6-13"></a></span>
+<span id="cb6-14"><a href="#cb6-14" tabindex="-1" aria-label="code-block-6-14"></a>        <span class="bu">print</span>(i)</span></code></pre>
+</div>
+</div>
+<div class="section level3">
+<h3 id="clean-code-is-dry">Clean Code is DRY<a class="anchor" aria-label="anchor" href="#clean-code-is-dry"></a></h3>
+<p>DRY stands for “Don’t Repeat Yourself”. This is a principle that
+states that you should avoid writing the same code multiple times. As a
+general rule, if you find yourself copying and pasting code, you should
+pause and think about whether there is a better way to structure your
+code so that you can reuse the same logic in multiple places.</p>
+<p>Though copy/paste can be a quick way to get something done, it can
+lead to problems down the line when it comes time to make changes. You
+might forget to update all the copies of the code, or you might make a
+mistake in one copy that you don’t make in another. Take the following
+example, where someone wants to run the same analysis twice, but on
+different datasets:</p>
+<div class="codewrapper sourceCode" id="cb7">
+<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" tabindex="-1" aria-label="code-block-7-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb7-2"><a href="#cb7-2" tabindex="-1" aria-label="code-block-7-2"></a></span>
+<span id="cb7-3"><a href="#cb7-3" tabindex="-1" aria-label="code-block-7-3"></a><span class="co">###</span></span>
+<span id="cb7-4"><a href="#cb7-4" tabindex="-1" aria-label="code-block-7-4"></a><span class="co">### Analyse dataset from 2024-01-01</span></span>
+<span id="cb7-5"><a href="#cb7-5" tabindex="-1" aria-label="code-block-7-5"></a><span class="co">###</span></span>
+<span id="cb7-6"><a href="#cb7-6" tabindex="-1" aria-label="code-block-7-6"></a></span>
+<span id="cb7-7"><a href="#cb7-7" tabindex="-1" aria-label="code-block-7-7"></a>dataset_df <span class="op">=</span> pd.read_csv(<span class="st">"2024_01_01_dataset.csv"</span>)</span>
+<span id="cb7-8"><a href="#cb7-8" tabindex="-1" aria-label="code-block-7-8"></a></span>
+<span id="cb7-9"><a href="#cb7-9" tabindex="-1" aria-label="code-block-7-9"></a><span class="co"># exclude records that have a placeholder value like "N/A"</span></span>
+<span id="cb7-10"><a href="#cb7-10" tabindex="-1" aria-label="code-block-7-10"></a>filtered_df <span class="op">=</span> dataset_df[dataset_df[<span class="st">"score"</span>] <span class="kw">not</span> <span class="kw">in</span> [<span class="st">"N/A"</span>, <span class="st">"NA"</span>]]</span>
+<span id="cb7-11"><a href="#cb7-11" tabindex="-1" aria-label="code-block-7-11"></a></span>
+<span id="cb7-12"><a href="#cb7-12" tabindex="-1" aria-label="code-block-7-12"></a><span class="co"># exclude records that have a score less than 5</span></span>
+<span id="cb7-13"><a href="#cb7-13" tabindex="-1" aria-label="code-block-7-13"></a>filtered_df <span class="op">=</span> dataset_df[dataset_df[<span class="st">"score"</span>] <span class="op">&gt;=</span> <span class="dv">5</span>]</span>
+<span id="cb7-14"><a href="#cb7-14" tabindex="-1" aria-label="code-block-7-14"></a></span>
+<span id="cb7-15"><a href="#cb7-15" tabindex="-1" aria-label="code-block-7-15"></a><span class="co"># find the mean and standard deviation of the remaining scores</span></span>
+<span id="cb7-16"><a href="#cb7-16" tabindex="-1" aria-label="code-block-7-16"></a>mean_score <span class="op">=</span> filtered_df[<span class="st">"score"</span>].mean()</span>
+<span id="cb7-17"><a href="#cb7-17" tabindex="-1" aria-label="code-block-7-17"></a>std_dev <span class="op">=</span> filtered_df[<span class="st">"score"</span>].std()</span>
+<span id="cb7-18"><a href="#cb7-18" tabindex="-1" aria-label="code-block-7-18"></a></span>
+<span id="cb7-19"><a href="#cb7-19" tabindex="-1" aria-label="code-block-7-19"></a><span class="bu">print</span>(<span class="ss">f"Dataset 2024_01_01_dataset.csv: Mean score: </span><span class="sc">{</span>mean_score<span class="sc">}</span><span class="ss">, Standard deviation: </span><span class="sc">{</span>std_dev<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb7-20"><a href="#cb7-20" tabindex="-1" aria-label="code-block-7-20"></a></span>
+<span id="cb7-21"><a href="#cb7-21" tabindex="-1" aria-label="code-block-7-21"></a><span class="co">###</span></span>
+<span id="cb7-22"><a href="#cb7-22" tabindex="-1" aria-label="code-block-7-22"></a><span class="co">### Analyse dataset from 2024-02-01</span></span>
+<span id="cb7-23"><a href="#cb7-23" tabindex="-1" aria-label="code-block-7-23"></a><span class="co">###</span></span>
+<span id="cb7-24"><a href="#cb7-24" tabindex="-1" aria-label="code-block-7-24"></a></span>
+<span id="cb7-25"><a href="#cb7-25" tabindex="-1" aria-label="code-block-7-25"></a>dataset_df <span class="op">=</span> pd.read_csv(<span class="st">"2024_02_01_dataset.csv"</span>)</span>
+<span id="cb7-26"><a href="#cb7-26" tabindex="-1" aria-label="code-block-7-26"></a></span>
+<span id="cb7-27"><a href="#cb7-27" tabindex="-1" aria-label="code-block-7-27"></a><span class="co"># exclude records that have a placeholder value like "N/A"</span></span>
+<span id="cb7-28"><a href="#cb7-28" tabindex="-1" aria-label="code-block-7-28"></a>filtered_df <span class="op">=</span> dataset_df[dataset_df[<span class="st">"score"</span>] <span class="kw">not</span> <span class="kw">in</span> [<span class="st">"N/A"</span>, <span class="st">"NA"</span>]]</span>
+<span id="cb7-29"><a href="#cb7-29" tabindex="-1" aria-label="code-block-7-29"></a></span>
+<span id="cb7-30"><a href="#cb7-30" tabindex="-1" aria-label="code-block-7-30"></a><span class="co"># exclude records that have a score less than 5</span></span>
+<span id="cb7-31"><a href="#cb7-31" tabindex="-1" aria-label="code-block-7-31"></a>filtered_df <span class="op">=</span> dataset_df[dataset_df[<span class="st">"score"</span>] <span class="op">&gt;=</span> <span class="dv">5</span>]</span>
+<span id="cb7-32"><a href="#cb7-32" tabindex="-1" aria-label="code-block-7-32"></a></span>
+<span id="cb7-33"><a href="#cb7-33" tabindex="-1" aria-label="code-block-7-33"></a><span class="co"># find the mean and standard deviation of the remaining scores</span></span>
+<span id="cb7-34"><a href="#cb7-34" tabindex="-1" aria-label="code-block-7-34"></a>mean_score <span class="op">=</span> filtered_df[<span class="st">"score"</span>].mean()</span>
+<span id="cb7-35"><a href="#cb7-35" tabindex="-1" aria-label="code-block-7-35"></a>std_dev <span class="op">=</span> filtered_df[<span class="st">"score"</span>].std()</span>
+<span id="cb7-36"><a href="#cb7-36" tabindex="-1" aria-label="code-block-7-36"></a></span>
+<span id="cb7-37"><a href="#cb7-37" tabindex="-1" aria-label="code-block-7-37"></a><span class="bu">print</span>(<span class="ss">f"Dataset 2024_02_01_dataset.csv: Mean score: </span><span class="sc">{</span>mean_score<span class="sc">}</span><span class="ss">, Standard deviation: </span><span class="sc">{</span>std_dev<span class="sc">}</span><span class="ss">"</span>)</span></code></pre>
+</div>
+<p>This is a pretty short example, but you can see how as new datasets
+are added, the code will quickly become unwieldy.</p>
+<p>With some quick refactoring, we can make this code more DRY by
+extracting the common logic into a function that we can reuse for each
+dataset, then looping over the datasets.</p>
+<div class="codewrapper sourceCode" id="cb8">
+<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" tabindex="-1" aria-label="code-block-8-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb8-2"><a href="#cb8-2" tabindex="-1" aria-label="code-block-8-2"></a></span>
+<span id="cb8-3"><a href="#cb8-3" tabindex="-1" aria-label="code-block-8-3"></a>datasets <span class="op">=</span> [<span class="st">"2024_01_01_dataset.csv"</span>, <span class="st">"2024_02_01_dataset.csv"</span>]</span>
+<span id="cb8-4"><a href="#cb8-4" tabindex="-1" aria-label="code-block-8-4"></a></span>
+<span id="cb8-5"><a href="#cb8-5" tabindex="-1" aria-label="code-block-8-5"></a><span class="kw">def</span> analyse_dataset(file_path: <span class="bu">str</span>):</span>
+<span id="cb8-6"><a href="#cb8-6" tabindex="-1" aria-label="code-block-8-6"></a>    dataset_df <span class="op">=</span> pd.read_csv(file_path)</span>
+<span id="cb8-7"><a href="#cb8-7" tabindex="-1" aria-label="code-block-8-7"></a></span>
+<span id="cb8-8"><a href="#cb8-8" tabindex="-1" aria-label="code-block-8-8"></a>    <span class="co"># exclude records that have a placeholder value like "N/A"</span></span>
+<span id="cb8-9"><a href="#cb8-9" tabindex="-1" aria-label="code-block-8-9"></a>    filtered_df <span class="op">=</span> dataset_df[dataset_df[<span class="st">"score"</span>] <span class="kw">not</span> <span class="kw">in</span> [<span class="st">"N/A"</span>, <span class="st">"NA"</span>]]</span>
+<span id="cb8-10"><a href="#cb8-10" tabindex="-1" aria-label="code-block-8-10"></a></span>
+<span id="cb8-11"><a href="#cb8-11" tabindex="-1" aria-label="code-block-8-11"></a>    <span class="co"># exclude records that have a score less than 5</span></span>
+<span id="cb8-12"><a href="#cb8-12" tabindex="-1" aria-label="code-block-8-12"></a>    filtered_df <span class="op">=</span> dataset_df[dataset_df[<span class="st">"score"</span>] <span class="op">&gt;=</span> <span class="dv">5</span>]</span>
+<span id="cb8-13"><a href="#cb8-13" tabindex="-1" aria-label="code-block-8-13"></a></span>
+<span id="cb8-14"><a href="#cb8-14" tabindex="-1" aria-label="code-block-8-14"></a>    <span class="co"># find the mean and standard deviation of the remaining scores</span></span>
+<span id="cb8-15"><a href="#cb8-15" tabindex="-1" aria-label="code-block-8-15"></a>    mean_score <span class="op">=</span> filtered_df[<span class="st">"score"</span>].mean()</span>
+<span id="cb8-16"><a href="#cb8-16" tabindex="-1" aria-label="code-block-8-16"></a>    std_dev <span class="op">=</span> filtered_df[<span class="st">"score"</span>].std()</span>
+<span id="cb8-17"><a href="#cb8-17" tabindex="-1" aria-label="code-block-8-17"></a></span>
+<span id="cb8-18"><a href="#cb8-18" tabindex="-1" aria-label="code-block-8-18"></a>    <span class="cf">return</span> mean_score, std_dev</span>
+<span id="cb8-19"><a href="#cb8-19" tabindex="-1" aria-label="code-block-8-19"></a></span>
+<span id="cb8-20"><a href="#cb8-20" tabindex="-1" aria-label="code-block-8-20"></a><span class="cf">for</span> dataset <span class="kw">in</span> datasets:</span>
+<span id="cb8-21"><a href="#cb8-21" tabindex="-1" aria-label="code-block-8-21"></a>    mean_score, std_dev <span class="op">=</span> analyse_dataset(dataset)</span>
+<span id="cb8-22"><a href="#cb8-22" tabindex="-1" aria-label="code-block-8-22"></a>    <span class="bu">print</span>(<span class="ss">f"Dataset </span><span class="sc">{</span>dataset<span class="sc">}</span><span class="ss">: Mean score: </span><span class="sc">{</span>mean_score<span class="sc">}</span><span class="ss">, Standard deviation: </span><span class="sc">{</span>std_dev<span class="sc">}</span><span class="ss">"</span>)</span></code></pre>
+</div>
+<p>This small change means that the process of updating the code to
+adapt to changes in processing is much simpler - the updates would only
+have to be done once in the <code>analyse_dataset</code> function and
+would always apply to all datasets. Additional, by defining the
+<code>datasets</code> list at the start of the script, it is easy to add
+or remove datasets from the analysis without having to modify the core
+logic of the script.</p>
+</div>
+<div class="section level3">
+<h3 id="clean-code-is-well-documented">Clean Code is Well Documented<a class="anchor" aria-label="anchor" href="#clean-code-is-well-documented"></a></h3>
+<p>Documentation is an important part of writing clean code. It helps
+other people (and your future self) understand what the code does, why
+it does it, and how it does it. The documentations can be as detailed as
+you are willing to make it, but at a minimum, you should include a
+docstring for each function that describes what the function does, what
+arguments it takes, and what it returns.</p>
+<p>There are a variety of standards for writing docstrings, both between
+languages and within. The most important thing is to select a standard
+as stick with it. Here are some example docstrings for a function that
+calculates the area of a circle:</p>
+<p>Python:</p>
+<details><summary>
+Google Style Guide
+</summary><div class="codewrapper sourceCode" id="cb9">
+<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" tabindex="-1" aria-label="code-block-9-1"></a><span class="kw">def</span> circle_area(radius: <span class="bu">float</span>) <span class="op">-&gt;</span> <span class="bu">float</span>:</span>
+<span id="cb9-2"><a href="#cb9-2" tabindex="-1" aria-label="code-block-9-2"></a>    <span class="co">"""Calculate the area of a circle.</span></span>
+<span id="cb9-3"><a href="#cb9-3" tabindex="-1" aria-label="code-block-9-3"></a></span>
+<span id="cb9-4"><a href="#cb9-4" tabindex="-1" aria-label="code-block-9-4"></a><span class="co">    Args:</span></span>
+<span id="cb9-5"><a href="#cb9-5" tabindex="-1" aria-label="code-block-9-5"></a><span class="co">        radius (float): The radius of the circle.</span></span>
+<span id="cb9-6"><a href="#cb9-6" tabindex="-1" aria-label="code-block-9-6"></a></span>
+<span id="cb9-7"><a href="#cb9-7" tabindex="-1" aria-label="code-block-9-7"></a><span class="co">    Returns:</span></span>
+<span id="cb9-8"><a href="#cb9-8" tabindex="-1" aria-label="code-block-9-8"></a><span class="co">        float: The area of the circle.</span></span>
+<span id="cb9-9"><a href="#cb9-9" tabindex="-1" aria-label="code-block-9-9"></a><span class="co">    """</span></span>
+<span id="cb9-10"><a href="#cb9-10" tabindex="-1" aria-label="code-block-9-10"></a>    <span class="cf">return</span> math.pi <span class="op">*</span> radius <span class="op">**</span> <span class="dv">2</span></span></code></pre>
+</div>
+</details><details><summary>
+Numpy Style Guide
+</summary><div class="codewrapper sourceCode" id="cb10">
+<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" tabindex="-1" aria-label="code-block-10-1"></a><span class="kw">def</span> circle_area(radius: <span class="bu">float</span>) <span class="op">-&gt;</span> <span class="bu">float</span>:</span>
+<span id="cb10-2"><a href="#cb10-2" tabindex="-1" aria-label="code-block-10-2"></a>    <span class="co">"""Calculate the area of a circle.</span></span>
+<span id="cb10-3"><a href="#cb10-3" tabindex="-1" aria-label="code-block-10-3"></a></span>
+<span id="cb10-4"><a href="#cb10-4" tabindex="-1" aria-label="code-block-10-4"></a><span class="co">    Parameters</span></span>
+<span id="cb10-5"><a href="#cb10-5" tabindex="-1" aria-label="code-block-10-5"></a><span class="co">    ----------</span></span>
+<span id="cb10-6"><a href="#cb10-6" tabindex="-1" aria-label="code-block-10-6"></a><span class="co">    radius : float</span></span>
+<span id="cb10-7"><a href="#cb10-7" tabindex="-1" aria-label="code-block-10-7"></a><span class="co">        The radius of the circle.</span></span>
+<span id="cb10-8"><a href="#cb10-8" tabindex="-1" aria-label="code-block-10-8"></a></span>
+<span id="cb10-9"><a href="#cb10-9" tabindex="-1" aria-label="code-block-10-9"></a><span class="co">    Returns</span></span>
+<span id="cb10-10"><a href="#cb10-10" tabindex="-1" aria-label="code-block-10-10"></a><span class="co">    -------</span></span>
+<span id="cb10-11"><a href="#cb10-11" tabindex="-1" aria-label="code-block-10-11"></a><span class="co">    float</span></span>
+<span id="cb10-12"><a href="#cb10-12" tabindex="-1" aria-label="code-block-10-12"></a><span class="co">        The area of the circle.</span></span>
+<span id="cb10-13"><a href="#cb10-13" tabindex="-1" aria-label="code-block-10-13"></a><span class="co">    """</span></span>
+<span id="cb10-14"><a href="#cb10-14" tabindex="-1" aria-label="code-block-10-14"></a>    <span class="cf">return</span> math.pi <span class="op">*</span> radius <span class="op">**</span> <span class="dv">2</span></span></code></pre>
+</div>
+</details><details><summary>
+Sphinx Style Guide
+</summary><div class="codewrapper sourceCode" id="cb11">
+<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" tabindex="-1" aria-label="code-block-11-1"></a><span class="kw">def</span> circle_area(radius: <span class="bu">float</span>) <span class="op">-&gt;</span> <span class="bu">float</span>:</span>
+<span id="cb11-2"><a href="#cb11-2" tabindex="-1" aria-label="code-block-11-2"></a>    <span class="co">"""Calculate the area of a circle.</span></span>
+<span id="cb11-3"><a href="#cb11-3" tabindex="-1" aria-label="code-block-11-3"></a></span>
+<span id="cb11-4"><a href="#cb11-4" tabindex="-1" aria-label="code-block-11-4"></a><span class="co">    :param radius: The radius of the circle.</span></span>
+<span id="cb11-5"><a href="#cb11-5" tabindex="-1" aria-label="code-block-11-5"></a><span class="co">    :type radius: float</span></span>
+<span id="cb11-6"><a href="#cb11-6" tabindex="-1" aria-label="code-block-11-6"></a><span class="co">    :return: The area of the circle.</span></span>
+<span id="cb11-7"><a href="#cb11-7" tabindex="-1" aria-label="code-block-11-7"></a><span class="co">    :rtype: float</span></span>
+<span id="cb11-8"><a href="#cb11-8" tabindex="-1" aria-label="code-block-11-8"></a><span class="co">    """</span></span>
+<span id="cb11-9"><a href="#cb11-9" tabindex="-1" aria-label="code-block-11-9"></a>    <span class="cf">return</span> math.pi <span class="op">*</span> radius <span class="op">**</span> <span class="dv">2</span></span></code></pre>
+</div>
+</details><p>R:</p>
+<details><summary>
+Roxygen2 Style Guide
+</summary><div class="codewrapper sourceCode" id="cb12">
+<h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co">#' Calculate the area of a circle</span></span>
+<span><span class="co">#'</span></span>
+<span><span class="co">#' @param radius The radius of the circle</span></span>
+<span><span class="co">#' @return The area of the circle</span></span>
+<span><span class="co">#'</span></span>
+<span><span class="co">#' @examples</span></span>
+<span><span class="co">#' circle_area(5)</span></span>
+<span><span class="va">circle_area</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">radius</span><span class="op">)</span> <span class="op">{</span></span>
+<span>    <span class="kw">return</span><span class="op">(</span><span class="va">pi</span> <span class="op">*</span> <span class="va">radius</span><span class="op">^</span><span class="fl">2</span><span class="op">)</span></span>
+<span><span class="op">}</span></span></code></pre>
+</div>
+</details><div class="section level4">
+<h4 id="file-headers">File Headers<a class="anchor" aria-label="anchor" href="#file-headers"></a></h4>
+<p>In addition to documenting functions, it is also important to
+document the file itself. The exact information will depend on the
+project and purpose of the file. A common script header might look like
+this:</p>
+<hr><h3 id="file-headers-1">
+Scripts
+<a class="anchor" aria-label="anchor" href="#file-headers-1"></a></h3>
+<p>With scripts in particular, it’s important to include a header that
+describes the purpose of the script, the author, and the date it was
+created or last modified. This information can help others understand
+the context of the script and how it fits into the larger project.</p>
+<details><summary>
+Python
+</summary><div class="codewrapper sourceCode" id="cb13">
+<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" tabindex="-1" aria-label="code-block-13-1"></a><span class="co">"""</span></span>
+<span id="cb13-2"><a href="#cb13-2" tabindex="-1" aria-label="code-block-13-2"></a><span class="co">01_data_cleaning.py</span></span>
+<span id="cb13-3"><a href="#cb13-3" tabindex="-1" aria-label="code-block-13-3"></a></span>
+<span id="cb13-4"><a href="#cb13-4" tabindex="-1" aria-label="code-block-13-4"></a><span class="co">Author: Max Mustermann &lt;max.mustermann@email.org&gt;</span></span>
+<span id="cb13-5"><a href="#cb13-5" tabindex="-1" aria-label="code-block-13-5"></a><span class="co">Date: 2024-01-01</span></span>
+<span id="cb13-6"><a href="#cb13-6" tabindex="-1" aria-label="code-block-13-6"></a></span>
+<span id="cb13-7"><a href="#cb13-7" tabindex="-1" aria-label="code-block-13-7"></a><span class="co">This script reads in a dataset for the &lt;PROJECT&gt; project and applies some basic cleaning steps</span></span>
+<span id="cb13-8"><a href="#cb13-8" tabindex="-1" aria-label="code-block-13-8"></a><span class="co">to prepare the data for analysis.</span></span>
+<span id="cb13-9"><a href="#cb13-9" tabindex="-1" aria-label="code-block-13-9"></a></span>
+<span id="cb13-10"><a href="#cb13-10" tabindex="-1" aria-label="code-block-13-10"></a><span class="co">These steps include:</span></span>
+<span id="cb13-11"><a href="#cb13-11" tabindex="-1" aria-label="code-block-13-11"></a><span class="co">- Removing records with missing/invalid values</span></span>
+<span id="cb13-12"><a href="#cb13-12" tabindex="-1" aria-label="code-block-13-12"></a><span class="co">- Standardizing column names</span></span>
+<span id="cb13-13"><a href="#cb13-13" tabindex="-1" aria-label="code-block-13-13"></a><span class="co">- Converting data types</span></span>
+<span id="cb13-14"><a href="#cb13-14" tabindex="-1" aria-label="code-block-13-14"></a><span class="co">- Saving the cleaned dataset to a new file</span></span>
+<span id="cb13-15"><a href="#cb13-15" tabindex="-1" aria-label="code-block-13-15"></a></span>
+<span id="cb13-16"><a href="#cb13-16" tabindex="-1" aria-label="code-block-13-16"></a><span class="co">Note: This script assumes that the dataset is in CSV format.</span></span>
+<span id="cb13-17"><a href="#cb13-17" tabindex="-1" aria-label="code-block-13-17"></a><span class="co">"""</span></span></code></pre>
+</div>
+</details><details><summary>
+R
+</summary><div class="codewrapper sourceCode" id="cb14">
+<h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co">#' Data Cleaning Script</span></span>
+<span><span class="co">#'</span></span>
+<span><span class="co">#' Author: Max Mustermann &lt;max.mustermann@email.org&gt;</span></span>
+<span><span class="co">#' Date: 2024-01-01</span></span>
+<span><span class="co">#'</span></span>
+<span><span class="co">#' This script reads in a dataset for the &lt;PROJECT&gt; project and applies some basic cleaning steps</span></span>
+<span><span class="co">#' to prepare the data for analysis.</span></span>
+<span><span class="co">#'</span></span>
+<span><span class="co">#' These steps include:</span></span>
+<span><span class="co">#' - Removing records with missing/invalid values</span></span>
+<span><span class="co">#' - Standardizing column names</span></span>
+<span><span class="co">#' - Converting data types</span></span>
+<span><span class="co">#' - Saving the cleaned dataset to a new file</span></span>
+<span><span class="co">#'</span></span>
+<span><span class="co">#' --------------------------------------------------------------------------------------------</span></span>
+<span><span class="co">#'</span></span>
+<span><span class="co">#' Notes: This script assumes that the dataset is in CSV format.</span></span>
+<span><span class="co">#'</span></span>
+<span><span class="co">#' --------------------------------------------------------------------------------------------</span></span></code></pre>
+</div>
+</details><hr><h3 id="file-headers-2">
+Modules
+<a class="anchor" aria-label="anchor" href="#file-headers-2"></a></h3>
+<p>For modules, it is important to include a header that describes the
+purpose of the module and it’s intended usage. This information can help
+others understand how to use the objects defined in the file and how
+they fit into the larger project. An example header for a module might
+look like this:</p>
+<details><summary>
+Python
+</summary><div class="codewrapper sourceCode" id="cb15">
+<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" tabindex="-1" aria-label="code-block-15-1"></a><span class="co">"""</span></span>
+<span id="cb15-2"><a href="#cb15-2" tabindex="-1" aria-label="code-block-15-2"></a><span class="co">project_dataset.py</span></span>
+<span id="cb15-3"><a href="#cb15-3" tabindex="-1" aria-label="code-block-15-3"></a></span>
+<span id="cb15-4"><a href="#cb15-4" tabindex="-1" aria-label="code-block-15-4"></a><span class="co">This object is used to load datasets for the &lt;PROJECT&gt; project for use in the model training</span></span>
+<span id="cb15-5"><a href="#cb15-5" tabindex="-1" aria-label="code-block-15-5"></a><span class="co">pipeline. It is based on the pytorch Dataset class and provides a simple interface for loading</span></span>
+<span id="cb15-6"><a href="#cb15-6" tabindex="-1" aria-label="code-block-15-6"></a><span class="co">and preprocessing data.</span></span>
+<span id="cb15-7"><a href="#cb15-7" tabindex="-1" aria-label="code-block-15-7"></a></span>
+<span id="cb15-8"><a href="#cb15-8" tabindex="-1" aria-label="code-block-15-8"></a><span class="co">Usage:</span></span>
+<span id="cb15-9"><a href="#cb15-9" tabindex="-1" aria-label="code-block-15-9"></a><span class="co">    dataset = ProjectDataset(file_path="data.csv")</span></span>
+<span id="cb15-10"><a href="#cb15-10" tabindex="-1" aria-label="code-block-15-10"></a></span>
+<span id="cb15-11"><a href="#cb15-11" tabindex="-1" aria-label="code-block-15-11"></a><span class="co">Parameters:</span></span>
+<span id="cb15-12"><a href="#cb15-12" tabindex="-1" aria-label="code-block-15-12"></a><span class="co">    - file_path (str): The path to the dataset file. The file must be in CSV format.</span></span>
+<span id="cb15-13"><a href="#cb15-13" tabindex="-1" aria-label="code-block-15-13"></a><span class="co">    - train (bool, optional): A flag indicating whether the dataset is for training or testing.</span></span>
+<span id="cb15-14"><a href="#cb15-14" tabindex="-1" aria-label="code-block-15-14"></a><span class="co">        Default is True.</span></span>
+<span id="cb15-15"><a href="#cb15-15" tabindex="-1" aria-label="code-block-15-15"></a></span>
+<span id="cb15-16"><a href="#cb15-16" tabindex="-1" aria-label="code-block-15-16"></a><span class="co">Exceptions:</span></span>
+<span id="cb15-17"><a href="#cb15-17" tabindex="-1" aria-label="code-block-15-17"></a><span class="co">    - FileNotFoundError: If the specified file does not exist</span></span>
+<span id="cb15-18"><a href="#cb15-18" tabindex="-1" aria-label="code-block-15-18"></a><span class="co">    - ValueError: If the file is not in CSV format</span></span>
+<span id="cb15-19"><a href="#cb15-19" tabindex="-1" aria-label="code-block-15-19"></a></span>
+<span id="cb15-20"><a href="#cb15-20" tabindex="-1" aria-label="code-block-15-20"></a><span class="co">"""</span></span></code></pre>
+</div>
+</details><details><summary>
+R
+</summary><div class="codewrapper sourceCode" id="cb16">
+<h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co">#' ProjectDataset: Load datasets for the &lt;PROJECT&gt; model training pipeline</span></span>
+<span><span class="co">#'</span></span>
+<span><span class="co">#' This object is used to load datasets for the &lt;PROJECT&gt; project, providing a simple</span></span>
+<span><span class="co">#' interface for loading and preprocessing data.</span></span>
+<span><span class="co">#'</span></span>
+<span><span class="co">#' @usage dataset &lt;- ProjectDataset(file_path = "data.csv")</span></span>
+<span><span class="co">#'</span></span>
+<span><span class="co">#' @param file_path A string specifying the path to the dataset file. The file must be in CSV format.</span></span>
+<span><span class="co">#' @param train A logical value indicating whether the dataset is for training or testing. Default is TRUE.</span></span>
+<span><span class="co">#'</span></span>
+<span><span class="co">#' @return A dataset object ready for use in model training.</span></span>
+<span><span class="co">#'</span></span>
+<span><span class="co">#' @examples</span></span>
+<span><span class="co">#' dataset &lt;- ProjectDataset("data.csv")</span></span>
+<span><span class="co">#'</span></span>
+<span><span class="co">#' @throws FileNotFoundError If the specified file does not exist.</span></span>
+<span><span class="co">#' @throws ValueError If the file is not in CSV format.</span></span></code></pre>
+</div>
+</details></div>
+</div>
+<div class="section level3">
+<h3 id="clean-code-is-consistent">Clean Code is Consistent<a class="anchor" aria-label="anchor" href="#clean-code-is-consistent"></a></h3>
+<p>You might agree or disagree with some of the rules we’ve discussed so
+far, but the most important by far is consistency. It is better to have
+code that is consistently formatted and styled than to have code that is
+formatted and styled in the “best” way some of the time. Consistency
+makes it easier to read and understand code because you know what to
+expect.</p>
+</div>
+</div>
+<div class="section level2">
+<h2 id="tools-for-writing-clean-code">Tools For Writing Clean Code<a class="anchor" aria-label="anchor" href="#tools-for-writing-clean-code"></a></h2>
+<p>There are a number of tools available that can help you write clean
+code. Some of these tools are linters, which are programs that analyze
+your code and flag potential issues. Others are formatters, which
+automatically format your code according to a set of rules.</p>
+<h3 id="tools-for-writing-clean-code-1">
+Linters
+<a class="anchor" aria-label="anchor" href="#tools-for-writing-clean-code-1"></a></h3>
+<ul><li>
+<strong>Python</strong>: <a href="https://flake8.pycqa.org/en/stable/" class="external-link">flake8</a>
+</li>
+<li>
+<strong>Python</strong>: <a href="https://pylint.readthedocs.io/en/stable/" class="external-link">Pylint</a>
+</li>
+<li>
+<strong>Python</strong>: <a href="https://github.com/astral-sh/ruff" class="external-link">ruff</a>
+</li>
+<li>
+<strong>R</strong>: <a href="https://lintr.r-lib.org/" class="external-link">lintr</a>
+</li>
+<li>
+<strong>JavaScript</strong>: <a href="https://eslint.org/" class="external-link">ESLint</a>
+</li>
+<li>
+<strong>Java</strong>: <a href="https://checkstyle.sourceforge.io/" class="external-link">Checkstyle</a>
+</li>
+<li>
+<strong>C/C++</strong>: <a href="https://clang.llvm.org/docs/ClangFormat.html" class="external-link">Clang</a>
+</li>
+</ul><h3 id="tools-for-writing-clean-code-2">
+Formatters
+<a class="anchor" aria-label="anchor" href="#tools-for-writing-clean-code-2"></a></h3>
+<ul><li>
+<strong>Python</strong>: <a href="https://black.readthedocs.io/en/stable/" class="external-link">Black</a>
+</li>
+<li>
+<strong>Python</strong>: <a href="https://github.com/astral-sh/ruff" class="external-link">ruff</a>
+</li>
+<li>
+<strong>R</strong>: <a href="https://styler.r-lib.org/" class="external-link">styler</a>
+</li>
+<li>
+<strong>JavaScript</strong>: <a href="https://prettier.io/" class="external-link">Prettier</a>
+</li>
+<li>
+<strong>C/C++</strong>: <a href="https://clang.llvm.org/docs/ClangFormat.html" class="external-link">Clang</a>
+</li>
+</ul></div>
+</div>
+<div class="footnotes footnotes-end-of-document">
+<hr><ol><li id="fn1"><p>There are language specific conventions - for example,
+Python uses <code>snake_case</code> for variable names and
+<code>PascelCase</code> for class names. JavaScript uses
+<code>camelCase</code> for both variable and class names. CSS uses
+<code>kebab-case</code> for class names.<a href="#fnref1" class="footnote-back">↩︎</a></p></li>
+<li id="fn2"><p>In languages that allow any value to be assigned to any
+variable (like Python) it is useful to include the type of the variable
+in the name. This is not strictly necessary in languages that require
+you to declare the type of the variable when you create it (like C or
+Java).<a href="#fnref2" class="footnote-back">↩︎</a></p></li>
+<li id="fn3"><p>In languages that allow any value to be assigned to any
+variable (like Python) it is useful to include the type of the variable
+in the name. This is not strictly necessary in languages that require
+you to declare the type of the variable when you create it (like C or
+Java).<a href="#fnref3" class="footnote-back">↩︎</a></p></li>
+<li id="fn4"><p>There are language specific conventions - for example,
+Python uses <code>snake_case</code> for variable names and
+<code>PascelCase</code> for class names. JavaScript uses
+<code>camelCase</code> for both variable and class names. CSS uses
+<code>kebab-case</code> for class names.<a href="#fnref4" class="footnote-back">↩︎</a></p></li>
+</ol></div>
 
 
 
@@ -592,7 +1206,7 @@
         <p>Materials licensed under <a href="LICENSE.html">CC-BY 4.0</a> by the authors</p>
 
         <p>Template licensed under <a href="https://creativecommons.org/licenses/by-sa/4.0/" class="external-link">CC-BY 4.0</a> by <a href="https://carpentries.org/" class="external-link">The Carpentries</a></p>
-        <p>Built with <a href="https://github.com/carpentries/sandpaper/tree/0.20.1" class="external-link">sandpaper (0.20.1)</a>, <a href="https://github.com/carpentries/pegboard/tree/0.7.9" class="external-link">pegboard (0.7.9)</a>, and <a href="https://github.com/carpentries/varnish/tree/1.1.0" class="external-link">varnish (1.1.0)</a></p>
+        <p>Built with <a href="https://github.com/carpentries/sandpaper/tree/0.20.2" class="external-link">sandpaper (0.20.2)</a>, <a href="https://github.com/carpentries/pegboard/tree/0.7.9" class="external-link">pegboard (0.7.9)</a>, and <a href="https://github.com/carpentries/varnish/tree/1.1.1" class="external-link">varnish (1.1.1)</a></p>
 		</div>
 		</footer></div> <!-- / div.container -->
 	<div id="to-top">
@@ -614,8 +1228,8 @@
   "url": "https://swcarpentry.github.io/python-novice-gapminder/instructor/22-talk-clean-code.html",
   "identifier": "https://swcarpentry.github.io/python-novice-gapminder/instructor/22-talk-clean-code.html",
   "dateCreated": "2016-01-07",
-  "dateModified": "2025-03-13",
-  "datePublished": "2026-05-19"
+  "dateModified": "2026-05-22",
+  "datePublished": "2026-05-22"
 }
 
   </script><script>

@@ -58,7 +58,7 @@
         </ul></div>
     </div>
   </div>
-  <hr></header><nav class="navbar navbar-expand-xl bottom-nav software" aria-label="Main Navigation"><div class="container-fluid nav-container">
+</header><nav class="navbar navbar-expand-xl bottom-nav software" aria-label="Main Navigation"><div class="container-fluid nav-container">
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle Navigation">
       <span class="navbar-toggler-icon"></span>
       <span class="menu-title">Menu</span>
@@ -107,12 +107,8 @@
     -->
     <a id="search-button" class="btn btn-primary" href="../instructor/aio.html" role="button" aria-label="Search the All In One page">Search the All In One page</a>
   </div><!--/div.container-fluid -->
-</nav><aside class="col-md-12 lesson-progress"><div style="width: 42%" class="percentage">
-    42%
-  </div>
-  <div class="progress software">
-    <div class="progress-bar software" role="progressbar" aria-label="Lesson Progress" aria-valuemin="0" aria-valuemax="100" aria-valuenow="42" style="width: 42%">
-    </div>
+</nav><aside class="col-md-12 lesson-progress"><div class="progress software">
+    <div class="progress-bar software" role="progressbar" style="width: 42%" aria-valuenow="42" aria-valuemin="0" aria-valuemax="100" aria-label="Lesson Progress">42%</div>
   </div>
 </aside><div class="container">
       <div class="row">
@@ -168,7 +164,7 @@
               </div><!--div.sidenav-view-selector -->
             </div><!--/div.col -->
 
-            <hr></div><!--/div.mobile-row -->
+          </div><!--/div.mobile-row -->
 
           <div class="accordion accordion-flush" id="accordion-chapters-toggle">
             <div class="accordion-item">
@@ -310,12 +306,24 @@
 <div class="accordion accordion-flush" id="accordionFlushcurrent">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-headingcurrent">
+      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapsecurrent" aria-expanded="true" aria-controls="flush-collapsecurrent">
         <span class="visually-hidden">Current Chapter</span>
         <span class="current-chapter">
         14. (Talk) Git Control System
         </span>
-      
+      </button>
     </div><!--/div.accordion-header-->
+
+    <div id="flush-collapsecurrent" class="accordion-collapse collapse show" data-bs-parent="#accordionFlushcurrent">
+      <div class="accordion-body">
+        <ul><li><a href="#introduction-why-should-i-use-git">Introduction: Why should I use Git?</a></li>
+<li><a href="#installation">Installation</a></li>
+<li><a href="#configuration">Configuration</a></li>
+<li><a href="#specifying-the-main-branch-name">Specifying the <em>main</em> branch name</a></li>
+<li><a href="#creating-a-repository">Creating a Repository</a></li>
+<li><a href="#making-tracking-changes">Making &amp; Tracking Changes</a></li>
+        </ul></div><!--/div.accordion-body-->
+    </div><!--/div.accordion-collapse-->
 
   </div><!--/div.accordion-item-->
 </div><!--/div.accordion-flush-->
@@ -506,8 +514,8 @@
         <!-- START: inst/pkgdown/templates/content-instructor.html -->
   <div class="col-xl-8 col-lg-12 primary-content">
     <nav class="lesson-content mx-md-4" aria-label="Previous and Next Chapter Top"><!-- content for small screens --><div class="d-block d-sm-block d-md-none">
-        <a class="chapter-link" href="../instructor/13-plotting.html"><i aria-hidden="true" class="small-arrow" data-feather="arrow-left"></i>Previous</a>
-        <a class="chapter-link float-end" href="../instructor/15-day-1-recap.html">Next<i aria-hidden="true" class="small-arrow" data-feather="arrow-right"></i></a>
+        <a class="chapter-link" href="../instructor/13-plotting.html" rel="prev"><i aria-hidden="true" class="small-arrow" data-feather="arrow-left"></i>Previous</a>
+        <a class="chapter-link float-end" href="../instructor/15-day-1-recap.html" rel="next">Next<i aria-hidden="true" class="small-arrow" data-feather="arrow-right"></i></a>
       </div>
       <!-- content for large screens -->
       <div class="d-none d-sm-none d-md-block">
@@ -520,9 +528,9 @@
           <i aria-hidden="true" class="small-arrow" data-feather="arrow-right"></i>
         </a>
       </div>
-      <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
+    </nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>(Talk) Git Control System</h1>
-        <p>Last updated on 2025-03-13 |
+        <p>Last updated on 2026-05-22 |
 
         <a href="https://github.com/dkz2r/python-novice-gapminder/edit/main/episodes/14-talk-git-primer.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -549,8 +557,334 @@
 </div>
 </div>
 </div>
-<p><a href="https://liascript.github.io/course/?https://api.allorigins.win/raw?url=https://fdmrwth.pages.rwth-aachen.de/rdm-overview/modules/coding/git.md#1" class="external-link">LiaScript
-- Git Control System</a></p>
+<section><h2 class="section-heading" id="introduction-why-should-i-use-git">Introduction: Why should I use Git?<a class="anchor" aria-label="anchor" href="#introduction-why-should-i-use-git"></a></h2>
+<hr class="half-width"><p>I am not exaggerating when I say that there is not a single concept
+that more changed the way I work day in and day out than Git. It is the
+one of the first things I install on a new machine, one of the first
+things I start when I start a new project, and one of the first things I
+teach to new developers.</p>
+<p>If you’ve ever dabbled in programming before now, you’ve probably
+come across a situation where you wanted to make a change to a file, but
+you were afraid to do so because you didn’t want to break anything or
+lose your work. You might have gotten around this my making a copy of
+the file and calling it “main2.py” or “main_backup.py”. And before you
+know it you have four or five slightly different versions of the same
+file, and you have to start picking through them to bring your original
+file back to the state you had in mind.</p>
+<p>Git solves this problem by keeping track of all the changes you make
+to your files, and allowing you to move back and forth between them at
+will. It also allows you to share your changes with other people, and to
+work on the same files at the same time without stepping on each other’s
+toes.</p>
+</section><section><h2 class="section-heading" id="installation">Installation<a class="anchor" aria-label="anchor" href="#installation"></a></h2>
+<hr class="half-width"><p>Git is available for all major operating systems, and can be
+installed from the following links:</p>
+<ul><li><a href="https://git-scm.com/download/win" class="external-link">Windows</a></li>
+<li><a href="https://git-scm.com/download/mac" class="external-link">Mac</a></li>
+<li><a href="https://git-scm.com/download/linux" class="external-link">Linux</a></li>
+</ul><p>There are various implemetations of Git, including versions that come
+built-in to IDEs like Visual Studio Code or GUIs like GitHub Desktop or
+TortoiseGit. For the purposes of this guide, we will be using the
+command line version of Git. The concepts are the same, but we will type
+our commands into a terminal window instead of clicking buttons.</p>
+</section><section><h2 class="section-heading" id="configuration">Configuration<a class="anchor" aria-label="anchor" href="#configuration"></a></h2>
+<hr class="half-width"><p>The first thing after installing git is to configure it with your
+name and email address. This information will be used to identify you
+when you make changes to your files. You can do this as a default for
+all Git repositories on your computer with the following commands:</p>
+<div class="codewrapper sourceCode" id="cb1">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" tabindex="-1" aria-label="code-block-1-1"></a><span class="fu">git</span> config <span class="at">--global</span> user.name <span class="st">"Your Name"</span></span>
+<span id="cb1-2"><a href="#cb1-2" tabindex="-1" aria-label="code-block-1-2"></a><span class="fu">git</span> config <span class="at">--global</span> user.email <span class="st">"Your Email"</span></span></code></pre>
+</div>
+<blockquote>
+<p>You can also specify both values for a specific Git repository by
+omitting the <code>--global</code> option while you are inside a Git
+repository.</p>
+</blockquote>
+</section><section><h2 class="section-heading" id="specifying-the-main-branch-name">Specifying the <em>main</em> branch name<a class="anchor" aria-label="anchor" href="#specifying-the-main-branch-name"></a></h2>
+<hr class="half-width"><p>Historically, <em>master</em> has been the default name for the main
+branch of a Git repository, but in recent years it has been replaced by
+<em>main</em>, as the term <em>master</em> has some negative
+connotations. You can set the global (for your user account) default
+branch name to <em>main</em> with the following command:</p>
+<div class="codewrapper sourceCode" id="cb2">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" tabindex="-1" aria-label="code-block-2-1"></a><span class="fu">git</span> config <span class="at">--global</span> init.defaultbranch <span class="st">"main"</span></span></code></pre>
+</div>
+</section><section><h2 class="section-heading" id="creating-a-repository">Creating a Repository<a class="anchor" aria-label="anchor" href="#creating-a-repository"></a></h2>
+<hr class="half-width"><p>Let’s start by creating a new repository. A repository is a folder on
+your computer, what we call being “Git controlled”, in that Git will
+keep track of changes. To create a new repository, create a folder
+somewhere on your computer and navigate to it in the terminal.</p>
+<blockquote>
+<p><em>Common Commands for Navigating in the Terminal:</em></p>
+<ul><li>
+<p><code>mkdir my_folder</code></p>
+<ul><li>Create a new folder called “my_folder”</li>
+</ul></li>
+<li>
+<p><code>cd my_folder</code></p>
+<ul><li>Change directory to “my_folder”</li>
+</ul></li>
+<li>
+<p><code>cd ..</code></p>
+<ul><li>Change directory to the parent folder</li>
+</ul></li>
+<li>
+<p><code>ls</code></p>
+<ul><li>List the contents of the current directory</li>
+</ul></li>
+</ul></blockquote>
+<p>We’ll start by creating a new folder called “git_workshop”:</p>
+<div class="codewrapper sourceCode" id="cb3">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" tabindex="-1" aria-label="code-block-3-1"></a><span class="fu">mkdir</span> git_workshop</span></code></pre>
+</div>
+<p>You can verify that your folder exists by using the command
+<code>ls</code> to see all of the files in the current directory. The
+folder “git_workshop” should appear in that list.</p>
+<p>Next we’ll “change directory” to the folder we just created:</p>
+<div class="codewrapper sourceCode" id="cb4">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" tabindex="-1" aria-label="code-block-4-1"></a><span class="bu">cd</span> git_workshop</span></code></pre>
+</div>
+<p>Once you are in the folder you want to use as your repository, run
+the following command:</p>
+<div class="codewrapper sourceCode" id="cb5">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" tabindex="-1" aria-label="code-block-5-1"></a><span class="fu">git</span> init</span></code></pre>
+</div>
+<p>This will create a new repository in the current folder - your
+terminal should now look like this:</p>
+<figure><img src="../img/git/git-init.PNG" alt="git init" class="figure mx-auto d-block"><div class="figcaption">git init</div>
+</figure><p>The blue “(master)” text at the end of the line indicates that we are
+currently in a Git controlled directory called “master”.</p>
+<p>“master” has always been the default name for the main branch of a
+Git repository, but in recent years it has been replaced by “main”, as
+the term “master” has some negative connotations. You can rename the
+branch with the following command:</p>
+<div class="codewrapper sourceCode" id="cb6">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" tabindex="-1" aria-label="code-block-6-1"></a><span class="fu">git</span> branch <span class="at">-m</span> main</span></code></pre>
+</div>
+</section><section><h2 class="section-heading" id="making-tracking-changes">Making &amp; Tracking Changes<a class="anchor" aria-label="anchor" href="#making-tracking-changes"></a></h2>
+<hr class="half-width"><p>Now that we have a repository, let’s make some changes to it. We’ll
+create a new file in our directory called <code>main.py</code> and add
+some code to it.</p>
+<div class="codewrapper sourceCode" id="cb7">
+<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" tabindex="-1" aria-label="code-block-7-1"></a><span class="bu">print</span>(<span class="st">"Hello, World!"</span>)</span></code></pre>
+</div>
+<p>You can do this with the text editor of your choice. Our directory
+now looks like this:</p>
+<figure><img src="../img/git/add-file.PNG" alt="git init" class="figure mx-auto d-block"><div class="figcaption">git init</div>
+</figure><div class="section level3">
+<h3 id="checking-the-status-of-the-repository">Checking the status of the repository<a class="anchor" aria-label="anchor" href="#checking-the-status-of-the-repository"></a></h3>
+<p>If we run the following command:</p>
+<div class="codewrapper sourceCode" id="cb8">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" tabindex="-1" aria-label="code-block-8-1"></a><span class="fu">git</span> status</span></code></pre>
+</div>
+<blockquote>
+<p><code>git status</code> is a great command to just pause and take
+stock of what is going on in your repository. It will tell you what
+files are being tracked, what files are not being tracked, and what
+changes have been made to the files that are being tracked.</p>
+</blockquote>
+<p>For now, we can see that Git has noticed that we have a new file in
+our directory, but it is not currently tracking it:</p>
+<figure><img src="../img/git/git-status-pre-add.PNG" alt="git before adding" class="figure mx-auto d-block"><div class="figcaption">git before adding</div>
+</figure></div>
+<div class="section level3">
+<h3 id="staging-adding-changes">Staging (adding) changes<a class="anchor" aria-label="anchor" href="#staging-adding-changes"></a></h3>
+<p>To tell Git to start tracking this file, we need to add it to the
+staging area. You can think of the staging area as a place where you put
+files temporarily, before you send them off to be stored. We can add our
+file to the staging area with the following command:</p>
+<div class="codewrapper sourceCode" id="cb9">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" tabindex="-1" aria-label="code-block-9-1"></a><span class="fu">git</span> add main.py</span></code></pre>
+</div>
+<p>If we run <code>git status</code> again, we can see that our file is
+now being tracked:</p>
+<figure><img src="../img/git/git-status-post-add.PNG" alt="git after adding" class="figure mx-auto d-block"><div class="figcaption">git after adding</div>
+</figure></div>
+<div class="section level3">
+<h3 id="committing-changes">Committing changes<a class="anchor" aria-label="anchor" href="#committing-changes"></a></h3>
+<p>So we’ve added our file to the staging area, but we haven’t actually
+saved it yet. To save the changes we’ve made to the file, we need to
+commit them. We can do this with the following command:</p>
+<div class="codewrapper sourceCode" id="cb10">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" tabindex="-1" aria-label="code-block-10-1"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"Add main.py"</span></span></code></pre>
+</div>
+<p>The <code>-m</code> flag stands for “message”, and the text that
+follows it is the message that will be attached to the commit. This
+message should be a short description of the changes you made in this
+commit.</p>
+<blockquote>
+<p>Generally, it’s good to keep commit messages short and to the point.
+There are better places to put long-form documentation than in your
+commit messages.</p>
+</blockquote>
+<p>When we run the command, we can see that Git has saved our
+changes:</p>
+<figure><img src="../img/git/git-commit.PNG" alt="git commit" class="figure mx-auto d-block"><div class="figcaption">git commit</div>
+</figure></div>
+</section><div class="section level1">
+<h1 id="practice">Practice<a class="anchor" aria-label="anchor" href="#practice"></a></h1>
+<p>Make a change to the file <code>main.py</code> and add/commit it with
+a message of your choice. Run <code>git status</code> after each step to
+see what is happening.</p>
+<p>If you have time, try making a few more changes to the file and
+adding/committing them, or adding a new file to the repository.</p>
+<div class="section level3">
+<h3 id="exploring-change-history">Exploring change history<a class="anchor" aria-label="anchor" href="#exploring-change-history"></a></h3>
+<p>If we want to see a history of the changes we’ve made to our
+repository, we can use the following command:</p>
+<div class="codewrapper sourceCode" id="cb11">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" tabindex="-1" aria-label="code-block-11-1"></a><span class="fu">git</span> log</span></code></pre>
+</div>
+<p>This shows you information about each commit, including the commit
+hash, the author, the date, and the commit message:</p>
+<figure><img src="../img/git/git-log.PNG" alt="git log" class="figure mx-auto d-block"><div class="figcaption">git log</div>
+</figure></div>
+<div class="section level2">
+<h2 id="how-the-magic-of-git-pays-off">How the magic of Git pays off<a class="anchor" aria-label="anchor" href="#how-the-magic-of-git-pays-off"></a></h2>
+<p>So this is maybe not so impressive yet. We’ve created a repository,
+added a file, and made some changes to it. But we could have done all of
+this with a text editor and a file explorer. Why should we bother with
+Git?</p>
+<p>Let’s imagine we were in a bind - we need to go back to the way our
+file was before our last commit. We can do this!</p>
+<div class="section level3">
+<h3 id="checking-out-past-versions">Checking out past versions<a class="anchor" aria-label="anchor" href="#checking-out-past-versions"></a></h3>
+<p>If we run the following command:</p>
+<div class="codewrapper sourceCode" id="cb12">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" tabindex="-1" aria-label="code-block-12-1"></a><span class="fu">git</span> checkout HEAD~1</span></code></pre>
+</div>
+<p>We can open our file and see that it has reverted back to the state
+it was in before our last commit:</p>
+<figure><img src="../img/git/git-checkout.PNG" alt="git checkout" class="figure mx-auto d-block"><div class="figcaption">git checkout</div>
+</figure><p>If you open our file in a text editor, you can see that it has
+reverted back to the state it was in before our last commit.</p>
+<blockquote>
+<p><code>HEAD</code> is a special keyword in Git that refers to the most
+recent commit. The <code>~1</code> means “one commit before HEAD”. You
+can use <code>~2</code> to go back two commits, <code>~3</code> to go
+back three commits, and so on.</p>
+</blockquote>
+<p>Notice however that the blue text at the end of the line has changed
+from “(main)” to “((abcd1234)…))” - this is because we are now in a
+“detached HEAD” state. This means that we are not currently on our
+“main” branch, and that any changes we make will not be saved.</p>
+<p>This is great for when you want to look at an old version of a file,
+but you don’t want to make any changes to it.</p>
+<p>If you want to go back to the most recent commit, you can run the
+following command:</p>
+<div class="codewrapper sourceCode" id="cb13">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" tabindex="-1" aria-label="code-block-13-1"></a><span class="fu">git</span> checkout main</span></code></pre>
+</div>
+<p>And you will be back on your main branch.</p>
+</div>
+<div class="section level3">
+<h3 id="working-with-branches">Working with branches<a class="anchor" aria-label="anchor" href="#working-with-branches"></a></h3>
+<p>Say we want to make some changes to our file, testing out some new
+code or a new way of doing things, but we want to make sure we can
+always go back to the way things were before. We can do this by creating
+a new branch:</p>
+<div class="codewrapper sourceCode" id="cb14">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1" tabindex="-1" aria-label="code-block-14-1"></a><span class="fu">git</span> branch new_feature</span></code></pre>
+</div>
+<p>This creates a new branch called “new_feature” that is identical to
+our “main” branch. But it doesn’t look like anything has happend? We
+have created a branch, but we haven’t switched to it yet. We can do this
+with the following command:</p>
+<div class="codewrapper sourceCode" id="cb15">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1" tabindex="-1" aria-label="code-block-15-1"></a><span class="fu">git</span> checkout new_feature</span></code></pre>
+</div>
+<p>You should now see that the blue text at the end of the line has
+changed to “(new_feature)” to indicate that we are now on the
+“new_feature” branch.</p>
+<figure><img src="../img/git/git-branch.PNG" alt="git branch" class="figure mx-auto d-block"><div class="figcaption">git branch</div>
+</figure><blockquote>
+<p>Because programmers are lazy, there is a shortcut for creating a new
+branch and switching to it at the same time. You can use
+<code>git checkout -b new_feature</code> to do both of these steps in
+one command.</p>
+</blockquote>
+<p>When we are done working on a specific feature and we want to make it
+available in the <em>main</em> branch, we need to merge the feature
+branch into the <em>main</em> branch.</p>
+<div class="codewrapper sourceCode" id="cb16">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb16-1"><a href="#cb16-1" tabindex="-1" aria-label="code-block-16-1"></a><span class="fu">git</span> checkout main</span>
+<span id="cb16-2"><a href="#cb16-2" tabindex="-1" aria-label="code-block-16-2"></a><span class="fu">git</span> merge my_feature_branch</span></code></pre>
+</div>
+<p>This “classic” form of merging will generate a so-called merge commit
+incorporating all changes from the feature branch into the main branch.
+Depending on the changes you may need to resolve conflicting changes
+during the merge.</p>
+</div>
+</div>
+</div>
+<div class="section level1">
+<h1 id="practice-1">Practice<a class="anchor" aria-label="anchor" href="#practice-1"></a></h1>
+<p>In our “new_feature” branch, make a change to the file
+<code>main.py</code> and add/commit it with a message of your
+choice.</p>
+<p>We can now switch back to our “main” branch with the following
+command:</p>
+<div class="codewrapper sourceCode" id="cb17">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb17-1"><a href="#cb17-1" tabindex="-1" aria-label="code-block-17-1"></a><span class="fu">git</span> checkout main</span></code></pre>
+</div>
+<p>If you open the file<code>main.py</code> in a text editor, you will
+see that the changes you made in the “new_feature” branch are not
+present. This is because the changes you made were only saved in the
+“new_feature” branch, and not in the “main” branch.</p>
+<p>We can switch back to the “new_feature” branch with the following
+command:</p>
+<div class="codewrapper sourceCode" id="cb18">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb18-1"><a href="#cb18-1" tabindex="-1" aria-label="code-block-18-1"></a><span class="fu">git</span> checkout new_feature</span></code></pre>
+</div>
+<p>And now our changes are back! No more <code>main2.py</code> or
+<code>main_backup.py</code> files - we can keep all of our changes in
+separate branches, and switch between them at will!</p>
+<div class="section level2">
+<h2 id="remote-repositories">Remote Repositories<a class="anchor" aria-label="anchor" href="#remote-repositories"></a></h2>
+<p>The real power of Git comes when you start working with other people.
+You can link your local repository to a remote repository, and push your
+changes to it. This allows other people to see your changes, and to make
+changes of their own, which you can then pull into your version of the
+repository.</p>
+</div>
+</div>
 
 
 
@@ -592,7 +926,7 @@
         <p>Materials licensed under <a href="LICENSE.html">CC-BY 4.0</a> by the authors</p>
 
         <p>Template licensed under <a href="https://creativecommons.org/licenses/by-sa/4.0/" class="external-link">CC-BY 4.0</a> by <a href="https://carpentries.org/" class="external-link">The Carpentries</a></p>
-        <p>Built with <a href="https://github.com/carpentries/sandpaper/tree/0.20.1" class="external-link">sandpaper (0.20.1)</a>, <a href="https://github.com/carpentries/pegboard/tree/0.7.9" class="external-link">pegboard (0.7.9)</a>, and <a href="https://github.com/carpentries/varnish/tree/1.1.0" class="external-link">varnish (1.1.0)</a></p>
+        <p>Built with <a href="https://github.com/carpentries/sandpaper/tree/0.20.2" class="external-link">sandpaper (0.20.2)</a>, <a href="https://github.com/carpentries/pegboard/tree/0.7.9" class="external-link">pegboard (0.7.9)</a>, and <a href="https://github.com/carpentries/varnish/tree/1.1.1" class="external-link">varnish (1.1.1)</a></p>
 		</div>
 		</footer></div> <!-- / div.container -->
 	<div id="to-top">
@@ -614,8 +948,8 @@
   "url": "https://swcarpentry.github.io/python-novice-gapminder/instructor/14-talk-git-primer.html",
   "identifier": "https://swcarpentry.github.io/python-novice-gapminder/instructor/14-talk-git-primer.html",
   "dateCreated": "2016-01-07",
-  "dateModified": "2025-03-13",
-  "datePublished": "2026-05-19"
+  "dateModified": "2026-05-22",
+  "datePublished": "2026-05-22"
 }
 
   </script><script>
