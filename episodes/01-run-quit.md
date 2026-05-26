@@ -329,7 +329,9 @@ a "text cell" is one that contains ordinary prose written for human beings.
 - When in Command mode (esc/gray),
   - The <kbd>b</kbd> key will make a new cell below the currently selected cell.
   - The <kbd>a</kbd> key will make one above.
-  - The <kbd>x</kbd> key will delete the current cell.
+  - The <kbd>x</kbd> key will cut the current cell.
+  - The <kbd>v</kbd> key will paste the current cell.
+  - Hitting <kbd>d</kbd><kbd>d</kbd> will delete the current cell.
   - The <kbd>z</kbd> key will undo your last cell operation (which could be a deletion, creation, etc).
 - All actions can be done using the menus, but there are lots of keyboard shortcuts to speed things up.
 
@@ -402,7 +404,7 @@ Table: Showing some markdown syntax and its rendered output.
 | ```                                   | <p></p>                                        |
 | 1.   Use numbers                      | 1.   Use numbers                               |
 | 1.   to create                        | 2.   to create                                 |
-| 1.   bullet lists.                    | 3.   numbered lists.                           |
+| 1.   numbered lists.                    | 3.   numbered lists.                           |
 | ```                                   |                                                |
 +---------------------------------------+------------------------------------------------+
 +---------------------------------------+------------------------------------------------+
