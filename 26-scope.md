@@ -71,19 +71,19 @@ NameError: name 'adjust_temperature' is not defined
 
 ## Local and Global Variable Use
 
-Trace the values of all variables in this program as it is executed.
-(Use '---' as the value of variables before and after they exist.)
+Trace the values of all variables in this program as it is executed. Copy this code to a cell in
+your notebook, and we'll try to predict the output before we run it.
 
 ```python
 limit = 100     # "limit" is a _____ variable
 
-def clip(value):  # "value" is a _____ variable
-		value = min(max(0.0, value), limit) # "value" is a ____ variable, "limit" is a ____ variable
-    return value
+def clip(my_value):  # "my_value" is a _____ variable
+		my_value = min(max(0.0, my_value), limit) # "my_value" is a ____ variable, "limit" is a ____ variable
+    return my_value
 
-value = -22.5
-print(clip(value))  # What is the result that will be printed to the console?
-print("value is", value) # What is the value of "value" that will be printed to the console?
+my_value = -22.5
+print(clip(my_value))  # What is the result that will be printed to the console?
+print("my_value is", my_value) # What is the value of "my_value" after we run our function?
 ```
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
