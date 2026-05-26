@@ -531,7 +531,7 @@
       </div>
     </nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Running and Quitting</h1>
-        <p>Last updated on 2024-11-20 |
+        <p>Last updated on 2026-05-26 |
 
         <a href="https://github.com/dkz2r/python-novice-gapminder/edit/main/episodes/01-run-quit.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -954,7 +954,9 @@ mode changes the content of cells.</li>
 <ul><li>The <kbd>b</kbd> key will make a new cell below the currently
 selected cell.</li>
 <li>The <kbd>a</kbd> key will make one above.</li>
-<li>The <kbd>x</kbd> key will delete the current cell.</li>
+<li>The <kbd>x</kbd> key will cut the current cell.</li>
+<li>The <kbd>v</kbd> key will paste the current cell.</li>
+<li>Hitting <kbd>d</kbd><kbd>d</kbd> will delete the current cell.</li>
 <li>The <kbd>z</kbd> key will undo your last cell operation (which could
 be a deletion, creation, etc).</li>
 </ul></li>
@@ -1026,11 +1028,11 @@ cell and you will be able to write in Markdown.</li>
 </ul></div>
 <div class="section level3">
 <h3 id="markdown-does-most-of-what-html-does-">Markdown does most of what HTML does.<a class="anchor" aria-label="anchor" href="#markdown-does-most-of-what-html-does-"></a></h3>
-<table class="table"><caption>Showing some markdown syntax and its rendered output.</caption>
-<colgroup><col width="44%"><col width="55%"></colgroup><thead><tr><th>Markdown code</th>
-<th>Rendered output</th>
-</tr></thead><tbody><tr><td></td>
+<table style="width:99%;" class="table"><caption>Showing some markdown syntax and its rendered output.</caption>
+<colgroup><col width="43%"><col width="53%"><col width="2%"></colgroup><tbody><tr><td rowspan="2"><h1 id="markdown-code">Markdown code</h1></td>
+<td rowspan="2"><h1 id="rendered-output">Rendered output</h1></td>
 <td></td>
+</tr><tr><td></td>
 </tr><tr><td><pre><code>*   Use asterisks
 *   to create
 *   bullet lists.</code></pre></td>
@@ -1041,19 +1043,15 @@ cell and you will be able to write in Markdown.</li>
 <li>to create</li>
 <li>bullet lists.</li>
 </ul></td>
+<td></td>
 </tr><tr><td></td>
 <td></td>
-</tr><tr><td><pre><code>1.   Use numbers
-1.   to create
-1.   bullet lists.</code></pre></td>
-<td>
-<p>
-</p>
-<ol style="list-style-type: decimal"><li>Use numbers</li>
-<li>to create</li>
-<li>numbered lists.</li>
-</ol></td>
+<td></td>
+</tr><tr><td colspan="3">
+<code>| &lt;p&gt;&lt;/p&gt;                                        | 1.   Use numbers                      | 1.   Use numbers                               | 1.   to create                        | 2.   to create                                 | 1.   numbered lists.                    | 3.   numbered lists.</code>
+| |</td>
 </tr><tr><td></td>
+<td></td>
 <td></td>
 </tr><tr><td><pre><code>*  You can use indents
   *  To create sublists
@@ -1073,7 +1071,9 @@ cell and you will be able to write in Markdown.</li>
 <li>types</li>
 </ol></li>
 </ul></td>
+<td></td>
 </tr><tr><td></td>
+<td></td>
 <td></td>
 </tr><tr><td><pre><code><span><span class="co"># A Level-1 Heading</span></span></code></pre></td>
 <td>
@@ -1081,7 +1081,9 @@ cell and you will be able to write in Markdown.</li>
 </p>
 <h2 id="a-level-1-heading">A Level-1 Heading</h2>
 </td>
+<td></td>
 </tr><tr><td></td>
+<td></td>
 <td></td>
 </tr><tr><td><pre><code><span><span class="co">## A Level-2 Heading (etc.)</span></span></code></pre></td>
 <td>
@@ -1089,7 +1091,9 @@ cell and you will be able to write in Markdown.</li>
 </p>
 <h3 id="a-level-2-heading-etc.">A Level-2 Heading (etc.)</h3>
 </td>
+<td></td>
 </tr><tr><td></td>
+<td></td>
 <td></td>
 </tr><tr><td><pre><code>Line breaks
 don't matter.
@@ -1102,7 +1106,9 @@ create new paragraphs.</code></pre></td>
 <p>Line breaks don’t matter.</p>
 <p>But blank lines create new paragraphs.</p>
 </td>
+<td></td>
 </tr><tr><td></td>
+<td></td>
 <td></td>
 </tr><tr><td><pre><code>[Links](http://software-carpentry.org)
 are created with `[...](...)`.
@@ -1115,6 +1121,7 @@ Or use [named links][data-carp].
 <p><a href="https://software-carpentry.org" class="external-link">Links</a> are created with
 <code>[...](...)</code>. Or use <a href="https://datacarpentry.org" class="external-link">named links</a>.</p>
 </td>
+<td></td>
 </tr></tbody></table><div id="creating-lists-in-markdown" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
@@ -1167,11 +1174,11 @@ the items of the numbered list.</p>
 <p>What is displayed when a Python cell in a notebook that contains
 several calculations is executed? For example, what happens when this
 cell is executed?</p>
-<div class="codewrapper sourceCode" id="cb14">
+<div class="codewrapper sourceCode" id="cb13">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" tabindex="-1" aria-label="code-block-14-1"></a><span class="dv">7</span> <span class="op">*</span> <span class="dv">3</span></span>
-<span id="cb14-2"><a href="#cb14-2" tabindex="-1" aria-label="code-block-14-2"></a><span class="dv">2</span> <span class="op">+</span> <span class="dv">1</span></span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" tabindex="-1" aria-label="code-block-13-1"></a><span class="dv">7</span> <span class="op">*</span> <span class="dv">3</span></span>
+<span id="cb13-2"><a href="#cb13-2" tabindex="-1" aria-label="code-block-13-2"></a><span class="dv">2</span> <span class="op">+</span> <span class="dv">1</span></span></code></pre>
 </div>
 </div>
 </div>
@@ -1184,10 +1191,10 @@ cell is executed?</p>
 <div id="collapseSolution4" class="accordion-collapse collapse" aria-labelledby="headingSolution4" data-bs-parent="#accordionSolution4">
 <div class="accordion-body">
 <p>Python returns the output of the last calculation.</p>
-<div class="codewrapper sourceCode" id="cb15">
+<div class="codewrapper sourceCode" id="cb14">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" tabindex="-1" aria-label="code-block-15-1"></a><span class="dv">3</span></span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" tabindex="-1" aria-label="code-block-14-1"></a><span class="dv">3</span></span></code></pre>
 </div>
 </div>
 </div>
@@ -1205,11 +1212,11 @@ Markdown</h3>
 <p>What happens if you write some Python in a code cell and then you
 switch it to a Markdown cell? For example, put the following in a code
 cell:</p>
-<div class="codewrapper sourceCode" id="cb16">
+<div class="codewrapper sourceCode" id="cb15">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" tabindex="-1" aria-label="code-block-16-1"></a>x <span class="op">=</span> <span class="dv">6</span> <span class="op">*</span> <span class="dv">7</span> <span class="op">+</span> <span class="dv">12</span></span>
-<span id="cb16-2"><a href="#cb16-2" tabindex="-1" aria-label="code-block-16-2"></a><span class="bu">print</span>(x)</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" tabindex="-1" aria-label="code-block-15-1"></a>x <span class="op">=</span> <span class="dv">6</span> <span class="op">*</span> <span class="dv">7</span> <span class="op">+</span> <span class="dv">12</span></span>
+<span id="cb15-2"><a href="#cb15-2" tabindex="-1" aria-label="code-block-15-2"></a><span class="bu">print</span>(x)</span></code></pre>
 </div>
 <p>And then run it with <kbd>Shift</kbd>+<kbd>Return</kbd> to be sure
 that it works as a code cell. Now go back to the cell and use
@@ -1230,10 +1237,10 @@ might this be useful?</p>
 if they are part of one contiguous paragraph. This could be useful to
 temporarily turn on and off cells in notebooks that get used for
 multiple purposes.</p>
-<div class="codewrapper sourceCode" id="cb17">
+<div class="codewrapper sourceCode" id="cb16">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" tabindex="-1" aria-label="code-block-17-1"></a>x <span class="op">=</span> <span class="dv">6</span> <span class="op">*</span> <span class="dv">7</span> <span class="op">+</span> <span class="dv">12</span> <span class="bu">print</span>(x)</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" tabindex="-1" aria-label="code-block-16-1"></a>x <span class="op">=</span> <span class="dv">6</span> <span class="op">*</span> <span class="dv">7</span> <span class="op">+</span> <span class="dv">12</span> <span class="bu">print</span>(x)</span></code></pre>
 </div>
 </div>
 </div>
@@ -1377,7 +1384,7 @@ documentation.</li>
   "url": "https://swcarpentry.github.io/python-novice-gapminder/01-run-quit.html",
   "identifier": "https://swcarpentry.github.io/python-novice-gapminder/01-run-quit.html",
   "dateCreated": "2016-01-07",
-  "dateModified": "2024-11-20",
+  "dateModified": "2026-05-26",
   "datePublished": "2026-05-26"
 }
 
