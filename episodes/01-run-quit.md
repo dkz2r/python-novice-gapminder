@@ -484,7 +484,7 @@ Note that the bullet list is indented 2 spaces so that it is inline with the ite
 
 :::::::::::::::::::::::::::::::::::::::  challenge
 
-## More Math
+## Multiple Calculations in a Cell
 
 What is displayed when a Python cell in a notebook
 that contains several calculations is executed?
