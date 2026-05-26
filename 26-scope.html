@@ -526,7 +526,7 @@ variable.</a></li>
       </div>
     </nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Variable Scope</h1>
-        <p>Last updated on 2024-11-20 |
+        <p>Last updated on 2026-05-26 |
 
         <a href="https://github.com/dkz2r/python-novice-gapminder/edit/main/episodes/26-scope.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -628,13 +628,15 @@ NameError: name 'adjust_temperature' is not defined</code></pre>
 <div class="codewrapper sourceCode" id="cb5">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" tabindex="-1" aria-label="code-block-5-1"></a>limit <span class="op">=</span> <span class="dv">100</span></span>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" tabindex="-1" aria-label="code-block-5-1"></a>limit <span class="op">=</span> <span class="dv">100</span>     <span class="co"># "limit" is a _____ variable</span></span>
 <span id="cb5-2"><a href="#cb5-2" tabindex="-1" aria-label="code-block-5-2"></a></span>
-<span id="cb5-3"><a href="#cb5-3" tabindex="-1" aria-label="code-block-5-3"></a><span class="kw">def</span> clip(value):</span>
-<span id="cb5-4"><a href="#cb5-4" tabindex="-1" aria-label="code-block-5-4"></a>    <span class="cf">return</span> <span class="bu">min</span>(<span class="bu">max</span>(<span class="fl">0.0</span>, value), limit)</span>
-<span id="cb5-5"><a href="#cb5-5" tabindex="-1" aria-label="code-block-5-5"></a></span>
-<span id="cb5-6"><a href="#cb5-6" tabindex="-1" aria-label="code-block-5-6"></a>value <span class="op">=</span> <span class="op">-</span><span class="fl">22.5</span></span>
-<span id="cb5-7"><a href="#cb5-7" tabindex="-1" aria-label="code-block-5-7"></a><span class="bu">print</span>(clip(value))</span></code></pre>
+<span id="cb5-3"><a href="#cb5-3" tabindex="-1" aria-label="code-block-5-3"></a><span class="kw">def</span> clip(value):  <span class="co"># "value" is a _____ variable</span></span>
+<span id="cb5-4"><a href="#cb5-4" tabindex="-1" aria-label="code-block-5-4"></a>		value <span class="op">=</span> <span class="bu">min</span>(<span class="bu">max</span>(<span class="fl">0.0</span>, value), limit) <span class="co"># "value" is a ____ variable, "limit" is a ____ variable</span></span>
+<span id="cb5-5"><a href="#cb5-5" tabindex="-1" aria-label="code-block-5-5"></a>    <span class="cf">return</span> value</span>
+<span id="cb5-6"><a href="#cb5-6" tabindex="-1" aria-label="code-block-5-6"></a></span>
+<span id="cb5-7"><a href="#cb5-7" tabindex="-1" aria-label="code-block-5-7"></a>value <span class="op">=</span> <span class="op">-</span><span class="fl">22.5</span></span>
+<span id="cb5-8"><a href="#cb5-8" tabindex="-1" aria-label="code-block-5-8"></a><span class="bu">print</span>(clip(value))  <span class="co"># What is the result that will be printed to the console?</span></span>
+<span id="cb5-9"><a href="#cb5-9" tabindex="-1" aria-label="code-block-5-9"></a><span class="bu">print</span>(<span class="st">"value is"</span>, value) <span class="co"># What is the value of "value" that will be printed to the console?</span></span></code></pre>
 </div>
 </div>
 </div>
@@ -774,7 +776,7 @@ variable.</li>
   "url": "https://swcarpentry.github.io/python-novice-gapminder/26-scope.html",
   "identifier": "https://swcarpentry.github.io/python-novice-gapminder/26-scope.html",
   "dateCreated": "2016-01-07",
-  "dateModified": "2024-11-20",
+  "dateModified": "2026-05-26",
   "datePublished": "2026-05-26"
 }
 
