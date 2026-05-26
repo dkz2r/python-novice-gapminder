@@ -637,19 +637,20 @@ NameError: name 'adjust_temperature' is not defined</code></pre>
 <h3 class="callout-title">Local and Global Variable Use</h3>
 <div class="callout-content">
 <p>Trace the values of all variables in this program as it is executed.
-(Use ‘—’ as the value of variables before and after they exist.)</p>
+Copy this code to a cell in your notebook, and we’ll try to predict the
+output before we run it.</p>
 <div class="codewrapper sourceCode" id="cb5">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" tabindex="-1" aria-label="code-block-5-1"></a>limit <span class="op">=</span> <span class="dv">100</span>     <span class="co"># "limit" is a _____ variable</span></span>
 <span id="cb5-2"><a href="#cb5-2" tabindex="-1" aria-label="code-block-5-2"></a></span>
-<span id="cb5-3"><a href="#cb5-3" tabindex="-1" aria-label="code-block-5-3"></a><span class="kw">def</span> clip(value):  <span class="co"># "value" is a _____ variable</span></span>
-<span id="cb5-4"><a href="#cb5-4" tabindex="-1" aria-label="code-block-5-4"></a>		value <span class="op">=</span> <span class="bu">min</span>(<span class="bu">max</span>(<span class="fl">0.0</span>, value), limit) <span class="co"># "value" is a ____ variable, "limit" is a ____ variable</span></span>
-<span id="cb5-5"><a href="#cb5-5" tabindex="-1" aria-label="code-block-5-5"></a>    <span class="cf">return</span> value</span>
+<span id="cb5-3"><a href="#cb5-3" tabindex="-1" aria-label="code-block-5-3"></a><span class="kw">def</span> clip(my_value):  <span class="co"># "my_value" is a _____ variable</span></span>
+<span id="cb5-4"><a href="#cb5-4" tabindex="-1" aria-label="code-block-5-4"></a>		my_value <span class="op">=</span> <span class="bu">min</span>(<span class="bu">max</span>(<span class="fl">0.0</span>, my_value), limit) <span class="co"># "my_value" is a ____ variable, "limit" is a ____ variable</span></span>
+<span id="cb5-5"><a href="#cb5-5" tabindex="-1" aria-label="code-block-5-5"></a>    <span class="cf">return</span> my_value</span>
 <span id="cb5-6"><a href="#cb5-6" tabindex="-1" aria-label="code-block-5-6"></a></span>
-<span id="cb5-7"><a href="#cb5-7" tabindex="-1" aria-label="code-block-5-7"></a>value <span class="op">=</span> <span class="op">-</span><span class="fl">22.5</span></span>
-<span id="cb5-8"><a href="#cb5-8" tabindex="-1" aria-label="code-block-5-8"></a><span class="bu">print</span>(clip(value))  <span class="co"># What is the result that will be printed to the console?</span></span>
-<span id="cb5-9"><a href="#cb5-9" tabindex="-1" aria-label="code-block-5-9"></a><span class="bu">print</span>(<span class="st">"value is"</span>, value) <span class="co"># What is the value of "value" that will be printed to the console?</span></span></code></pre>
+<span id="cb5-7"><a href="#cb5-7" tabindex="-1" aria-label="code-block-5-7"></a>my_value <span class="op">=</span> <span class="op">-</span><span class="fl">22.5</span></span>
+<span id="cb5-8"><a href="#cb5-8" tabindex="-1" aria-label="code-block-5-8"></a><span class="bu">print</span>(clip(my_value))  <span class="co"># What is the result that will be printed to the console?</span></span>
+<span id="cb5-9"><a href="#cb5-9" tabindex="-1" aria-label="code-block-5-9"></a><span class="bu">print</span>(<span class="st">"my_value is"</span>, my_value) <span class="co"># What is the value of "my_value" after we run our function?</span></span></code></pre>
 </div>
 </div>
 </div>
