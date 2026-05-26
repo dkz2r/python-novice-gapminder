@@ -75,13 +75,15 @@ Trace the values of all variables in this program as it is executed.
 (Use '---' as the value of variables before and after they exist.)
 
 ```python
-limit = 100
+limit = 100     # "limit" is a _____ variable
 
-def clip(value):
-    return min(max(0.0, value), limit)
+def clip(value):  # "value" is a _____ variable
+		value = min(max(0.0, value), limit) # "value" is a ____ variable, "limit" is a ____ variable
+    return value
 
 value = -22.5
-print(clip(value))
+print(clip(value))  # What is the result that will be printed to the console?
+print("value is", value) # What is the value of "value" that will be printed to the console?
 ```
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
