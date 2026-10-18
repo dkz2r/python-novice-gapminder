@@ -114,7 +114,7 @@ git init
 
 This will create a new repository in the current folder - your terminal should now look like this:
 
-![git init](img/git/git-init.PNG)
+![git init](fig/git-init.PNG)
 
 The blue "(master)" text at the end of the line indicates that we are currently in a Git controlled
 directory called "master".
@@ -138,7 +138,7 @@ print("Hello, World!")
 
 You can do this with the text editor of your choice. Our directory now looks like this:
 
-![git init](img/git/add-file.PNG)
+![git init](fig/add-file.PNG)
 
 ### Checking the status of the repository
 
@@ -155,7 +155,7 @@ git status
 For now, we can see that Git has noticed that we have a new file in our directory, but it is not currently
 tracking it:
 
-![git before adding](img/git/git-status-pre-add.PNG)
+![git before adding](fig/git-status-pre-add.PNG)
 
 ### Staging (adding) changes
 
@@ -169,7 +169,7 @@ git add main.py
 
 If we run `git status` again, we can see that our file is now being tracked:
 
-![git after adding](img/git/git-status-post-add.PNG)
+![git after adding](fig/git-status-post-add.PNG)
 
 ### Committing changes
 
@@ -189,7 +189,7 @@ commit.
 
 When we run the command, we can see that Git has saved our changes:
 
-![git commit](img/git/git-commit.PNG)
+![git commit](fig/git-commit.PNG)
 
 Practice
 ========
@@ -212,7 +212,7 @@ git log
 This shows you information about each commit, including the commit hash, the author, the date, and
 the commit message:
 
-![git log](img/git/git-log.PNG)
+![git log](fig/git-log.PNG)
 
 ## How the magic of Git pays off
 
@@ -234,7 +234,7 @@ git checkout HEAD~1
 We can open our file and see that it has reverted back to the state it was in before our last
 commit:
 
-![git checkout](img/git/git-checkout.PNG)
+![git checkout](fig/git-checkout.PNG)
 
 If you open our file in a text editor, you can see that it has reverted back to the state it was
 in before our last commit.
@@ -279,7 +279,7 @@ git checkout new_feature
 You should now see that the blue text at the end of the line has changed to "(new_feature)" to
 indicate that we are now on the "new_feature" branch.
 
-![git branch](img/git/git-branch.PNG)
+![git branch](fig/git-branch.PNG)
 
 > Because programmers are lazy, there is a shortcut for creating a new branch and switching to it
 > at the same time. You can use `git checkout -b new_feature` to do both of these steps in one
