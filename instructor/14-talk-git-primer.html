@@ -554,7 +554,7 @@
       </div>
     </nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>(Talk) Git Control System</h1>
-        <p>Last updated on 2026-05-22 |
+        <p>Last updated on 2026-10-18 |
 
         <a href="https://github.com/dkz2r/python-novice-gapminder/edit/main/episodes/14-talk-git-primer.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -573,7 +573,7 @@
 <button class="accordion-button instructor-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseInstructor1" aria-expanded="false" aria-controls="collapseInstructor1">
   <h3 class="accordion-header" id="headingInstructor1">  <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="edit-2"></i></div> Instructor Note </h3>
 </button>
-<div id="collapseInstructor1" class="accordion-collapse collapse" data-bs-parent="#accordionInstructor1" aria-labelledby="headingInstructor1">
+<div id="collapseInstructor1" class="accordion-collapse collapse" aria-labelledby="headingInstructor1" data-bs-parent="#accordionInstructor1">
 <div class="accordion-body">
 <p>Estimated: 15:30 - 16:00</p>
 <p>Source: <a href="https://fdmrwth.pages.rwth-aachen.de/rdm-overview/modules/coding/git.md" class="external-link uri">https://fdmrwth.pages.rwth-aachen.de/rdm-overview/modules/coding/git.md</a></p>
@@ -686,7 +686,7 @@ the following command:</p>
 </div>
 <p>This will create a new repository in the current folder - your
 terminal should now look like this:</p>
-<figure><img src="../img/git/git-init.PNG" alt="git init" class="figure mx-auto d-block"><div class="figcaption">git init</div>
+<figure><img src="../fig/git-init.PNG" alt="git init" class="figure mx-auto d-block"><div class="figcaption">git init</div>
 </figure><p>The blue “(master)” text at the end of the line indicates that we are
 currently in a Git controlled directory called “master”.</p>
 <p>“master” has always been the default name for the main branch of a
@@ -709,7 +709,7 @@ some code to it.</p>
 </div>
 <p>You can do this with the text editor of your choice. Our directory
 now looks like this:</p>
-<figure><img src="../img/git/add-file.PNG" alt="git init" class="figure mx-auto d-block"><div class="figcaption">git init</div>
+<figure><img src="../fig/add-file.PNG" alt="git init" class="figure mx-auto d-block"><div class="figcaption">git init</div>
 </figure><div class="section level3">
 <h3 id="checking-the-status-of-the-repository">Checking the status of the repository<a class="anchor" aria-label="anchor" href="#checking-the-status-of-the-repository"></a></h3>
 <p>If we run the following command:</p>
@@ -726,7 +726,7 @@ changes have been made to the files that are being tracked.</p>
 </blockquote>
 <p>For now, we can see that Git has noticed that we have a new file in
 our directory, but it is not currently tracking it:</p>
-<figure><img src="../img/git/git-status-pre-add.PNG" alt="git before adding" class="figure mx-auto d-block"><div class="figcaption">git before adding</div>
+<figure><img src="../fig/git-status-pre-add.PNG" alt="git before adding" class="figure mx-auto d-block"><div class="figcaption">git before adding</div>
 </figure></div>
 <div class="section level3">
 <h3 id="staging-adding-changes">Staging (adding) changes<a class="anchor" aria-label="anchor" href="#staging-adding-changes"></a></h3>
@@ -741,7 +741,7 @@ file to the staging area with the following command:</p>
 </div>
 <p>If we run <code>git status</code> again, we can see that our file is
 now being tracked:</p>
-<figure><img src="../img/git/git-status-post-add.PNG" alt="git after adding" class="figure mx-auto d-block"><div class="figcaption">git after adding</div>
+<figure><img src="../fig/git-status-post-add.PNG" alt="git after adding" class="figure mx-auto d-block"><div class="figcaption">git after adding</div>
 </figure></div>
 <div class="section level3">
 <h3 id="committing-changes">Committing changes<a class="anchor" aria-label="anchor" href="#committing-changes"></a></h3>
@@ -764,7 +764,7 @@ commit messages.</p>
 </blockquote>
 <p>When we run the command, we can see that Git has saved our
 changes:</p>
-<figure><img src="../img/git/git-commit.PNG" alt="git commit" class="figure mx-auto d-block"><div class="figcaption">git commit</div>
+<figure><img src="../fig/git-commit.PNG" alt="git commit" class="figure mx-auto d-block"><div class="figcaption">git commit</div>
 </figure></div>
 </section><div class="section level1">
 <h1 id="practice">Practice<a class="anchor" aria-label="anchor" href="#practice"></a></h1>
@@ -784,7 +784,7 @@ repository, we can use the following command:</p>
 </div>
 <p>This shows you information about each commit, including the commit
 hash, the author, the date, and the commit message:</p>
-<figure><img src="../img/git/git-log.PNG" alt="git log" class="figure mx-auto d-block"><div class="figcaption">git log</div>
+<figure><img src="../fig/git-log.PNG" alt="git log" class="figure mx-auto d-block"><div class="figcaption">git log</div>
 </figure></div>
 <div class="section level2">
 <h2 id="how-the-magic-of-git-pays-off">How the magic of Git pays off<a class="anchor" aria-label="anchor" href="#how-the-magic-of-git-pays-off"></a></h2>
@@ -804,7 +804,7 @@ file was before our last commit. We can do this!</p>
 </div>
 <p>We can open our file and see that it has reverted back to the state
 it was in before our last commit:</p>
-<figure><img src="../img/git/git-checkout.PNG" alt="git checkout" class="figure mx-auto d-block"><div class="figcaption">git checkout</div>
+<figure><img src="../fig/git-checkout.PNG" alt="git checkout" class="figure mx-auto d-block"><div class="figcaption">git checkout</div>
 </figure><p>If you open our file in a text editor, you can see that it has
 reverted back to the state it was in before our last commit.</p>
 <blockquote>
@@ -851,7 +851,7 @@ with the following command:</p>
 <p>You should now see that the blue text at the end of the line has
 changed to “(new_feature)” to indicate that we are now on the
 “new_feature” branch.</p>
-<figure><img src="../img/git/git-branch.PNG" alt="git branch" class="figure mx-auto d-block"><div class="figcaption">git branch</div>
+<figure><img src="../fig/git-branch.PNG" alt="git branch" class="figure mx-auto d-block"><div class="figcaption">git branch</div>
 </figure><blockquote>
 <p>Because programmers are lazy, there is a shortcut for creating a new
 branch and switching to it at the same time. You can use
@@ -972,7 +972,7 @@ repository.</p>
   "url": "https://swcarpentry.github.io/python-novice-gapminder/instructor/14-talk-git-primer.html",
   "identifier": "https://swcarpentry.github.io/python-novice-gapminder/instructor/14-talk-git-primer.html",
   "dateCreated": "2016-01-07",
-  "dateModified": "2026-05-22",
+  "dateModified": "2026-10-18",
   "datePublished": "2026-10-18"
 }
 
