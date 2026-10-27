@@ -305,3 +305,55 @@ print('total cost:', sum(prices.values()))
 :::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
+
+:::::::::::::::::::::::::::::::::::::::  challenge
+
+## Preventing `KeyError`s using `.get()`
+
+Let's say we don't want to get an error if the key we are looking for in the dictionary does not exist.
+
+Exactly for this purpose, dictionaries have a method `.get(key, default)`.
+
+If the key exists, it returns the value.
+If the key does not exist, it returns the `default` value instead of raising a `KeyError`.
+
+1. Try to predict the output of this program:
+
+```python
+prices = {
+    "laptop": 500,
+    "mouse": 10,
+    "camera": 85,
+}
+print('price of mouse:', prices.get('mouse'))
+print('price of keyboard:', prices.get('keyboard'))
+print('price of keyboard:', prices.get('keyboard', 'not available'))
+```
+
+2. A customer wants a laptop and a keyboard. Using `.get()` calculate the total price without getting any errors. Things that we do not have for sale should not add anything to the total.
+
+:::::::::::::::  solution
+
+
+## Solution
+
+1.
+```output
+price of mouse: 10
+price of keyboard: None
+price of keyboard: not available
+```
+Without a default, `.get()` returns `None` for a missing key.
+
+2.
+```python
+print('total cost:', prices.get("laptop", 0) + prices.get("keyboard", 0))
+```
+
+```output
+total price: 500
+```
+
+:::::::::::::::::::::::::
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
