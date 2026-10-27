@@ -357,3 +357,42 @@ total price: 500
 :::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
+:::::::::::::::::::::::::::::::::::::::  challenge
+
+## From Dictionary to DataFrame
+
+We can use `pd.DataFrame` to create a table from a dictionary.
+Complete the dictionary (the part marked with `...`) and pass the correct argument to `pd.DataFrame`, so that the program produces the output below.
+
+```python
+import pandas as pd
+
+gdp_europe = {
+    ...
+}
+
+df = pd.DataFrame(____)
+print(df)
+```
+
+```output
+   country  gdpPercap_2007
+0  Albania   5937.03
+1  Austria  36126.49
+2  Belgium  33692.61
+```
+
+:::::::::::::::  solution
+## Solution
+
+
+```python
+gdp_europe = {
+    "country": ["Albania", "Austria", "Belgium"],
+    "gdpPercap_2007": [5937.03, 36126.49, 33692.61]
+}
+```
+:::::::::::::::::::::::::
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
+
